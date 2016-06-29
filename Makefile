@@ -1,4 +1,5 @@
 PAGES ?= wiki
+TRAVIS ?= false
 
 # don't lint bugs-found-by-musl.md due to intentionally long line length
 lint:
@@ -6,3 +7,15 @@ lint:
 
 serve:
 	gollum --h1-title --user-icons gravatar --no-edit --no-live-preview --host 127.0.0.1 --css --page-file-dir $(PAGES)
+
+install:
+	@command -v gem >/dev/null 2>&1 || { echo "\`gem\` needs to be installed."; exit 1; }
+	@echo "This target will install dependencies need to lint the markdown files,"
+	@echo "and also locally run the wiki. If you do not want \`gem\` to install"
+	@echo "markdownlint, gollum, and github-markdown, press Ctrl-C."
+	@[[ "$(TRAVIS)" == true ]] || sleep 10
+	@command -v gollum >/dev/null 2>&1 || gem install --verbose --no-document gollum; exit $$?
+	@command -v mdl >/dev/null 2>&1 || gem install --verbose --no-document markdownlint; exit $$?
+	@( gem list | grep -q "github-markdown" && exit $$? || exit 1 ) || gem install --verbose --no-document github-markdown; exit $$?
+
+.PHONY: lint serve install
