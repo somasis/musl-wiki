@@ -2,8 +2,7 @@
 
 # Linux distributions using musl
 
-- [sabotage] - up-to-date and maintained fork
-    - Derived from LFS. based on busybox.
+- [sabotage] - experimental Linux distribution based on busybox and musl.
     - About 700 packages including X11, LXDE, alsa, SDL, C++.
     - Supports i386, x86_64, arm, mips, powerpc
     - Uses lightweight replacements for netlink, pkg-config, and gettext
@@ -32,7 +31,7 @@
 - [void linux] provides official musl based images.
 - [Exherbo] has an x86_64 musl stage.
 
-[sabotage]: https://github.com/sabotage-linux/sabotage
+[sabotage]: http://sabotage.tech/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
 [LightCube OS]: https://github.com/jhuntwork/lightcube-bootstrap-musl
 [Snowflake]: https://bitbucket.org/GregorR/snowflake
