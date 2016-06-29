@@ -85,5 +85,5 @@ VFPv4.
 
 If your distro uses musl natively, then naturally, anything compiled on that
 distro will use musl. Several distros using musl, such as sabotage, are listed
-on the [distributions page of this wiki](Distributions).
+on the [[Projects using musl page of this wiki|projects-using-musl]].
 
