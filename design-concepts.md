@@ -40,6 +40,7 @@ keeping the others. In a sense this was true at some point, before any of them
 really worked properly. But now they are all extremely interdependent, and
 burdened by their dependencies on one another's private interfaces. Some
 examples:
+
 - Interaction between libc and ldso for handling of init/fini, atexit type
   registrations, library unloading, ...
 - Interaction between pthreads and ldso for TLS storage for dynamic libraries.
@@ -59,7 +60,7 @@ implementation.
 
 # Thread cancellation
 
-Adapted from http://www.openwall.com/lists/musl/2011/04/18/1
+Adapted from <http://www.openwall.com/lists/musl/2011/04/18/1>
 
 The current thread cancellation design in musl is the second in a series of
 designs to rememdy two critical flaws in the classic way cancellation is
@@ -76,7 +77,7 @@ implemented by glibc and other libraries:
 3. At the time this system was designed, there were mixed opinions on whether
    these flaws are violations of the POSIX requirements on cancellation. Now,
    based on the resolution to issue 614 on the Austin Group tracker
-   (http://austingroupbugs.net/view.php?id=614), it's clear that POSIX does have
+   (<http://austingroupbugs.net/view.php?id=614>), it's clear that POSIX does have
    very specific requirements for the side effects of functions when they are
    cancelled. Either way the above flaws make it virtually impossible to use
    cancellation for the intended purpose. Both flaws stem from a
@@ -96,6 +97,7 @@ have some flaws too, and eventually it was simplified to just use
 externally-visible labels in the assembly code. The cancellation signal handler
 can then compare the instruction pointers of the interrupted context to
 determine at which point the cancellation request came:
+
 - in the code leading up to, or while blocked at, the syscall,
 - after completion of the syscall, OR
 - while executing a signal handler which interrupted the syscall.
@@ -115,6 +117,7 @@ Surprisingly, this entire cancellation system has very few machine dependencies,
 beyond the need for machine-specific syscall code which was already a
 requirement. Everything else is written in plain POSIX C, and makes only the
 following assumptions:
+
 - The saved context received by signal handlers contains the saved value of
   the current instruction address from the interrupted code (the offsets for
   these are defined in an arch-specific file).
@@ -177,7 +180,7 @@ Such enhancements will be considered at a later time if there is demand.
 
 # Time conversion subsystem
 
-Adapted from http://www.openwall.com/lists/musl/2013/07/16/16
+Adapted from <http://www.openwall.com/lists/musl/2013/07/16/16>
 
 Internally, all POSIX times (seconds since epoch) are passed around as long
 long. This ensures that values derived from struct tm, timezone rules, etc. can

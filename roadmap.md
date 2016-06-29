@@ -14,6 +14,7 @@ constraints. The roadmap may change radically before we get there.
 Estimated release: Early May
 
 Primary targets:
+
 - Merging in-progress MIPS n64 port
 - Merging PowerPC soft-float support
 - Dynamic linker correctness improvements
@@ -22,6 +23,7 @@ Primary targets:
 - Using stdio buffer provided to setvbuf
 
 Secondary targets:
+
 - Updating character data to current Unicode
 - UB-correctness fixes including string functions and stdio
 - Further dynamic linker performance improvements and clean-up
@@ -33,14 +35,16 @@ Secondary targets:
 Estimated release: June
 
 Primary targets:
+
 - Adding ARM Cortex-M (NOMMU) support (including building ARM as pure thumb2).
 - Resolving GCC symbol-versioning incompatibility issue - see
-  http://www.openwall.com/lists/musl/2015/05/10/1
+  <http://www.openwall.com/lists/musl/2015/05/10/1>
 - LC_COLLATE implementation
 - IDN support in DNS resolver
 - Message translation support for dynamic linker
 
 Secondary targets:
+
 - IEEE quad math correctness
 - Complex math correctness Complex math correctness
 - Remapping of glibc-ABI-incompatible symbols (regexec, etc.) by dynamic linker
@@ -58,7 +62,7 @@ there will likely be at least one additional release (beyond the above) in the
     - Deduplication and asm-reduction of atomic operations
     - Deduplication of bits headers for archs
     - Support for out-of-tree builds
-- Improved locale and multilingual support 
+- Improved locale and multilingual support
     - LC_COLLATE support for collation orders other than simple codepoint order
     - IDN support in DNS resolver
     - Character data aligned with current Unicode at time of release
@@ -76,7 +80,7 @@ there will likely be at least one additional release (beyond the above) in the
     - Locale data and libc message translations
     - External header-file-only fortify library providing _FORTIFY_SOURCE
       feature
-    - Support for Windows targets via Midipix (http://www.midipix.org)
+    - Support for Windows targets via Midipix (<http://www.midipix.org>)
 
 # Open longer-term goals
 

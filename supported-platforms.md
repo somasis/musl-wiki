@@ -57,7 +57,7 @@ As of 2013-09-29, the following compilers are known to be able to compile musl:
       project (for details see [[Getting started]]).
 - Clang (>=3.2)
     - [[Instructions for Building LLVM+Clang against musl|Building LLVM]]
-    - http://ellcc.org/ ELLCC is a Clang and musl based cross-compiler
+    - <http://ellcc.org/> ELLCC is a Clang and musl based cross-compiler
       toolchain for embedded development.
 - PCC (>=1.1.0.DEVEL)
 - [CParser/firm]

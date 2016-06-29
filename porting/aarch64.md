@@ -15,25 +15,25 @@ to the existing unfinished ports.
 
 # Reference documents
 
-## Procedure Call Standards:
+## Procedure Call Standards
 
 - Procedure Call Standard for ARM 64-bit Architecture (AArch64):
-  http://infocenter.arm.com/help/topic/com.arm.doc.ihi0055b/IHI0055B_aapcs64.pdf
+  <http://infocenter.arm.com/help/topic/com.arm.doc.ihi0055b/IHI0055B_aapcs64.pdf>
 - Procedure Call Standard for the ARM Architecture (AArch32):
-  http://infocenter.arm.com/help/topic/com.arm.doc.ihi0042e/IHI0042E_aapcs.pdf
+  <http://infocenter.arm.com/help/topic/com.arm.doc.ihi0042e/IHI0042E_aapcs.pdf>
 
 ## ELF
 
 - ELF for the ARM 64-bit Architecture (AArch64):
-  http://infocenter.arm.com/help/topic/com.arm.doc.ihi0056a/IHI0056A_aaelf64.pdf
+  <http://infocenter.arm.com/help/topic/com.arm.doc.ihi0056a/IHI0056A_aaelf64.pdf>
 
 ## Instruction set
 
 - ARMv8-A Architecture Reference Manual:
-  http://infocenter.arm.com/help/topic/com.arm.doc.ddi0487a.b/index.html
+  <http://infocenter.arm.com/help/topic/com.arm.doc.ddi0487a.b/index.html>
   (requires registration)
 - ARM v8 Instruction Set Architecture:
-  http://infocenter.arm.com/help/topic/com.arm.doc.genc010197a/index.html
+  <http://infocenter.arm.com/help/topic/com.arm.doc.genc010197a/index.html>
   (requires registration)
 
 ## Other resources
@@ -52,9 +52,9 @@ the ARM website.
 
 ## unfinished musl ports
 
-https://github.com/wermut/musl-aarch64 Feel free to fork and send pull requests.
+<https://github.com/wermut/musl-aarch64> Feel free to fork and send pull requests.
 
-https://github.com/crxz0193/musl-aarch64 Continuation of the above, left stale
+<https://github.com/crxz0193/musl-aarch64> Continuation of the above, left stale
 after encountering an issue with syscalls that were removed in the aarch64
 kernel. the issue was fixed in musl master, but the port was not continued.
 

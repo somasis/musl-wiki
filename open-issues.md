@@ -13,6 +13,7 @@ Presently, musl's C locale is not quite conforming (to ISO C or POSIX), and the
 situation will be worse in the future once the resolution to issue #663 is
 applied to POSIX, disallowing multibyte characters in the C locale. The present
 issues are:
+
 - setlocale() returns "C.UTF-8" even if "C" was passed to it. (This is barely a
   functional issue; fixing it would just require saving a flag for which to
   return.)
@@ -44,8 +45,9 @@ global and thread-local locale state.
 Right now, musl's iconv descriptors are not identifiers for an allocated
 resource, but just bitfields identifying the source and destination charset.
 There has been some demand for stateful encodings, however:
+
 - UTF-16 with BOM (yes, disgusting...)
-- ISO-2022 Japanese text (common on IRC still)
+    - ISO-2022 Japanese text (common on IRC still)
 
 It's still an open question whether these are worth supporting.
 
@@ -67,6 +69,7 @@ files. musl does not support anything but flat files.
 The direction planned in musl is not to add in the bloat of additional backends
 or dynamically loading backends, but to offer a single protocol for
 communicating with a daemon that would serve as the backend. Candidates are:
+
 - nscd, the protocol used by the daemon that caches results of such lookups in
   glibc. The biggest advantage of this option is that you could use ANY backend
   supported by glibc by just installing the real glibc nscd. The protocol is
@@ -226,6 +229,5 @@ file descriptor was reassigned. An analogous bug is also present in glibc's
 implementation.
 
 Details are available on this mailing list thread:
-
-http://www.openwall.com/lists/musl/2013/06/16/18
+<http://www.openwall.com/lists/musl/2013/06/16/18>
 

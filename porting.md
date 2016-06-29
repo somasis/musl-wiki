@@ -2,9 +2,9 @@
 
 resources describing a musl port to a new architecture
 
-http://brightrain.aerifal.cx/~niklata/PORTING
+<http://brightrain.aerifal.cx/~niklata/PORTING>
 
-http://www.openwall.com/lists/musl/2012/07/08/1
+<http://www.openwall.com/lists/musl/2012/07/08/1>
 
 [commit introducing a new C-based crt framework][commit-crt], which makes
 writing arch-specific startup-code much simpler.
@@ -13,10 +13,10 @@ writing arch-specific startup-code much simpler.
 required for a new arch.
 
 the unsquashed history of the powerpc port has been archived @
-https://github.com/rofl0r/musl-ppc (branch ppc)
+<https://github.com/rofl0r/musl-ppc> (branch ppc)
 
 the unsquashed history of the x32 port has been archived @
-https://github.com/rofl0r/musl (branch x32g)
+<https://github.com/rofl0r/musl> (branch x32g)
 
 [[AArch64|Porting/AArch64]] porting page.
 

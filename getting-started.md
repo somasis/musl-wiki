@@ -35,7 +35,7 @@ Now you can use `musl-gcc` instead of `gcc` to compile things against musl. Use
 `-static` to build static binaries. For example, to compile a software package
 that uses autoconf statically against musl:
 
-```
+```sh
 CC="musl-gcc -static" ./configure --prefix=$HOME/musl && make
 ```
 

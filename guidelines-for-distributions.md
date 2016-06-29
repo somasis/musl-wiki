@@ -33,6 +33,7 @@ it's best to just stick with all the standard pathnames.
 If musl is missing functions which are present in another libc and which are
 needed by programs you want to package for your distribution, there are several
 options for how to proceed:
+
 - The safest solution is always putting the new functions in a separate
   (preferably static) library file and linking them into the programs that need
   them. This will not affect backwards compatibility, forwards compatibility,

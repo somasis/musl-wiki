@@ -57,9 +57,9 @@
 # Linux distros shipping musl as an optional package
 
 - [Gentoo] (see [musl overlay])
-    - http://distfiles.gentoo.org/experimental/amd64/
-    - http://distfiles.gentoo.org/experimental/x86/musl/
-    - http://distfiles.gentoo.org/experimental/arm/musl/
+    - <http://distfiles.gentoo.org/experimental/amd64/>
+    - <http://distfiles.gentoo.org/experimental/x86/musl/>
+    - <http://distfiles.gentoo.org/experimental/arm/musl/>
 - [Arch Linux]
 - [Debian] package can now be found in sid (unstable).
 - [Ubuntu] package is included in the universe section of the repository
@@ -82,6 +82,7 @@
 # Other Projects
 
 Third-party projects using or building on musl:
+
 - [simplecct] simple cross compiler toolchain
 - [ELLCC] is a Clang/LLVM and musl based cross compilation toolchain for
   embedded systems

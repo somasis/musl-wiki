@@ -8,6 +8,7 @@ support, and clean code.
 [[_TOC_]]
 
 # Introduction
+
 - [[Getting started]]
 - [[FAQ]]
 - [[Compatibility]] - software and standards compatibility of the API musl
@@ -17,12 +18,14 @@ support, and clean code.
 - [[Contacts]] - mailing list, IRC, support, discussion
 
 # Using musl
+
 - [Official documentation]
 - [[Environment variables affecting musl|Environment variables]]
 - [[Functional differences from glibc]]
 - [[Guidelines for Distributions]]
 
 # Development
+
 - [[Open issues]]
 - [[Roadmap for post-1.0 development|Roadmap]]
 - [[How to port musl to a new arch|Porting]]
@@ -32,6 +35,7 @@ support, and clean code.
 - [[Mathematical Library]]
 
 # Further reading
+
 - [Comparison] with other Linux libc implementations
 - [Install notes], [readme], and [release notes] in the official repo.
 - [Generating cross compilers for musl][generating-cross] - also features

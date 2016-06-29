@@ -15,7 +15,7 @@ after 3.12, which cannot be accessed using libc headers.
 to compile busybox 1.22.1 allyesconfig, the following config changes are
 needed to support musl
 
-```
+```text
 # CONFIG_EXTRA_COMPAT is not set
 # CONFIG_SELINUX is not set
 # CONFIG_FEATURE_HAVE_RPC is not set

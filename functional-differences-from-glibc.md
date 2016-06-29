@@ -29,6 +29,7 @@ available, even after the EOF flag is set.
 ## Read and write patterns
 
 musl uses readv and writev for implementing stdio:
+
 - When a read cannot be satisfied from the buffer, a single readv call
   transfers the remaining request to the caller's buffer and fills the stdio
   buffer.
@@ -74,7 +75,7 @@ multiple threads, but the code that caused this behavior was removed in 1.1.2.
 glibc does not deadlock under recursive exit, but it's unclear whether such
 usage just "happens to work" or whether it's supported.
 
-# Dynamic liker
+# Dynamic linker
 
 ## Lazy bindings
 
@@ -105,6 +106,7 @@ process, until it exits or calls exec. dlclose is a no-op. This is very
 different from glibc's approach of reference counting libraries and unloading
 them when the count reaches zero. The differences in observable behavior to
 applications:
+
 - Destructors will run on dlclose (as long as there are no remaining references)
   under glibc, and subsequent opens of the same library will run their
   constructors again. Under musl, constructors only run the first time a library
@@ -121,6 +123,7 @@ applications:
 
 Either behavior conforms to POSIX, but only the musl behavior can satisfy the
 robustness conditions musl aims to provide. In particular:
+
 - Under glibc's approach, libraries not designed with dlclose in mind (which
   may not be the libraries directly loaded with dlopen, but rather their
   dependencies) may leave around references to themselves in such a way that
@@ -229,6 +232,7 @@ interfaces that cannot rely on being able to allocate working space.
 The iconv implementation musl is very small and oriented towards being
 unobtrusive to static link. Its character set/encoding coverage is very strong
 for its size, but not comprehensive like glibc's. In particular:
+
 - Legacy double-byte and multi-byte East Asian encodings are supported only as
   the source charset, not the destination charset.
 - Transliterations (//TRANSLIT suffix) are not supported.
@@ -307,6 +311,7 @@ only supporting up to three nameservers, and can be mitigated further at the
 configuration level by only configuring one nameserver) but drastically improves
 performance and reliability of DNS lookups, especially if diverse nameservers
 are used. An ideal configuration is:
+
 - Caching nameserver on localhost (near-zero latency for locally cached results,
   but typically smallest cache size, and slowest for queries not serviceable
   from cache)

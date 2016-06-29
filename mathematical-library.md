@@ -73,6 +73,7 @@ and payload of nan)
 Infinities are printed as "inf" and "-inf".
 
 # Development documentation
+
 ## Overview
 
 The source code of math functions are in three directories: src/math/,
@@ -144,18 +145,18 @@ exponent:
 
 double foo(double x)
 {
-	union {double f; uint64_t i;} u = {x};
-	int e = u.i>>52 & 0x7ff;
-	int s = u.i>>63;
-	return e<0x3ff || (s && e==0x3ff) ? x : 0;
+    union {double f; uint64_t i;} u = {x};
+    int e = u.i>>52 & 0x7ff;
+    int s = u.i>>63;
+    return e<0x3ff || (s && e==0x3ff) ? x : 0;
 }
 
 float foof(float x)
 {
-	union {float f; uint32_t i;} u = {x};
-	int e = u.i>>23 & 0xff;
-	int s = u.i>>31;
-	return e<0x7f || (s && e==0x7f) ? x : 0;
+    union {float f; uint32_t i;} u = {x};
+    int e = u.i>>23 & 0xff;
+    int s = u.i>>31;
+    return e<0x7f || (s && e==0x7f) ? x : 0;
 }
 
 #include <float.h>
@@ -165,10 +166,10 @@ long double fool(long double x) { return foo(x); }
 #include "libm.h"
 long double fool(long double x)
 {
-	kunion ldshape u = {x};
-	int e = u.i.se & 0x7fff;
-	int s = u.i.se>>15;
-	return e<0x3fff || (s && e==0x3fff) ? x : 0;
+    kunion ldshape u = {x};
+    int e = u.i.se & 0x7fff;
+    int s = u.i.se>>15;
+    return e<0x3fff || (s && e==0x3fff) ? x : 0;
 }
 #endif
 ```
@@ -183,8 +184,8 @@ for !=) the foo function can be implemented without bit manipulation
 ```c
 double foo(double x)
 {
-	if (x!=x) return 0;
-	return x > -2 && x < 1 ? x : 0;
+    if (x!=x) return 0;
+    return x > -2 && x < 1 ? x : 0;
 }
 ```
 
@@ -304,8 +305,8 @@ the wider exponent range can still cause double rounding in the subnormal range
 where the inmemory representation has smaller precision than the fp registers)
 
 ```c
-	double x = 0.5 + 0x1p-50; // exact, no rounding
-	x = x + 0x1p52;
+    double x = 0.5 + 0x1p-50; // exact, no rounding
+    x = x + 0x1p52;
 ```
 
 On FLT_EVAL_METHOD==0 platforms x is set to 0x1p52+1, on i386 the addition is
@@ -316,7 +317,7 @@ In non-nearest rounding mode double rounding cannot cause different results, but
 it can cause the omission of the underflow flag:
 
 ```c
-	(double)(0x1p-1070 + 0x1p-1000*0x1p-1000)
+    (double)(0x1p-1070 + 0x1p-1000*0x1p-1000)
 ```
 
 The result is inexact and subnormal, so it should raise the underflow flag, but
@@ -356,7 +357,7 @@ Neither gcc nor clang supports the FENV_ACCESS pragma, in which case they should
 assume FENV_ACCESS ON for all code for safety, however both compilers assume
 FENV_ACCESS OFF and do agressive fp optimizations which cannot be turned off.
 
-For the gcc issues see http://gcc.gnu.org/wiki/FloatingPointMath
+For the gcc issues see <http://gcc.gnu.org/wiki/FloatingPointMath>
 
 Various FENV_ACCESS issues with gcc and clang (can be worked around using
 volatile hacks):
@@ -381,10 +382,10 @@ fesetround(FE_TONEAREST);
 /* ... */
 x = a + b;
 if (x == 0) {
-	/* make sure the sign of zero is right */
-	fesetround(r);
-	x = a + b;
-	return x;
+    /* make sure the sign of zero is right */
+    fesetround(r);
+    x = a + b;
+    return x;
 }
 ```
 
@@ -395,7 +396,7 @@ of y omitting inexact exception):
 /* round to integer, raise inexact if not integer */
 y = absx + 0x1p52 - 0x1p52;
 if (absx < 1)
-	return 0*x;
+    return 0*x;
 ```
 
 Expression reordering (old lrint code: converting the result of rint to long
@@ -408,7 +409,7 @@ feholdexcept(&e);
 i = rint(x);
 /* dont raise inexact on overflow */
 if (fetestexcept(FE_INVALID))
-	feclearexcept(FE_INEXACT);
+    feclearexcept(FE_INEXACT);
 feupdateenv(&e);
 return i;
 ```
@@ -430,23 +431,23 @@ approximated by x + x*x*x/2 + x^5*eps when x is small, otherwise return g(x).
 ```c
 double f(double x)
 {
-	union {double f; uint64_t i;} u = {x};
-	int e = u.i>>52 & 0x7ff;
+    union {double f; uint64_t i;} u = {x};
+    int e = u.i>>52 & 0x7ff;
 
-	if (e < 0x3ff - 13) { /* |x| < 0x1p-13 */
-		if (e < 0x3ff - 26) { /* |x| < 0x1p-26 */
-			if (e == 0) { /* x is subnormal or zero */
-				#pragma STDC FENV_ACCESS ON
-				/* raise underflow if x!=0 */
-				float unused = x;
-			}
-			/* do not fall through, x*x could raise underflow incorrectly */
-			/* note: inexact flag is not supported */
-			return x;
-		}
-		return x*(1 + x*x/2);
-	}
-	return g(x);
+    if (e < 0x3ff - 13) { /* |x| < 0x1p-13 */
+    if (e < 0x3ff - 26) { /* |x| < 0x1p-26 */
+    if (e == 0) { /* x is subnormal or zero */
+    #pragma STDC FENV_ACCESS ON
+    /* raise underflow if x!=0 */
+    float unused = x;
+    }
+    /* do not fall through, x*x could raise underflow incorrectly */
+    /* note: inexact flag is not supported */
+    return x;
+    }
+    return x*(1 + x*x/2);
+    }
+    return g(x);
 }
 ```
 
@@ -454,9 +455,9 @@ Unfortunately the unused variable is optimized away so the convention is to use
 volatile hacks in such cases:
 
 ```c
-	if (e == 0)
-		/* raise underflow if x!=0 */
-		FORCE_EVAL((float)x);
+    if (e == 0)
+    /* raise underflow if x!=0 */
+    FORCE_EVAL((float)x);
 ```
 
 the FORCE_EVAL macro is defined in libm.h and does a volatile assignment which
@@ -495,11 +496,11 @@ fp)
 Using the exponent
 
 ```c
-	union {double f; uint64_t i;} u = {x};
-	int e = u.i>>52 & 0x7ff;
-	if (e == 0x7ff) { /* +-inf or nan */ }
-	if (e == 0x3ff + N) { /* 2^N <= |x| < 2^(N+1) */ }
-	if (e == 0) { /* +-0 or subnormal x */ }
+    union {double f; uint64_t i;} u = {x};
+    int e = u.i>>52 & 0x7ff;
+    if (e == 0x7ff) { /* +-inf or nan */ }
+    if (e == 0x3ff + N) { /* 2^N <= |x| < 2^(N+1) */ }
+    if (e == 0) { /* +-0 or subnormal x */ }
 ```
 
 Exact add in nearest rounding mode: hi+lo == x+y exactly and hi ==
@@ -507,47 +508,47 @@ Exact add in nearest rounding mode: hi+lo == x+y exactly and hi ==
 the exactness)
 
 ```c
-	/* exact add, assumes exponent_x >= exponent_y, no overflow */
-	hi = x + y;
-	lo = y - (hi - x);
+    /* exact add, assumes exponent_x >= exponent_y, no overflow */
+    hi = x + y;
+    lo = y - (hi - x);
 ```
 
 Exact mul in nearest rounding mode: hi+lo == x*y exactly and hi ==
 (double)(x*y), it assumes FLT_EVAL_METHOD==0
 
 ```c
-	/* exact mul, assumes no over/underflow */
-	static const double c = 0x1p27 + 1;
-	double cx, xh, xl, cy, yh, yl, hi, lo, x, y;
+    /* exact mul, assumes no over/underflow */
+    static const double c = 0x1p27 + 1;
+    double cx, xh, xl, cy, yh, yl, hi, lo, x, y;
 
-	cx = c*x;
-	xh = x - cx + cx;
-	xl = x - xh;
-	cy = c*y;
-	yh = y - cy + cy;
-	yl = y - yh;
-	hi = x*y;
-	lo = (xh*yh - hi) + xh*yl + xl*yh + xl*yl;
+    cx = c*x;
+    xh = x - cx + cx;
+    xl = x - xh;
+    cy = c*y;
+    yh = y - cy + cy;
+    yl = y - yh;
+    hi = x*y;
+    lo = (xh*yh - hi) + xh*yl + xl*yh + xl*yl;
 ```
 
 Another method to get reasonably precise x*x is to zero out the low bits (hi+lo
 has extra 26bit precision compared to (double)(x*x)):
 
 ```c
-	union {double f; uint64_t i;} u = {x};
-	u.i &= (uint64_t)-1<<27;
-	hi = u.f*u.f;  // exact
-	lo = (x+u.f)*(x-u.f); // inexact
+    union {double f; uint64_t i;} u = {x};
+    u.i &= (uint64_t)-1<<27;
+    hi = u.f*u.f;  // exact
+    lo = (x+u.f)*(x-u.f); // inexact
 ```
 
 Round to int in the current rounding mode (or round to fixed point value):
 
 ```c
-	static const double_t toint = 1/EPSILON;
-	// x >= 0, x < 0x1p52
-	r1 = x + toint - toint;
-	// |x| < 0x1p51, nearest rounding mode
-	r2 = x + 1.5*toint - 1.5*toint;
+    static const double_t toint = 1/EPSILON;
+    // x >= 0, x < 0x1p52
+    r1 = x + toint - toint;
+    // |x| < 0x1p51, nearest rounding mode
+    r2 = x + 1.5*toint - 1.5*toint;
 ```
 
 where EPSILON is DBL_EPSILON (0x1p-52) or LDBL_EPSILON (0x1p-63 or 0x1p-112)

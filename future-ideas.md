@@ -14,7 +14,7 @@ known object sizes and provide information to the functions in libc.
 Rather than developing and maintaining a corresponding feature in musl, we would
 like to see a libc-agnostic _FORTIFY_SOURCE implementation built purely on GCC
 features. It would be based on an alternate set of headers which use GCC's
-#include_next feature to get the libc headers, then proceed to define macros
+`#include_next` feature to get the libc headers, then proceed to define macros
 similar in spirit to glibc's, but using 100% inline functions rather than
 support code in libc. This would eliminate all maintenance complexity of
 coordinating with musl development and would allow them to be used with other
