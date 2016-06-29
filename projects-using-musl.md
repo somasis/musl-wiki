@@ -10,7 +10,7 @@
     - Per-package directories following stow/gobolinux spirit
 - [bootstrap-linux] - consists only of a minimal set of packages that can be
   crosscompiled. kernel, toolchain, busybox.
-- [LightCube OS] - For now there are only scripts to bootstrap a working
+- [LightCube OS] - for now there are only scripts to bootstrap a working
   environment with musl. This environment will be used to build out a full
   server-centric distribution with a centralized package repository.
 - [Snowflake]
@@ -19,15 +19,15 @@
     - Uses pkgsrc for additional packages, so supports thousands of packages
     - Mainly a platform for testing usrview, a system for per-process views of
       /usr, for very fine-grained control of package management.
-- [Embedded Linux From Scratch]. This is a fork of CLFS embedded using musl libc
+- [Embedded Linux From Scratch] - a fork of CLFS embedded using musl libc
     - 2013-09-28 Updated to correct name of toolchain used
     - 2013-09-14 Updated to musl-0.9.13. Supports \*-\*-musl\* toolchains.
-- [Cross Linux From Scratch]: CLFS uses musl since 16.10.2013
+- [Cross Linux From Scratch] - CLFS uses musl since 16.10.2013
   ([Announcement][CLFS-announcement)
-- [morpheus] suckless linux distro
-- [Bedrock Linux], as of version 1.0alpha4
-- [Alpine Linux] Alpine is based on musl since the 3.0 release.
-- [DSLR] DSL remake based on musl, tinyxserver, and GTK+1
+- [morpheus] - suckless linux distro
+- [Bedrock Linux] - as of version 1.0alpha4
+- [Alpine Linux] - based on musl since the 3.0 release.
+- [DSLR] - DSL remake based on musl, tinyxserver, and GTK+1
 - [void linux] provides official musl based images.
 - [Exherbo] has an x86_64 musl stage.
 
