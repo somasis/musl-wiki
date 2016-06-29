@@ -30,6 +30,7 @@
 - [Alpine Linux] Alpine is based on musl since the 3.0 release.
 - [DSLR] DSL remake based on musl, tinyxserver, and GTK+1
 - [void linux] provides official musl based images.
+- [Exherbo] has an x86_64 musl stage.
 
 [sabotage]: https://github.com/sabotage-linux/sabotage
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
@@ -42,6 +43,7 @@
 [Alpine Linux]: http://alpinelinux.org/
 [DSLR]: http://dslr.dimakrasner.com/
 [void linux]: http://www.voidlinux.eu/
+[Exherbo]: http://www.exherbo.org/
 
 # Linux distros that plan to switch to musl
 
