@@ -16,4 +16,4 @@ after_success:
     - ssh-add id_rsa
     - echo -e "Host somasis.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
     - git remote add deploy travis@somasis.com:/srv/www/wiki.somasis.com
-    - git push deploy
+    - git push deploy -vf
