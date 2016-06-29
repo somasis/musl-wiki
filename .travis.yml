@@ -1,6 +1,3 @@
-git:
-    depth: 5
-
 before_install:
     - openssl aes-256-cbc -K $encrypted_481248b6289f_key -iv $encrypted_481248b6289f_iv -in .travis.id_rsa.enc -out id_rsa -d
 
