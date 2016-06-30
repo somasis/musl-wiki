@@ -26,3 +26,10 @@ if the new commits introduce warnings.
 If you're not sure if you have the deps needed for testing locally, just run
 `make install` and it should take care of it.
 
+In addition to editing locally, you can also edit online.
+For creating new pages, go to the wiki directory, click GitHub's
+"Create New File" button, type the page filename (so, <filename>.md), and begin
+editing there. You can also edit pages the same way by going into the wiki
+directory, clicking a page (the filenames corrispond to the page titles) and
+clicking the edit button next to history.
+
