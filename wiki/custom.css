@@ -20,3 +20,7 @@
 #search-submit span:hover {
     background-color: rgba(0,0,0,.5);
 }
+
+#wiki-footer img {
+    margin-bottom: -4px;
+}
