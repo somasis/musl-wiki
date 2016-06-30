@@ -1,6 +1,6 @@
 # musl-wiki
 
-[![Travis](https://img.shields.io/travis/somasis/musl-wiki.svg?maxAge=2592000?style=flat-square)](https://travis-ci.org/somasis/musl-wiki)
+[![Travis](https://img.shields.io/travis/somasis/musl-wiki.svg?style=flat-square)](https://travis-ci.org/somasis/musl-wiki)
 
 A community-maintained wiki detailing things such as implementation details,
 frequently asked questions, open issues, users of musl, and other information to
