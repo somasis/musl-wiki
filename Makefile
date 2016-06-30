@@ -15,7 +15,7 @@ install:
 	@echo "markdownlint, gollum, and github-markdown, press Ctrl-C."
 	@[ "$(TRAVIS)" = true ] || sleep 10
 	@command -v gollum >/dev/null 2>&1 || gem install --verbose --no-document gollum; exit $$?
-	@command -v mdl >/dev/null 2>&1 || gem install --verbose --no-document markdownlint; exit $$?
+	@command -v mdl >/dev/null 2>&1 || gem install --verbose --no-document mdl; exit $$?
 	@( gem list | grep -q "github-markdown" && exit $$? || exit 1 ) || gem install --verbose --no-document github-markdown; exit $$?
 
 .PHONY: lint serve install
