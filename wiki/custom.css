@@ -17,10 +17,6 @@
     text-decoration: underline;
 }
 
-#search-submit span:after {
-    content: '\128269'
-}
-
 #search-submit span:hover {
     background-color: rgba(0,0,0,.5);
 }
