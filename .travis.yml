@@ -12,5 +12,6 @@ script:
 
 after_success:
     - chmod 600 id_rsa
+    - echo -e "Host somasis.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
     - git remote add deploy travis@somasis.com:/srv/www/wiki.somasis.com
-    - GIT_SSH_COMMAND='ssh -i id_rsa -o StrictHostKeyChecking=no' git push deploy -vf
+    - GIT_SSH_COMMAND='ssh -i id_rsa' git push deploy -vf
