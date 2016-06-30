@@ -13,7 +13,7 @@ install:
 	@echo "This target will install dependencies need to lint the markdown files,"
 	@echo "and also locally run the wiki. If you do not want \`gem\` to install"
 	@echo "markdownlint, gollum, and github-markdown, press Ctrl-C."
-	@[[ "$(TRAVIS)" == true ]] || sleep 10
+	@[ "$(TRAVIS)" = true ] || sleep 10
 	@command -v gollum >/dev/null 2>&1 || gem install --verbose --no-document gollum; exit $$?
 	@command -v mdl >/dev/null 2>&1 || gem install --verbose --no-document markdownlint; exit $$?
 	@( gem list | grep -q "github-markdown" && exit $$? || exit 1 ) || gem install --verbose --no-document github-markdown; exit $$?
