@@ -5,7 +5,7 @@ lint:
 	find . -type f -and -not -name 'bugs-found-by-musl.md' -and -not -name '_*' -and -name '*.md' -print0 | xargs -0 mdl -s .mdlstyle.rb
 
 serve:
-	gollum --h1-title --user-icons gravatar --no-edit --no-live-preview --host 127.0.0.1 --css --adapter rugged --base-path /wiki
+	gollum --h1-title --user-icons gravatar --no-edit --no-live-preview --host 127.0.0.1 --css --adapter rugged
 
 install:
 	@command -v gem >/dev/null 2>&1 || { echo "\`gem\` needs to be installed."; exit 1; }
