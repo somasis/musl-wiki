@@ -2,7 +2,7 @@ notifications:
     - email: false
 
 before_install:
-    - openssl aes-256-cbc -K $encrypted_481248b6289f_key -iv $encrypted_481248b6289f_iv -in .travis.id_rsa.enc -out id_rsa -d
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || openssl aes-256-cbc -K $encrypted_481248b6289f_key -iv $encrypted_481248b6289f_iv -in .travis.id_rsa.enc -out id_rsa -d'
 
 install:
     - make install TRAVIS=true
@@ -11,9 +11,9 @@ script:
     - make lint
 
 after_success:
-    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && eval "$(ssh-agent -s)"'
-    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && chmod 600 id_rsa'
-    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && ssh-add id_rsa'
-    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && echo -e "Host somasis.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config'
-    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && git remote add deploy travis@somasis.com:/srv/www/wiki.somasis.com'
-    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && git push deploy -vf'
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || eval "$(ssh-agent -s)"'
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || chmod 600 id_rsa'
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || ssh-add id_rsa'
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || echo -e "Host somasis.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config'
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || git remote add deploy travis@somasis.com:/srv/www/wiki.somasis.com'
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || git push deploy -vf'
