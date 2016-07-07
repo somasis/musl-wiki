@@ -1,4 +1,4 @@
-# musl libc
+# musl libc sucks!
 
 [musl] is a C standard library implementation for Linux. This is a wiki
 maintained by the enthusiastic user community of musl. Some of musl's major
