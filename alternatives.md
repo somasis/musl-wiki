@@ -345,10 +345,10 @@ regular language.
 - [Harmful software] More recommendations from suckless.org and plan 9 for
   libraries to avoid and what to replace them with.
 - [Puppy Linux forum thread on Unbloated resources]
-- [Unbloated resources in C] (beware of stb* from nothings.org since author is
-  ignorant about invoking UB)
 - [choosing an ssl library]
 - [BusyBox tiny utility recommendations]
+- [Unbloated resources in C] \(beware of stb* from nothings.org since author is
+  ignorant about invoking UB\)
 - [embutils]
 - [MinGW Useful links] I realize the page is for MinGW, but it has several
   cross-platform library recommendations including a large list of GUIs. It's
