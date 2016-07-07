@@ -2,7 +2,7 @@
 
 [musl] is a C standard library implementation for Linux. This is a wiki
 maintained by the enthusiastic user community of musl. Some of musl's major
-advantages over glibc and uclibc are its size, correctness, static linking
+advantages over glibc and uClibc are its size, correctness, static linking
 support, and clean code.
 
 [[_TOC_]]
@@ -44,7 +44,7 @@ support, and clean code.
   that may be of interest in building small musl-based systems
 - [[Bugs found by musl]] - mostly glibc and POSIX issues, some of them affect the
   development of musl
-- [[Building Busybox]] explains how to build busybox 1.22.1 against musl (and
+- [[Building Busybox]] explains how to build Busybox 1.22.1 against musl (and
   kernel header compatibility in general)
 
 [musl]: https://www.musl-libc.org/
