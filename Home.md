@@ -2,7 +2,7 @@
 
 [musl] is a C standard library implementation for Linux. This is a wiki
 maintained by the enthusiastic user community of musl. Some of musl's major
-advantages over glibc and uClibc are its size, correctness, static linking
+advantages over [glibc] and [uClibc]/[uClibc-ng] are its size, correctness, static linking
 support, and clean code.
 
 [[_TOC_]]
@@ -48,6 +48,9 @@ support, and clean code.
   kernel header compatibility in general)
 
 [musl]: https://www.musl-libc.org/
+[glibc]: https://www.gnu.org/software/libc/
+[uClibc]: http://www.uclibc.org/
+[uClibc-ng]: http://uclibc-ng.org/
 [Official documentation]: https://www.musl-libc.org/manual.html
 [Comparison]: https://www.etalabs.net/compare_libcs.html
 [Install notes]: https://git.musl-libc.org/cgit/musl/tree/INSTALL
