@@ -23,7 +23,7 @@
     - 2013-09-28 Updated to correct name of toolchain used
     - 2013-09-14 Updated to musl-0.9.13. Supports \*-\*-musl\* toolchains.
 - [Cross Linux From Scratch] - CLFS uses musl since 16.10.2013
-  ([Announcement][CLFS-announcement)
+  ([Announcement][CLFS-announcement])
 - [morpheus] - suckless linux distro
 - [Bedrock Linux] - as of version 1.0alpha4
 - [Alpine Linux] - based on musl since the 3.0 release.
@@ -43,6 +43,7 @@
 [DSLR]: http://dslr.dimakrasner.com/
 [void linux]: http://www.voidlinux.eu/
 [Exherbo]: http://www.exherbo.org/
+[CLFS-announcement]: http://openwall.com/lists/musl/2013/10/16/1
 
 # Linux distros that plan to switch to musl
 
