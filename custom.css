@@ -8,7 +8,7 @@
     background: initial;
     background-image: none;
     color: inherit;
-    text-shadow: 0 0px;
+    text-shadow: 0;
     border: 0px;
     border-radius: 0px;
 }
@@ -24,3 +24,8 @@
 #wiki-footer img {
     margin-bottom: -4px;
 }
+
+.action-fileview {
+    display: none !important;
+}
+
