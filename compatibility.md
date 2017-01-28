@@ -10,9 +10,9 @@ software packages.
 - [C99 API coverage][C99]
 - [C11 API coverage][C11] (optional annex K is not included)
 
-[POSIX2008]: http://nsz.repo.hu/git/?p=musl-tables;a=blob_plain;f=tab_posix.html;hb=HEAD
-[C99]: http://nsz.repo.hu/git/?p=musl-tables;a=blob_plain;f=tab_c99.html;hb=HEAD
-[C11]: http://nsz.repo.hu/git/?p=musl-tables;a=blob_plain;f=tab_c11.html;hb=HEAD
+[POSIX2008]: http://repo.or.cz/w/musl-tools.git/blob_plain/HEAD:/tab_posix.html
+[C99]: http://repo.or.cz/w/musl-tools.git/blob_plain/HEAD:/tab_c99.html
+[C11]: http://repo.or.cz/w/musl-tools.git/blob_plain/HEAD:/tab_c11.html
 
 ## Compatibility with other implementations
 
