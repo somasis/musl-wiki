@@ -1,13 +1,11 @@
 # FAQ
 
-[[_TOC_]]
-
 # Q: lib[m|pthread|crypt].a/so are empty?
 
 Yes, this is by design. musl puts everything into libc.a/so to avoid memory
 bloat. The empty files are only there for compatibilit reasons. The official
 explaination: <http://openwall.com/lists/musl/2012/07/25/3>
-more info: [[Design Concepts]]
+more info: [Design Concepts]
 
 # Q: Why is there no `__MUSL__` macro?
 
@@ -172,7 +170,7 @@ math support).
 # Q: Application XY misbehaves or crashes at runtime when linked against musl
 
 Usually this is because the app has hardcoded glibc-specific assumptions or
-wrong #ifdefs. See [[Functional differences from glibc]]. The most common causes
+wrong #ifdefs. See [Functional differences from glibc]. The most common causes
 are expectations of gnu getopt behaviour, iconv usage on UCS2 with assumptions
 that BOM is processed and the byte order detected, assuming that off_t is 32
 bit, and assumptions that pthread_create will create sufficiently large stacks

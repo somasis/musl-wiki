@@ -5,8 +5,6 @@ non-trivial to fix. Before adding an issue here, it should have been discussed
 at least once on the mailing list or IRC channel. Simple bugs found can usually
 be fixed right away.
 
-[[_TOC_]]
-
 # C locale conformance
 
 Presently, musl's C locale is not quite conforming (to ISO C or POSIX), and the
@@ -82,7 +80,7 @@ communicating with a daemon that would serve as the backend. Candidates are:
 
 # Security/hardening features
 
-## Substitute for _FORTIFY_SOURCE
+## Substitute for \_FORTIFY_SOURCE
 
 The current plan is to implement this in a libc-agnostic way as a second set of
 headers on top of the libc headers, using "GNU C" features such as #include_next

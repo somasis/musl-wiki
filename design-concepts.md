@@ -1,7 +1,5 @@
 # Design Concepts
 
-[[_TOC_]]
-
 # Unified libc/libpthread/ldso
 
 Not only does musl lack separate broken-down libraries like libpthread, libm,
@@ -160,7 +158,7 @@ loaded at the time of the call.
 Before a new thread begins execution, TLS pointers are already setup, and the
 TLS images have all been copied, for TLS belonging to libraries that were loaded
 before the thread was created. If a thread attempts to access TLS in a library
-that was loaded after the thread started, the __tls_get_addr function searches
+that was loaded after the thread started, the \_\_tls_get_addr function searches
 the list of loaded libraries to find the pre-allocated storage that was obtained
 when the library was loaded, and uses an atomic-fetch-and-add operation to
 adjust the index into this storage. This makes access to the pre-allocated

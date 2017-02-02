@@ -11,8 +11,6 @@ the #musl IRC channel. At this point it is probably best to restart, since there
 have been changes in master's bits headers which would require several changes
 to the existing unfinished ports.
 
-[[_TOC_]]
-
 # Reference documents
 
 ## Procedure Call Standards

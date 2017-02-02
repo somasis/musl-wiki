@@ -7,8 +7,6 @@ and feature targets fairly closely. Past that, later releases are just rough
 ideas or what might be feasible and worthy of prioritizing within the given time
 constraints. The roadmap may change radically before we get there.
 
-[[_TOC_]]
-
 # musl 1.1.15
 
 Estimated release: Early May
@@ -49,7 +47,7 @@ Secondary targets:
 - Complex math correctness Complex math correctness
 - Remapping of glibc-ABI-incompatible symbols (regexec, etc.) by dynamic linker
 - New getlogin[_r] with lookup via controlling tty
-- Enhanced LSB/glibc ABI-compat, especially fortify __*_chk symbols
+- Enhanced LSB/glibc ABI-compat, especially fortify \_\_*_chk symbols
 
 # Milestone goals for musl 1.2.0
 
@@ -78,7 +76,7 @@ there will likely be at least one additional release (beyond the above) in the
 - Third-party projects
     - Non-glibc-based nscd-protocol backend for LDAP (and perhaps NIS)
     - Locale data and libc message translations
-    - External header-file-only fortify library providing _FORTIFY_SOURCE
+    - External header-file-only fortify library providing \_FORTIFY_SOURCE
       feature
     - Support for Windows targets via Midipix (<http://www.midipix.org>)
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><?makefile title?></title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="<?makefile description?>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="<?makefile author?>" />
+    <meta name="date" content="<?makefile date?>" />
+    <meta name="generator" content="<?makefile version?>" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="96x96" />
+    <link rel="stylesheet" type="text/css" href="/main.min.css" />
+</head>
+<body>
+    <header class='pageheader'>
+        <div class='title'>
+            <a href='/'>
+                <img alt='musl libc logo' src='/logo.png' class='logo' />musl libc
+                <small class='title'>A new libc striving to be fast, simple, lightweight, free, and correct</small>
+            </a>
+        </div>
+    </header>
+    <nav class='toc'>
+        <?makefile toc?>
+    </nav>
+    <main>
+        <header>
+            <h1><?makefile title_unprefixed?></h1>
+        </header>
+        <?makefile body?>
+    </main>
+    <footer>
+        You can contribute to this wiki! Submit pull-requests to <a href='https://github.com/somasis/musl-wiki'>somasis/musl-wiki</a>.<br />
+        <a href='https://travis-ci.org/somasis/musl-wiki'><img alt='Build Status' src='https://img.shields.io/travis/somasis/musl-wiki.svg?style=flat-square' /></a>
+        <a href='https://github.com/somasis/musl-wiki/issues'><img alt='GitHub Issues' src='https://img.shields.io/github/issues/somasis/musl-wiki.svg?style=flat-square' /></a><br />
+        <small>
+            This work is licensed under the <a href='http://creativecommons.org/licenses/by-sa/3.0'>Creative Commons Attribution-ShareAlike 3.0 Unported license</a>, unless otherwise noted.<br />
+            <?makefile commit?>
+        </small>
+    </footer>
+</body>
+</html>

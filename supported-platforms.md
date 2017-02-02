@@ -1,7 +1,5 @@
 # Supported Platforms
 
-[[_TOC_]]
-
 The target platforms (operating system, compiler toolchain, instruction set) on
 top of which musl is known to work.
 
@@ -33,7 +31,7 @@ applications.
 - sh (experimental) with sh, sheb, sh-nofpu, and sheb-nofpu subarchs (currently
   this [kernel-patch] is required for multithread usage)
 
-[[ABI/ASM manuals|ABI Manuals]]
+[ABI/ASM manuals][ABI Manuals]
 
 [xilinx gitweb]: http://git.xilinx.com/?p=microblaze-gnu.git
 [this patch]: https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=99399545d62533b4ae742190b5c6b11f7a5826d9
@@ -54,9 +52,9 @@ As of 2013-09-29, the following compilers are known to be able to compile musl:
     - [musl-cross] provides prebuilt cross-compiler toolchains and
       cross-compiler build instructions.
     - GCC is officially supported using the musl-gcc wrapper or the musl-cross
-      project (for details see [[Getting started]]).
+      project (for details see [Getting started]).
 - Clang (>=3.2)
-    - [[Instructions for Building LLVM+Clang against musl|Building LLVM]]
+    - [Instructions for Building LLVM+Clang against musl][Building LLVM]
     - <http://ellcc.org/> ELLCC is a Clang and musl based cross-compiler
       toolchain for embedded development.
 - PCC (>=1.1.0.DEVEL)
@@ -74,6 +72,6 @@ As of 2013-09-29, the following compilers are known to be able to compile musl:
 Bootstrapping a working qemu development environment for microblaze is hard,
 [here][microblaze-qemu] are the needed steps to do so.
 
-See [[Porting]] for information on how to port musl to a new architecture.
+See [Porting] for information on how to port musl to a new architecture.
 
 [microblaze-qemu]: http://blog.waldemar-brodkorb.de/index.php?/archives/10-qemu-microblaze-system-emulation-tipps.html

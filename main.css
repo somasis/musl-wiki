@@ -1,0 +1,358 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Droid+Sans:400,700|Droid+Serif:700');
+
+body {
+    line-height: 1.4;
+    max-width: 780px;
+
+    padding: 0px 16px;
+    margin: 0 auto;
+
+    color: #444444;
+    background-color: #fefefe;
+
+    font-family: "Droid Sans", sans-serif;
+    font-size: 12pt;
+}
+
+header, main, footer {
+    width: 100%;
+}
+
+header.pageheader {
+    display: block;
+}
+
+main ul, main ul li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+li > ul {
+    margin-left: 24px;
+}
+
+main ul li:before {
+    content: "\2013";
+    padding-right: 4px;
+}
+
+/* Headings */
+
+main > header h1 {
+    font-size: 36pt;
+    font-weight: bold;
+    font-family: "Droid Serif", serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 4px 0px;
+}
+
+h1,h2,h3 {
+    border-bottom: 2px solid rgb(200,200,200);
+}
+
+footer {
+    border-top: 2px solid rgb(200,200,200);
+}
+
+a:link {
+    color: #2c66cd;
+}
+
+a:hover {
+    color: #4e99df;
+}
+
+a:visited {
+    color: #a05184;
+}
+
+a:visited:hover {
+    color: #c68fcc;
+}
+
+/* Page header */
+header.pageheader div.title {
+    display: block;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 0px;
+}
+
+header.pageheader div.title {
+    font-weight: bold;
+    font-family: "Droid Sans", sans-serif;
+    font-size: 64pt;
+    line-height: 1;
+    margin-left: -32px;
+}
+
+header.pageheader div.title img {
+    vertical-align: middle;
+}
+
+header.pageheader div.title a,
+header.pageheader div.title a:hover,
+header.pageheader small {
+    color: #D23E9C;
+    user-select: none;
+    text-decoration: none;
+}
+
+header.pageheader small {
+    font-family: "Droid Sans", sans-serif;
+    font-size: 12pt;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: lowercase;
+
+    padding-bottom: 16px;
+
+    display: block;
+    border: 0;
+
+    margin-top: -24px;
+    padding-left: 120px;
+
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+header.pageheader nav {
+    margin-bottom: -28px;
+    margin-left: 48px;
+    margin-right: 48px;
+    user-select: none;
+}
+
+header.pageheader nav ul {
+    text-align: justify;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+header.pageheader nav ul:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
+
+header.pageheader nav ul, header.pageheader nav li {
+    display: inline-block;
+}
+
+footer {
+    margin-top: 16px;
+    padding: 8px 0px;
+    text-align: center;
+}
+
+blockquote {
+    background: rgba(128,128,128,.1);
+    margin: 0 auto;
+    padding: 4px;
+    border-top: 2px solid rgb(79,100,128);
+    border-bottom: 2px solid rgb(79,100,128);
+}
+
+blockquote p {
+    margin: 0;
+}
+
+pre {
+    max-width: 100%;
+    word-wrap: break-word;
+    white-space: pre-line;
+}
+
+main > pre, pre > code {
+    font-family: "Droid Sans Mono", monospace;
+    font-size: 11pt;
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 800px) {
+    header.pageheader small {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    body {
+        font-size: 11pt;
+        padding: 0px 8px;
+    }
+
+    header.pageheader {
+        padding-top: 16px;
+    }
+
+    header.pageheader div.title {
+        font-size: 20vw;
+        font-size: 48pt;
+    }
+
+    h2 {
+        font-size: 16pt;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        margin-bottom: 4px;
+    }
+
+    header.pageheader nav ul {
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+}
+
+@media only screen and (max-width: 610px) {
+    header.pageheader div.title {
+        padding-left: 16px;
+        font-size: 18vw;
+        font-size: 32pt;
+    }
+    header.pageheader div.title img {
+        width:auto;
+        height:64px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    header.pageheader div.title img {
+        display: none;
+    }
+}
+
+nav.toc:not(:empty):before {
+    font-family: "FontAwesome", "Droid Sans", sans-serif;
+    content: "\f02d\00a0Table of Contents";
+    color: #999999;
+    width: 100%;
+    border-bottom: 1px solid #898989;
+    display: block;
+    font-size: 11pt;
+}
+
+nav.toc {
+    position: static;
+    padding-top: 8px;
+}
+
+nav.toc ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 24px;
+}
+
+nav.toc>ul {
+    padding-left: 0px;
+}
+
+nav.toc ul li:before {
+    content: unset;
+}
+
+nav.toc ul a {
+    text-decoration: none;
+}
+
+nav.toc ul a:visited:hover {
+    color: #9caed1;
+}
+
+nav.toc ul a:visited {
+    color: #5e98ef;
+}
+
+@media only screen and (min-width: 1520px) {
+    nav.toc {
+        position: fixed;
+        top: 16px;
+        padding-bottom: 16px;
+        margin-left: -360px;
+        width: 340px;
+        height: calc(100% - 48px);
+        max-height: calc(100% - 48px);
+        overflow: hidden;
+        font-size: 10pt;
+    }
+    nav.toc:hover {
+        overflow-y: auto;
+    }
+
+}
+
+@media only screen and (max-width: 1520px) {
+    nav.toc {
+        width: 64px;
+        height: 64px;
+        margin: 0px;
+        padding: 0px;
+        top: 16px;
+        right: 16px;
+        position: fixed;
+        text-indent: 100%;
+        user-select: none;
+        white-space: nowrap;
+        overflow: hidden;
+        background: #222222;
+        border: 2px solid #e6e5f9;
+    }
+    nav.toc:not(:empty):before {
+        text-indent: 0%;
+        content: "\f02d" !important;
+        font-family: FontAwesome;
+        font-size: 32pt;
+        text-rendering: auto;
+        position: absolute;
+        font-weight: bold;
+        right: 10px;
+        color: #fefefe;
+        top: 0px;
+        width: auto;
+        border-bottom: 0px;
+    }
+    nav.toc:hover:before {
+        content: unset;
+    }
+    nav.toc:hover, nav.toc:active {
+        background: #efefef;
+        width: auto;
+        max-width: 90%;
+        max-width: calc(60% - 52px);
+        height: auto;
+        max-height: 90%;
+        max-height: calc(90% - 48px);
+        text-indent: initial;
+        white-space: initial;
+        overflow: auto;
+        padding: 8px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    nav.toc {
+        right: 8px;
+        top: 8px;
+    }
+    nav.toc:hover, nav.toc:active {
+        width: 90%;
+        width: calc(100% - 36px);
+        max-width: 95%;
+        height: auto;
+        max-height: 95%;
+        max-height: calc(100% - 36px);
+    }
+}
+

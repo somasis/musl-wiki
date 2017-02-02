@@ -18,9 +18,9 @@ the unsquashed history of the powerpc port has been archived @
 the unsquashed history of the x32 port has been archived @
 <https://github.com/rofl0r/musl> (branch x32g)
 
-[[AArch64|Porting/AArch64]] porting page.
+[AArch64][Porting/AArch64] porting page.
 
-use the [[libc-test]] testsuite to test your port.
+use the [libc-test] testsuite to test your port.
 
 [commit-crt]: http://git.musl-libc.org/cgit/musl/commit/?id=c5e34dabbb47d8e97a4deccbb421e0cd93c0094b
 [commit-or1k]: http://git.musl-libc.org/cgit/musl/commit/?id=200d15479c0bc48471ee7b8e538ce33af990f82e

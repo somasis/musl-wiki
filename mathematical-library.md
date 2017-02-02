@@ -1,7 +1,5 @@
 # Mathematical Library
 
-[[_TOC_]]
-
 # User documentation
 
 The mathematical library follows Annex F of C99 and assumes floating-point

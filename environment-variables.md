@@ -1,7 +1,5 @@
 # Environment Variables
 
-[[_TOC_]]
-
 # PATH
 
 Used by execvp, execlp, and posix_spawnp as specified in POSIX.
@@ -10,7 +8,7 @@ Used by execvp, execlp, and posix_spawnp as specified in POSIX.
 
 Specifies the local timezone to be used for functions which deal with local
 time. The value of TZ can be either a [POSIX timezone specification] in the form
-stdoffset[dst[offset][,start[/time],end[/time]]] or the name of a
+stdoffset[dst[offset][,start[/time],end[/time]] or the name of a
 zoneinfo-binary-format timezone file (the form used by glibc and almost all
 other systems). The zoneinfo file is interpreted as an absolute pathname if it
 begins with a slash, a relative pathname if it begins with a dot, and otherwise
@@ -43,7 +41,7 @@ absolute or relative pathnames or filenames in the default library search path.
 This variable is completely ignored in programs invoked setuid, setgid, or with
 other elevated capabilities.
 
-# LD_LIBRARY_PATH
+# LD\_LIBRARY_PATH
 
 Colon-separated list of pathnames that will be searched for shared libraries
 requested without an explicit pathname. This path is searched prior to the

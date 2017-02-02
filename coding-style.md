@@ -6,8 +6,6 @@ kernel style". The style guidelines which follow are descriptive rather than
 prescriptive; they document what's currently in use in musl, and hopefully give
 a feel for how new code should look.
 
-[[_TOC_]]
-
 # Indention
 
 The indention style in musl distinguishes between "indention" and "alignment".

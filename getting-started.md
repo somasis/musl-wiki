@@ -2,8 +2,6 @@
 
 To start using musl, you have three choices.
 
-[[_TOC_]]
-
 # Using the musl-gcc wrapper
 
 This allows you to test and use musl on a glibc/uclibc system with no great
@@ -85,5 +83,5 @@ VFPv4.
 
 If your distro uses musl natively, then naturally, anything compiled on that
 distro will use musl. Several distros using musl, such as sabotage, are listed
-on the [[Projects using musl page of this wiki|projects-using-musl]].
+on the [Projects using musl page of this wiki][projects-using-musl].
 

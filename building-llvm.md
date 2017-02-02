@@ -15,8 +15,6 @@ the perspective of root in /root.
 
 [LightCube bootstrap environment]: https://github.com/jhuntwork/lightcube-bootstrap-musl
 
-[[_TOC_]]
-
 # Environment
 
 Just set up a PM variable for use with make in order to have it take advantage

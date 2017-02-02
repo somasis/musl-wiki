@@ -1,2 +1,5 @@
+*.tmp
+*.html
+*.min.css
 *.bak
 *~

@@ -4,8 +4,6 @@ Resource list for alternative libraries and programs that are lightweight, not
 bloated, efficient or have other useful design characteristics and may be
 useable with musl.
 
-[[_TOC_]]
-
 # Alternative Libraries and Programs
 
 - [pkgconf] Drop in replacement for pkg-config with no circular dependencies.

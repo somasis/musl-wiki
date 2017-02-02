@@ -16,7 +16,7 @@ software packages.
 
 ## Compatibility with other implementations
 
-- [[Functional differences from glibc]]
+- [Functional differences from glibc]
 - [Comparison] with other Linux libc implementations.
 
 [Comparison]: https://www.etalabs.net/compare_libcs.html
@@ -24,7 +24,7 @@ software packages.
 ## Software compatibility, patches and build instructions
 
 - pkgsrc based software compatibility table:
-    - ~~[[Pkgsrc results]] (warning: very large wiki page, renders slowly)~~ Outdated.
+    - ~~Pkgsrc results~~ outdated.
     - pkgsrc results are archived at <http://musl.codu.org>.
     - The necessary patches are at [musl-pkgsrc-patches (hg)] or
       [musl-pkgsrc-patches (git)].
@@ -35,7 +35,7 @@ software packages.
     - [Alpine ports]
     - [Gentoo overlay with musl support]
     - See the packaging work in various other
-      [[distributions|Projects using musl#linux-distributions-using-musl]].
+      [distributions][Projects using musl#linux-distributions-using-musl].
 
 [musl-pkgsrc-patches (hg)]: http://bitbucket.org/GregorR/musl-pkgsrc-patches
 [musl-pkgsrc-patches (git)]: https://github.com/GregorR/musl-pkgsrc-patches

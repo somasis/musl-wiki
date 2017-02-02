@@ -1,7 +1,5 @@
 # Functional differences from glibc
 
-[[_TOC_]]
-
 # The stdio implementation
 
 ## printf behavior

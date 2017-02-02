@@ -1,20 +1,37 @@
 TRAVIS ?= false
 
-# don't lint bugs-found-by-musl.md due to intentionally long line length
+# requires discount markdown, postcss-cli, cssnano, htmltidy (html5), and autoprefixer
+
+SRCDIR          := $(realpath $(dir $(realpath $(lastword $(MAKEFILE_LIST)))))
+IMAGE           ?= /srv/www/wiki.somasis.com
+
+all: $(addsuffix .html,$(basename $(shell find -type f -name '*.md')))
+all: $(addsuffix .min.css,$(basename $(shell find -type f -name '*.css' -and -not -name '*.min.css')))
+
+clean:
+	find -type f -name '*.html' -delete -print
+	find -type f -name '*.min.css' -delete -print
+	find -type f -name '*.tmp' -delete -print
+
 lint:
-	find . -type f -and -not -name 'bugs-found-by-musl.md' -and -not -name '_*' -and -name '*.md' -print0 | xargs -0 mdl -s .mdlstyle.rb
+	@find -type f -name '*.md' -and -not -name 'bugs-found-by-musl.md' -print0 | xargs -t0 mdl -s .mdlstyle.rb
 
-serve:
-	gollum --h1-title --user-icons gravatar --no-edit --no-live-preview --host 127.0.0.1 --css --adapter rugged
+# cssnano is ran separately because it likes to take out vendor prefixes we might still need
+%.min.css: %.css
+	postcss -u cssnano "$*.css" -o "$*.css.tmp"
+	postcss -u autoprefixer "$*.css.tmp" -o "$*.min.css"
+	rm -f "$*.css.tmp"
 
-install:
-	@command -v gem >/dev/null 2>&1 || { echo "\`gem\` needs to be installed."; exit 1; }
-	@echo "This target will install dependencies need to lint the markdown files,"
-	@echo "and also locally run the wiki. If you do not want \`gem\` to install"
-	@echo "markdownlint, gollum, and rugged, press Ctrl-C."
-	@[ "$(TRAVIS)" = true ] || sleep 10
-	@[ "$(TRAVIS)" = true ] || command -v gollum >/dev/null 2>&1 || gem install --verbose --no-document gollum; exit $$?
-	@command -v mdl >/dev/null 2>&1 || gem install --verbose --no-document mdl; exit $$?
-	@[ "$(TRAVIS)" = true ] || ( gem list | grep -q "gollum-rugged_adapter" && exit $$? || exit 1 ) || gem install --verbose --no-document gollum-rugged_adapter; exit $$?
+%.html: %.md $(shell $(SRCDIR)/scripts/markdown.sh --template "$<" "$@")
+	$(SRCDIR)/scripts/markdown.sh "$<" "$@"
+	tidy -w 0 -utf8 -language en -i -m --show-info no "$@"
 
-.PHONY: lint serve install
+watch:
+	while true; do \
+	    { find . -not -name '*.min.css' -and -not -name '*.tmp' -and -not -name '*.html'; } | entr -c sh -c '$(MAKE) lint && $(MAKE)'; \
+	done
+
+deploy: all
+	rm -f $(IMAGE)/Makefile $(shell find "$(IMAGE)" -type f -name '*.css' -and -not -name '*.min.css') $(shell find "$(IMAGE)" -type f -name '*.md' -or -name '*.theme' -or -name '*.tmp')
+
+.PHONY: all clean deploy lint watch

@@ -5,34 +5,32 @@ maintained by the enthusiastic user community of musl. Some of musl's major
 advantages over [glibc] and [uClibc]/[uClibc-ng] are its size, correctness,
 static linking support, and clean code.
 
-[[_TOC_]]
-
 # Introduction
 
-- [[Getting started]]
-- [[FAQ]]
-- [[Compatibility]] - software and standards compatibility of the API musl
+- [Getting started]
+- [FAQ]
+- [Compatibility] - software and standards compatibility of the API musl
   provides
-- [[Supported Platforms]] - compilers, architectures, platforms, where musl works
-- [[Projects using musl]] - Linux distributions and other projects using musl
-- [[Contacts]] - mailing list, IRC, support, discussion
+- [Supported Platforms] - compilers, architectures, platforms, where musl works
+- [Projects using musl] - Linux distributions and other projects using musl
+- [Contacts] - mailing list, IRC, support, discussion
 
 # Using musl
 
 - [Official documentation]
-- [[Environment variables affecting musl|Environment variables]]
-- [[Functional differences from glibc]]
-- [[Guidelines for Distributions]]
+- [Environment variables affecting musl][Environment variables]
+- [Functional differences from glibc]
+- [Guidelines for Distributions]
 
 # Development
 
-- [[Open issues]]
-- [[Roadmap for post-1.0 development|Roadmap]]
-- [[How to port musl to a new arch|Porting]]
-- [[Ideas for future development|Future Ideas]]
-- [[Design Concepts]]
-- [[Coding Style]]
-- [[Mathematical Library]]
+- [Open issues]
+- [Roadmap for post-1.0 development][Roadmap]
+- [How to port musl to a new arch][Porting]
+- [Ideas for future development][Future Ideas]
+- [Design Concepts]
+- [Coding Style]
+- [Mathematical Library]
 
 # Further reading
 
@@ -40,11 +38,11 @@ static linking support, and clean code.
 - [Install notes], [readme], and [release notes] in the official repo.
 - [Generating cross compilers for musl][generating-cross] - also features
   [pre-built cross compiler downloads][pre-built-cross] for different arches
-- Lightweight [[alternatives to common libraries and software|Alternatives]]
+- Lightweight [alternatives to common libraries and software][Alternatives]
   that may be of interest in building small musl-based systems
-- [[Bugs found by musl]] - mostly glibc and POSIX issues, some of them affect the
+- [Bugs found by musl] - mostly glibc and POSIX issues, some of them affect the
   development of musl
-- [[Building Busybox]] explains how to build Busybox 1.22.1 against musl (and
+- [Building Busybox] explains how to build Busybox 1.22.1 against musl (and
   kernel header compatibility in general)
 
 [musl]: https://www.musl-libc.org/
