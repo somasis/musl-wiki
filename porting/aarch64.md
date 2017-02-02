@@ -1,7 +1,7 @@
 # Porting/AArch64
 
 This page is intended to collect relevant information on the AArch64
-architectur. AArch64 is the 64bit architecture first released as part of the
+architecture. AArch64 is the 64bit architecture first released as part of the
 armv8 design.
 
 The porting effort has been started by 2 parties, but left unfinished
