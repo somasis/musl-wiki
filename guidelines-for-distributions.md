@@ -13,7 +13,7 @@ The musl developers have attempted to avoid gratuitous dependence on fixed
 pathnames and have used existing, well-established ones when possible rather
 than inventing new ones. For compatibility of dynamic-linked musl-based binaries
 across different systems, the most important is the location of the dynamic
-linker. It should always be at /lib/ld-musl-$ARCH.so.1, where $ARCH is the full
+linker. It should always be at `/lib/ld-musl-$ARCH.so.1`, where `$ARCH` is the full
 arch/sub-arch name produced by musl's configure script for the target
 architecture/ABI combination. It does not matter whether it's an actual file or
 a symbolic link to a file in another location, as long as it's available at boot
@@ -21,7 +21,7 @@ time (or as soon as you need dynamic-linked binaries to work). This pathname
 exactly (and not other variants based on your distribution's symbolic link
 layout, etc.) should appear in the PT_INTERP header of dynamic-linked programs.
 
-For other standard pathnames, like /etc/resolv.conf, /etc/passwd, etc. it's
+For other standard pathnames, like `/etc/resolv.conf`, `/etc/passwd`, etc. it's
 non-invasive (but not officially supported) to change them in libc.so; dynamic
 linked programs will automatically use whatever libc.so uses. For static
 linking, however, it's problematic to do so since the binaries will be tied down
@@ -58,6 +58,6 @@ with a "stock" musl libc that does not provide them, and it's probably best to
 attempt to coordinate such additions with upstream (at least to make sure that
 your local changes don't conflict with future plans upstream).
 
-When a feature does affect public API (example: additional GLOB_* flags) it's
+When a feature does affect public API (example: additional `GLOB_*` flags) it's
 effectively much closer to adding a function (see above).
 

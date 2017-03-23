@@ -4,8 +4,8 @@
 
 ## printf behavior
 
-glibc supports some alternate incorrect format specifiers, like %Ld as an alias
-for %lld. musl does not support these, and returns an error upon encountering
+glibc supports some alternate incorrect format specifiers, like `%Ld` as an alias
+for `%lld`. musl does not support these, and returns an error upon encountering
 them.
 
 musl does not support glibc's custom format specifier registration system.
@@ -14,7 +14,7 @@ musl's floating point conversions honor rounding mode. glibc's do not.
 
 ## Buffering
 
-musl's setbuf and setvbuf functions ignore the caller-provided buffer and only
+musl's `setbuf` and `setvbuf` functions ignore the caller-provided buffer and only
 switch between fully-buffered, line-buffered, and non-buffered modes.
 
 ## Behavior on end of file
@@ -26,9 +26,9 @@ available, even after the EOF flag is set.
 
 ## Read and write patterns
 
-musl uses readv and writev for implementing stdio:
+musl uses `readv` and `writev` for implementing stdio:
 
-- When a read cannot be satisfied from the buffer, a single readv call
+- When a read cannot be satisfied from the buffer, a single `readv` call
   transfers the remaining request to the caller's buffer and fills the stdio
   buffer.
 - When a write cannot fit in the remaining space in the buffer, a single write
@@ -37,13 +37,13 @@ musl uses readv and writev for implementing stdio:
 
 Normally this just yields good performance independent of heuristics on when to
 buffer and when to transfer. However, it does also impact how Linux interprets
-some writes to files in /proc.
+some writes to files in `/proc`.
 
 # Signal mask and setjmp/longjmp
 
-By default, glibc provides the legacy BSD behavior for setjmp/longjmp, saving
-and restoring the signal mask as part of the jmp_buf. musl never includes signal
-masks unless you use sigsetjmp/siglongjmp and specifically request that the
+By default, glibc provides the legacy BSD behavior for `setjmp`/`longjmp`, saving
+and restoring the signal mask as part of the `jmp_buf`. musl never includes signal
+masks unless you use `sigsetjmp`/`siglongjmp` and specifically request that the
 signal mask be saved/restored. Per POSIX, correct applications cannot rely on
 setjmp to save the signal mask, so musl's behavior gives much better performance
 for applications which do not care and which are using the interfaces correctly.
@@ -57,7 +57,7 @@ of the GNU extensions to POSIX BRE that add ERE-like capabilities to BRE.
 The GNU regex implementation also has an alternate API which can be used instead
 of the POSIX API. This alternate API is not supported by musl at all.
 
-Finally, glibc's regex uses a 32-bit regoff_t even on 64-bit archs. This is
+Finally, glibc's regex uses a 32-bit `regoff_t` even on 64-bit archs. This is
 non-conforming to POSIX and precludes giving correct output for strings larger
 than 2GB. musl uses a correct type, but this renders the ABI of the regex
 functions incompatible on 64-bit archs. The ABI is compatible on 32-bit.
@@ -100,19 +100,19 @@ applications.
 ## Unloading libraries
 
 musl's dynamic loader loads libraries permanently for the lifetime of the
-process, until it exits or calls exec. dlclose is a no-op. This is very
+process, until it exits or calls exec. `dlclose` is a no-op. This is very
 different from glibc's approach of reference counting libraries and unloading
 them when the count reaches zero. The differences in observable behavior to
 applications:
 
-- Destructors will run on dlclose (as long as there are no remaining references)
+- Destructors will run on `dlclose` (as long as there are no remaining references)
   under glibc, and subsequent opens of the same library will run their
   constructors again. Under musl, constructors only run the first time a library
   is run, and destructors only run on exit.
 - Under glibc, the contents of all static storage in a library will be reset to
   its original state if the library is unloaded and reloaded. Under musl, it
   will never be reset.
-- Address space from a library remains tied up even after dlclose on musl, so
+- Address space from a library remains tied up even after `dlclose` on musl, so
   opening and closing an infinite family of libraries will eventually consume
   the entire address space and other resources. However, as long as there's only
   a finite set of libraries being opened and closed, address space usage will be
@@ -122,26 +122,26 @@ applications:
 Either behavior conforms to POSIX, but only the musl behavior can satisfy the
 robustness conditions musl aims to provide. In particular:
 
-- Under glibc's approach, libraries not designed with dlclose in mind (which
-  may not be the libraries directly loaded with dlopen, but rather their
+- Under glibc's approach, libraries not designed with `dlclose` in mind (which
+  may not be the libraries directly loaded with `dlopen`, but rather their
   dependencies) may leave around references to themselves in such a way that
   removing them from the address space results in a crash (or worse) later on.
   This cannot happen under musl.
 - Managing storage for thread-local objects is much more difficult if dlclose
   unloads libraries. If space is to be reserved in advance (needed to guarantee
-  no late/unrecoverable failures), supporting unloading in dlclose seems to
+  no late/unrecoverable failures), supporting unloading in `dlclose` seems to
   necessitate leaking TLS memory, which largely defeats the purpose of doing the
   unloading in the first place.
 
-## Thread-safety of dlerror
+## Thread-safety of `dlerror`
 
-POSIX 2008+TC1 allows dlerror to be thread-safe (with a thread-local error
+POSIX 2008+TC1 allows `dlerror` to be thread-safe (with a thread-local error
 buffer) or non-thread-safe (with a global buffer). Prior versions required it to
 use a global buffer.
 
-glibc has provided a thread-local dlerror result for a long time. Versions of
-musl up through 1.1.8 honored an old POSIX requirement and had global dlerror
-state. Starting with 1.1.9, musl's dlerror state is thread-local and now matches
+glibc has provided a thread-local `dlerror` result for a long time. Versions of
+musl up through 1.1.8 honored an old POSIX requirement and had global `dlerror`
+state. Starting with 1.1.9, musl's `dlerror` state is thread-local and now matches
 the glibc behavior.
 
 ## Symbol versioning
@@ -156,7 +156,7 @@ version, which comes first in the regular symbol tables.
 ## Thread stack size
 
 The default stack size for new threads on glibc is determined based on the
-resource limit governing the main thread's stack (RLIMIT_STACK). It generally
+resource limit governing the main thread's stack (`RLIMIT_STACK`). It generally
 ends up being 2-10 MB.
 
 musl provides a default stack size of 80k. This does not include the guard page,
@@ -166,7 +166,7 @@ application. This size was determined empirically with the goals of not
 gratuitously breaking applications but also not causing large amounts of memory
 and virtual address space to be committed in programs with large numbers of
 threads. Programs needing larger stacks, or which explicitly want a smaller
-stack, should make this explicit with pthread_attr_setstacksize. For largely
+stack, should make this explicit with `pthread_attr_setstacksize`. For largely
 unrestrained use of the standard library, a minimum of 12k is recommended, but
 stack sizes down to 2k are allowed.
 
@@ -197,7 +197,7 @@ Up through version 1.1.10, musl provided a purely UTF-8 C locale. Despite being
 unusual, this had precedent (Plan 9) and is explicitly permitted by the ISO C
 standard (it's documented as an option in the MSE1 Rationale document). However,
 many scripts expect to be able to process data which is not valid UTF-8 using
-the standard utilities by setting LC_CTYPE=C, and as of Spring 2013, the Austin
+the standard utilities by setting `LC_CTYPE=C`, and as of Spring 2013, the Austin
 Group (responsible for maintaining POSIX) resolved to require in future versions
 of the standard that the C locale be "8 bit clear", i.e. treat each possible
 byte as an abstract character, to facilitate processing data in unknown or mixed
@@ -206,7 +206,7 @@ behaviors non-conforming.
 
 Starting with version 1.1.11, musl provides a special C locale where bytes
 0x80-0xff are treated as abstract single-byte-character units with no actual
-character identity (they're mapped into wchar_t values that occupy the Unicode
+character identity (they're mapped into `wchar_t` values that occupy the Unicode
 surrogates range). All other locales are still processed as multibyte UTF-8, and
 the intent is that the plain C locale's character set be thought of as "UTF-8,
 but processed byte-by-byte and without validation".
@@ -222,7 +222,7 @@ glibc on the other hand accepts 5 and 6 byte sequences.
 
 Aside from being a matter of standards conformance, accepting sequences only up
 to 4 bytes allows for the possibility of generating UTF-8 output in a buffer
-intended for wchar_t, then converting it in-place, which is necessary for some
+intended for `wchar_t`, then converting it in-place, which is necessary for some
 interfaces that cannot rely on being able to allocate working space.
 
 ## iconv
@@ -260,8 +260,8 @@ double format).
 
 ## Floating-point exceptions
 
-Glibc supports exception unmasking using fesetenv with non-standard fenv
-setting. Musl does not support exception unmasking and library functions assume
+glibc supports exception unmasking using fesetenv with non-standard fenv
+setting. musl does not support exception unmasking and library functions assume
 exceptions are always masked (floating-point arithmetics never trap).
 
 IEEE 754 specifies five exception **signals** and five exception **status
@@ -279,15 +279,15 @@ the exception signals (or invokes other unspecified fenv operations, eg. changes
 the x87 FPU precision setting on i386) in which case the behaviour of library
 functions is undefined.
 
-## math_errhandling
+## `math_errhandling`
 
-Glibc supports non-zero math_errhandling & MATH_ERRNO, ie. exceptional
-conditions of the mathematical library are reported in errno. Musl only supports
-MATH_ERREXCEPT.
+glibc supports non-zero `math_errhandling` & `MATH_ERRNO`, ie. exceptional
+conditions of the mathematical library are reported in errno. musl only supports
+`MATH_ERREXCEPT`.
 
-At least one of MATH_ERRNO and MATH_ERREXCEPT must be supported and Annex F
-requires MATH_ERREXCEPT support. Old platforms and platforms without FPU may not
-provide the necessary IEEE 754 exception semantics for MATH_ERREXCEPT. On such
+At least one of `MATH_ERRNO` and `MATH_ERREXCEPT` must be supported and Annex F
+requires `MATH_ERREXCEPT` support. Old platforms and platforms without FPU may not
+provide the necessary IEEE 754 exception semantics for `MATH_ERREXCEPT`. On such
 platforms an implementation can only fall back to the classic errno based error
 reporting that was already present in C89. (Note: the errno based method
 provides less information, only EDOM and ERANGE is reported and the semantics is

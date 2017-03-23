@@ -86,7 +86,9 @@ implemented by glibc and other libraries:
         3. Disable asynchronous cancellation (actually restore the old state).
 
 The first idea to remedy the situation appeared in musl 0.7.5, but turned out to
-have its own set of flaws. The new approach, which works like this:
+have its own set of flaws.
+
+The new approach works like this...
 
 A specialized version of the syscall wrapper assembly code is used for
 cancellation points. Originally, it recorded its stack address and a pointer to
@@ -146,19 +148,19 @@ contrast to other implementations such as glibc which are forced to abort when
 lazy allocation fails.
 
 There are only two operations which can increase a process's TLS needs:
-pthread_create and dlopen. During dlopen, a lock is held which prevents the
-creation of new threads, so dlopen can use the current thread count to allocate
+`pthread_create` and `dlopen`. During `dlopen`, a lock is held which prevents the
+creation of new threads, so `dlopen` can use the current thread count to allocate
 sufficient storage for all currently-running threads at the time the library is
-loaded; if storage cannot be obtained dlopen returns failure. Before releasing
-the lock that prevents thread creation, dlopen updates the record of how much
+loaded; if storage cannot be obtained `dlopen` returns failure. Before releasing
+the lock that prevents thread creation, `dlopen` updates the record of how much
 TLS storage new threads will need and makes it available future calls to
-pthread_create, which pre-allocate storage for TLS in all libraries that were
+`pthread_create`, which pre-allocate storage for TLS in all libraries that were
 loaded at the time of the call.
 
 Before a new thread begins execution, TLS pointers are already setup, and the
 TLS images have all been copied, for TLS belonging to libraries that were loaded
 before the thread was created. If a thread attempts to access TLS in a library
-that was loaded after the thread started, the \_\_tls_get_addr function searches
+that was loaded after the thread started, the `__tls_get_addr` function searches
 the list of loaded libraries to find the pre-allocated storage that was obtained
 when the library was loaded, and uses an atomic-fetch-and-add operation to
 adjust the index into this storage. This makes access to the pre-allocated
@@ -167,10 +169,10 @@ and async-signal-safe (important for supporting the case where the first access
 to a library's TLS takes place in a signal handler or after forking).
 
 One consequence of this design is that there is memory which is never freed.
-However, the point at which this memory is allocated is in dlopen, an interface
+However, the point at which this memory is allocated is in `dlopen`, an interface
 which inherently allocates an unfreeable (in musl, for various good reasons)
 resource: a shared library. If for some reason there exists an extreme,
-unusually large number of threads at the moment dlopen is called, however, the
+unusually large number of threads at the moment `dlopen` is called, however, the
 permanent allocations could be costly. It may be possible to arrange for some or
 all of this memory to be freeable upon thread exit, by carving up the large
 allocation into individual pieces returnable to the malloc subsystem via free.
@@ -181,14 +183,14 @@ Such enhancements will be considered at a later time if there is demand.
 Adapted from <http://www.openwall.com/lists/musl/2013/07/16/16>
 
 Internally, all POSIX times (seconds since epoch) are passed around as long
-long. This ensures that values derived from struct tm, timezone rules, etc. can
+long. This ensures that values derived from `struct tm`, timezone rules, etc. can
 never overflow, and allows overflow checking to be deferred until it's time to
-convert the value back into time_t. Without this design, handling the "partial
-years" at the edge of time_t overflow range is very difficult, as is handling
-the denormalized struct tm forms mktime is required to support and normalize
+convert the value back into `time_t`. Without this design, handling the "partial
+years" at the edge of `time_t` overflow range is very difficult, as is handling
+the denormalized `struct tm` forms mktime is required to support and normalize
 (for instance, overflowing the year range by using a very large month number).
 
-Instead of converting back and forth to broken-down struct tm for applying
+Instead of converting back and forth to broken-down `struct tm` for applying
 timezone rules, the new code simply converts the combination of year and TZ rule
 string to a POSIX time within the given year at which the transition occurs.
 This value has type long long so that it cannot overflow even at the boundary
@@ -196,18 +198,18 @@ years. Determining whether DST is in effect at a given time is simply a range
 comparison, just like the comparison used for processing zoneinfo-format
 timezone rules.
 
-For years within the currently-reasonable range/32-bit time_t, the hot path for
+For years within the currently-reasonable range/32-bit `time_t`, the hot path for
 converting a year to seconds since the epoch involves no division. We can get
 away with >>2 and &3 since in the range [1901,2099] the leap year rule is simply
 that multiple-of-4 years are leap years. I would like it be able to have the
-compiler throw away the larger, slower, general-case code on 32-bit-time_t
+compiler throw away the larger, slower, general-case code on 32-bit-`time_t`
 targets, but unfortunately the need to use long long internally to avoid
 difficult corner cases is precluding that.
 
-Any representable struct tm will successfully convert to time_t if and only if
-it represents a value of seconds-since-the-epoch that fits in time_t. Any
-representable time_t will successfully convert to struct tm if and only if it
-represents a (normalized) date and time repr esentable in struct tm. The
+Any representable `struct tm` will successfully convert to `time_t` if and only if
+it represents a value of seconds-since-the-epoch that fits in `time_t`. Any
+representable `time_t` will successfully convert to `struct tm` if and only if it
+represents a (normalized) date and time representable in `struct tm`. The
 relevant functions will avoid setting errno except on error so that a caller can
-distinguish between a time_t value of -1 as a valid result and as an error.
+distinguish between a `time_t` value of -1 as a valid result and as an error.
 

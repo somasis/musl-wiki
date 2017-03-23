@@ -26,7 +26,7 @@ Secondary targets:
 - UB-correctness fixes including string functions and stdio
 - Further dynamic linker performance improvements and clean-up
 - Further build-system cleanup
-- Adding GLOB_TILDE to glob implementation
+- Adding `GLOB_TILDE` to glob implementation
 
 # musl 1.1.16
 
@@ -37,7 +37,7 @@ Primary targets:
 - Adding ARM Cortex-M (NOMMU) support (including building ARM as pure thumb2).
 - Resolving GCC symbol-versioning incompatibility issue - see
   <http://www.openwall.com/lists/musl/2015/05/10/1>
-- LC_COLLATE implementation
+- `LC_COLLATE` implementation
 - IDN support in DNS resolver
 - Message translation support for dynamic linker
 
@@ -47,7 +47,7 @@ Secondary targets:
 - Complex math correctness Complex math correctness
 - Remapping of glibc-ABI-incompatible symbols (regexec, etc.) by dynamic linker
 - New getlogin[_r] with lookup via controlling tty
-- Enhanced LSB/glibc ABI-compat, especially fortify \_\_*_chk symbols
+- Enhanced LSB/glibc ABI-compat, especially fortify `__*_chk` symbols
 
 # Milestone goals for musl 1.2.0
 
@@ -61,7 +61,7 @@ there will likely be at least one additional release (beyond the above) in the
     - Deduplication of bits headers for archs
     - Support for out-of-tree builds
 - Improved locale and multilingual support
-    - LC_COLLATE support for collation orders other than simple codepoint order
+    - `LC_COLLATE` support for collation orders other than simple codepoint order
     - IDN support in DNS resolver
     - Character data aligned with current Unicode at time of release
 - Porting
@@ -76,7 +76,7 @@ there will likely be at least one additional release (beyond the above) in the
 - Third-party projects
     - Non-glibc-based nscd-protocol backend for LDAP (and perhaps NIS)
     - Locale data and libc message translations
-    - External header-file-only fortify library providing \_FORTIFY_SOURCE
+    - External header-file-only fortify library providing `_FORTIFY_SOURCE`
       feature
     - Support for Windows targets via Midipix (<http://www.midipix.org>)
 

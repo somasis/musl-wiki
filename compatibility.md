@@ -3,7 +3,7 @@
 Compatibility of the interfaces provided by musl with existing standards and
 software packages.
 
-## Standards compatibility tables
+# Standards compatibility tables
 
 - [POSIX 2008 API coverage][POSIX2008] (obsolete STREAMS and posix_trace APIs
   are not included)
@@ -14,14 +14,14 @@ software packages.
 [C99]: http://repo.or.cz/w/musl-tools.git/blob_plain/HEAD:/tab_c99.html
 [C11]: http://repo.or.cz/w/musl-tools.git/blob_plain/HEAD:/tab_c11.html
 
-## Compatibility with other implementations
+# Compatibility with other implementations
 
 - [Functional differences from glibc]
 - [Comparison] with other Linux libc implementations.
 
 [Comparison]: https://www.etalabs.net/compare_libcs.html
 
-## Software compatibility, patches and build instructions
+# Software compatibility, patches and build instructions
 
 - pkgsrc based software compatibility table:
     - ~~Pkgsrc results~~ outdated.
@@ -35,7 +35,7 @@ software packages.
     - [Alpine ports]
     - [Gentoo overlay with musl support]
     - See the packaging work in various other
-      [distributions][Projects using musl#linux-distributions-using-musl].
+      [distributions][Projects using musl#Linux distributions using musl].
 
 [musl-pkgsrc-patches (hg)]: http://bitbucket.org/GregorR/musl-pkgsrc-patches
 [musl-pkgsrc-patches (git)]: https://github.com/GregorR/musl-pkgsrc-patches

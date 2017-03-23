@@ -1,6 +1,6 @@
 # FAQ
 
-# Q: lib[m|pthread|crypt].a/so are empty?
+# Q: lib(m|pthread|crypt).a/so are empty?
 
 Yes, this is by design. musl puts everything into libc.a/so to avoid memory
 bloat. The empty files are only there for compatibilit reasons. The official
@@ -200,22 +200,25 @@ a compilation error instead of offering a portable fallback version of their
 code, so they can show you their muscles when you come to ask for help as the
 error message suggests to do. See
 <http://www.mail-archive.com/bug-gnulib@gnu.org/msg27386.html> and
-<http://www.mail-archive.com/search?q=musl&l=bug-gnulib%40gnu.org>. To fix it,
-either update the in-tree gnulib (no idea how to do that), or use a hack: each
-one of the gnulib function is triggered by a configure test, the condition being
-either "libc doesnt have this function" or "this libc function doesnt behave
-like GNUlib dictators want it to be". all of those configure checks use a cache
-variable like "gl_cv_func_isnanl_works=yes" [bigger list]. so you can prevent
-their code getting compiled in when you start configure with ./configure
-gl_cv_func_isnanl_works=yes. alternatively you can put all of these symbols into
-a file called config.cache and start ./configure -C (the -C makes configure pick
-up the cache). so all these checks will be skipped. to prevent additional
-breakage, [overwrite all .c files in the gnulib folder that try to replace libc
-functionality with an empty file][overwrite]. if that's still not enough to make
-the $*!#/ gnulib happy, you may have to do additional preprocessor hacks so
-their "rpl_" functions get again mapped to the real libc thing: for example
-CFLAGS="-Dgnu_fnmatch=fnmatch -Drpl_getgroups=getgroups
--Drpl_nanosleep=nanosleep -Drpl_futimens=futimens" ./configure ... [1].
+<http://www.mail-archive.com/search?q=musl&l=bug-gnulib%40gnu.org>.
+
+To fix it, either update the in-tree gnulib (no idea how to do that), or use a
+hack: each one of the gnulib function is triggered by a configure test, the
+condition being either "libc doesnt have this function" or "this libc function
+doesnt behave like GNUlib dictators want it to be". All of those configure
+checks use a cache variable like "gl_cv_func_isnanl_works=yes" [bigger list].
+
+So, you can prevent their code getting compiled in when you start configure with
+`./configure gl_cv_func_isnanl_works=yes`. Alternatively, you can put all of
+these symbols into a file called config.cache and run `./configure -C` (the `-C`
+makes configure pick up the cache), so all these checks will be skipped.
+
+To prevent additional breakage, [overwrite all .c files in the gnulib folder that try to replace libc functionality with an empty file][overwrite].
+If that's still not enough to make gnulib happy, you may have to do additional preprocessor hacks so
+their "rpl_" functions get again mapped to the real libc thing.
+
+For example: `CFLAGS="-Dgnu_fnmatch=fnmatch -Drpl_getgroups=getgroups
+-Drpl_nanosleep=nanosleep -Drpl_futimens=futimens" ./configure` ... [1].
 
 [1]: https://github.com/sabotage-linux/sabotage/blob/master/pkg/coreutils#L16
 [bigger list]: https://github.com/sabotage-linux/sabotage/blob/master/KEEP/config.cache#L1430

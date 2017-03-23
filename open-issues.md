@@ -12,7 +12,7 @@ situation will be worse in the future once the resolution to issue #663 is
 applied to POSIX, disallowing multibyte characters in the C locale. The present
 issues are:
 
-- setlocale() returns "C.UTF-8" even if "C" was passed to it. (This is barely a
+- `setlocale()` returns "C.UTF-8" even if "C" was passed to it. (This is barely a
   functional issue; fixing it would just require saving a flag for which to
   return.)
 - The character classes (wctype.h) contain characters not allowed to be present
@@ -21,11 +21,11 @@ issues are:
 Fixing the second issue depends on fixing the first, but there are two possible
 ways it could be fixed. One is to make the wctype.h functions stateful and
 dependent on the current locale, so that they reject non-ASCII characters in the
-pure "C" locale (which would only be active if you never call setlocale at all,
+pure "C" locale (which would only be active if you never call `setlocale` at all,
 or explicitly pass "C" as an argument). The other possible fix would be to make
 the encoding (UTF-8 vs abstract 8-bit) dependent on the locale. This would meet
 the requirements of the POSIX interpretation for issue #663, and by making it so
-that Unicode-range values of wchar_t never arise in the C locale, would
+that Unicode-range values of `wchar_t` never arise in the C locale, would
 eliminate the need to make any changes to the current Unicode-aware wctype.h
 functions.
 
@@ -80,12 +80,12 @@ communicating with a daemon that would serve as the backend. Candidates are:
 
 # Security/hardening features
 
-## Substitute for \_FORTIFY_SOURCE
+## Substitute for `_FORTIFY_SOURCE`
 
 The current plan is to implement this in a libc-agnostic way as a second set of
-headers on top of the libc headers, using "GNU C" features such as #include_next
-and __builtin_object_size to provide a fully-inline (no use of special libc
-functions) version of FORTIFY. [implementation](http://git.2f30.org/fortify)
+headers on top of the libc headers, using "GNU C" features such as `#include_next`
+and `__builtin_object_size` to provide a fully-inline (no use of special libc
+functions) version of FORTIFY. [Implementation](http://git.2f30.org/fortify).
 
 ## Building musl itself with stack-protector
 
@@ -113,7 +113,7 @@ musl.
 
 # fnmatch logic
 
-The fnmatch_internal function can be simplified (the check of the last '*'
+The `fnmatch_internal` function can be simplified (the check of the last '*'
 pattern component can be removed) and it has corner-cases where EILSEQ might not
 be handled correctly.
 
@@ -130,9 +130,9 @@ provide a legacy header set separate from the libc headers.
 
 # ucontext.h
 
-Legacy functions operating on ucontext_t (getcontext, setcontext, makecontext,
+Legacy functions operating on `ucontext_t` (getcontext, setcontext, makecontext,
 swapcontext) are not implemented. They are no longer part of POSIX, but
-cooperative multi-tasking applications use them. ucontext_t also appears as an
+cooperative multi-tasking applications use them. `ucontext_t` also appears as an
 argument to sigaction handlers which cannot be used portably.
 
 # Previously posted issues which were resolved
@@ -221,7 +221,7 @@ accesses) on modern kernels.
 
 Up through musl 1.1.6, the POSIX AIO implementation had significant conformance
 and quality of implementation issues. The most serious was that AIO was not
-synchronized with the close() function, meaning pending AIO operations could act
+synchronized with the `close()` function, meaning pending AIO operations could act
 upon (and possibly corrupt) another file if their original fd was closed and the
 file descriptor was reassigned. An analogous bug is also present in glibc's
 implementation.
