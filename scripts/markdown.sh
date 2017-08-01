@@ -125,7 +125,8 @@ author=$(printf '%s\n' "${author}" | tr '\n' ' ' | sed -r 's/,? $//')
 date=$(git log --date='format:%Y-%m-%d' --format='%ad' -1 "${file}")
 
 edo sed \
-    -e "s|<?makefile commit?>|${tree_commit} / ${file_commit}|g" \
+    -e "s|<?makefile tree_commit?>|${tree_commit}|g" \
+    -e "s|<?makefile file_commit?>|${file_commit}|g" \
     -e "s|<?makefile title?>|${title}|g" \
     -e "s|<?makefile title_unprefixed?>|${title_unprefixed}|g" \
     -e "s|<?makefile description?>|${description}|g" \

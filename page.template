@@ -35,7 +35,7 @@
         <a href='https://github.com/somasis/musl-wiki/issues'><img alt='GitHub Issues' src='https://img.shields.io/github/issues/somasis/musl-wiki.svg?style=flat-square' /></a><br />
         <small>
             This work is licensed under the <a href='http://creativecommons.org/licenses/by-sa/3.0'>Creative Commons Attribution-ShareAlike 3.0 Unported license</a>, unless otherwise noted.<br />
-            <?makefile commit?>
+            <a title='Latest commit to this page' href='https://github.com/somasis/musl-wiki/commit/<?makefile file_commit?>'><?makefile file_commit?></a> / <a title='Latest commit to entire site' href='https://github.com/somasis/musl-wiki/commit/<?makefile tree_commit?>'><?makefile tree_commit?></a>
         </small>
     </footer>
 </body>
