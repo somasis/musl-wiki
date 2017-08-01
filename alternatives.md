@@ -240,6 +240,7 @@ useable with musl.
   Pretty popular, but some semantic choices may make conscious programmer
   cringe: accessing non-existent (mistyped) variable returns legitimate value,
   array indexes start from 1, etc.
+- [Quasar m4] is a small GNU m4-compatible re-implementation derived from the FreeBSD m4.
 - [Squirrel] is embeddable language with C-like syntax and minimal number of
   syntax/semantics idiosyncrasies. Uses reference counting. Core builds to
   ~250KB for i386. uses C++ though.
@@ -254,6 +255,7 @@ useable with musl.
 - [tinypy] Minimalist implementation of python in 64k of code.
 
 [Lua]: http://www.lua.org/
+[Quasar m4]: http://haddonthethird.net/m4/
 [Squirrel]: http://squirrel-lang.org/
 [General-Purpose Squirrel]: https://github.com/pfalcon/squirrel-modules
 [jim]: http://jim.tcl.tk/
