@@ -304,6 +304,7 @@ regular language.
 - [Toybox]
 - [Busybox]
 - [Heirloom Project]
+- [Utilities Chest] - a set of unix utilities written to be simple and small
 - [picobsd]
 - [obase] Port of OpenBSD userland to Linux
 - [noXCUse] New Open XCU Simple Edition; or, No Excuse for bloat and brokenness:
@@ -325,6 +326,7 @@ regular language.
 [Toybox]: http://landley.net/toybox
 [Busybox]: http://www.busybox.net/
 [Heirloom Project]: http://heirloom.sourceforge.net/
+[Utilities Chest]: https://github.com/eltanin-os/utilchest
 [picobsd]: http://code.google.com/p/freebsd-head/source/browse/release/?r=bbfa6f219c41b6850ef0e7699f439ad5488435ae#release%2Fpicobsd
 [obase]: https://github.com/chneukirchen/obase
 [noXCUse]: http://git.musl-libc.org/cgit/noxcuse/tree/
