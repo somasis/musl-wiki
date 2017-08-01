@@ -1,6 +1,6 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Droid+Sans:400,700|Droid+Serif:700');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Droid+Sans:400,700|Droid+Serif:400,700');
 
 body {
     line-height: 1.4;
@@ -12,7 +12,7 @@ body {
     color: #444444;
     background-color: #fefefe;
 
-    font-family: "Droid Sans", sans-serif;
+    font-family: "Droid Serif", sans-serif;
     font-size: 12pt;
 }
 
