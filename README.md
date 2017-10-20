@@ -1,7 +1,7 @@
 # musl-wiki
 
 [![Travis](https://img.shields.io/travis/somasis/musl-wiki.svg?style=flat-square)](https://travis-ci.org/somasis/musl-wiki)
-[![Website status](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?style=flat-square)](https://wiki.somasis.com)
+[![Website status](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?style=flat-square)](https://wiki.musl-libc.org)
 
 A community-maintained wiki detailing things such as implementation details,
 frequently asked questions, open issues, users of musl, and other information to

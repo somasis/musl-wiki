@@ -3,7 +3,7 @@ TRAVIS ?= false
 # requires discount markdown, postcss-cli, cssnano, htmltidy (html5), and autoprefixer
 
 SRCDIR          := $(realpath $(dir $(realpath $(lastword $(MAKEFILE_LIST)))))
-IMAGE           ?= /srv/www/wiki.somasis.com
+IMAGE           ?= /srv/www/wiki.musl-libc.org
 
 all: $(addsuffix .html,$(basename $(shell find -type f -name '*.md')))
 all: $(addsuffix .min.css,$(basename $(shell find -type f -name '*.css' -and -not -name '*.min.css')))
