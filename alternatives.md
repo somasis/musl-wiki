@@ -2,7 +2,7 @@
 
 Resource list for alternative libraries and programs that are lightweight, not
 bloated, efficient or have other useful design characteristics and may be
-useable with musl.
+usable with musl.
 
 # Alternative Libraries and Programs
 
@@ -23,7 +23,7 @@ useable with musl.
 - [gettext-stub] - Provides a stub replacement for libintl.
 - [libdrpc] - Port of RPC based on Android's libdrpc. Replaces parts of older
   glibc RPC functionality and/or libtirpc.
-- [libsep] - Minimal RPC library to assist compartmentalisation of small
+- [libsep] - Minimal RPC library to assist compartmentalization of small
   applications.
 - [minised] - Faster but limited earlier version of sed. (note that busybox
   1.20.2's sed implementation is 100% POSIX compatible and feature-complete)
@@ -31,11 +31,11 @@ useable with musl.
 - [linenoise] - lightweight readline replacement.
 - [libedit] - drop-in replacement for readline
   ([needs a handful of symlinks][libedit-symlinks]). about 30% less code.
-  lacks some rare functions but is compatible with a number of readline users
+  lacks some rare functions but is compatible with a number of readline users,
   like gdb.
 - ~~[termbox] - alternative to ncurses for simple terminal apps. 16 colors only.
   very small, clean, well designed code.~~ only up to commit [66c3f91b]
-- [tinyalsa] - alternative to alsalib (interfacing with kernel's alsa API).
+- [tinyalsa] - alternative to alsalib (interfacing with kernel's ALSA API).
 - [libnl-tiny] - drop-in replacement for netlink (libnl 1.2). may need some
   [compatibility CFLAGS].
 - [uuterm] - slim terminal emulator written by musl's author.
