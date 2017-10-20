@@ -19,6 +19,10 @@
                 <small class='title'>A new libc striving to be fast, simple, lightweight, free, and correct</small>
             </a>
         </div>
+        <form action='https://duckduckgo.com' class='search'>
+            <input type='hidden' name='sites' value='wiki.musl-libc.org' />
+            <input type='search' name='q' autocomplete="on" placeholder='Search the wiki...' />
+        </form>
     </header>
     <nav class='toc'>
         <?makefile toc?>
