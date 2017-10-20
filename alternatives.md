@@ -6,55 +6,55 @@ useable with musl.
 
 # Alternative Libraries and Programs
 
-- [pkgconf] Drop in replacement for pkg-config with no circular dependencies.
+- [pkgconf] - Drop in replacement for pkg-config with no circular dependencies.
   Does not require glib.
-- [netbsd-curses] Drop in replacement for ncurses and ncursesw, ported from
+- [netbsd-curses] - Drop in replacement for ncurses and ncursesw, ported from
   netbsd. considerably smaller than ncurses.
-- [mlibtool] Drop-in replacement for libtool. can speed up builds significantly
+- [mlibtool] - Drop-in replacement for libtool. can speed up builds significantly
   as it's written in C.
-- [cDetect] C replacement for feature detection generally provided by utilities
+- [cDetect] - C replacement for feature detection generally provided by utilities
   like GNU autotools.
-- [freeglut] Replacement for glut.
-- [libutf] utf8 library (note that by using musl, UTF8 support is automatically
+- [freeglut] - Replacement for glut.
+- [libutf] - UTF8 library (note that by using musl, UTF8 support is automatically
   enabled. no need to use any 3rd party library)
 - [gettext-tiny] - gettext replacement. Provides an extra-compatible implementation
   of libintl for musl, or a no-op, along with several no-op gettext utilities, and
   a complete msgfmt implementation.
-- [gettext-stub] Provides a stub replacement for libintl.
-- [libdrpc] Port of RPC based on Android's libdrpc. Replaces parts of older
+- [gettext-stub] - Provides a stub replacement for libintl.
+- [libdrpc] - Port of RPC based on Android's libdrpc. Replaces parts of older
   glibc RPC functionality and/or libtirpc.
-- [libsep] Minimal RPC library to assist compartmentalisation of small
+- [libsep] - Minimal RPC library to assist compartmentalisation of small
   applications.
-- [minised] Faster but limited earlier version of sed. (note that busybox
+- [minised] - Faster but limited earlier version of sed. (note that busybox
   1.20.2's sed implementation is 100% POSIX compatible and feature-complete)
-- [ignite] init replacement, works with runit.
-- [linenoise] lightweight readline replacement.
-- [libedit] drop-in replacement for readline
+- [ignite] - init replacement, works with runit.
+- [linenoise] - lightweight readline replacement.
+- [libedit] - drop-in replacement for readline
   ([needs a handful of symlinks][libedit-symlinks]). about 30% less code.
   lacks some rare functions but is compatible with a number of readline users
   like gdb.
-- ~~[termbox] alternative to ncurses for simple terminal apps. 16 colors only.
+- ~~[termbox] - alternative to ncurses for simple terminal apps. 16 colors only.
   very small, clean, well designed code.~~ only up to commit [66c3f91b]
-- [tinyalsa] alternative to alsalib (interfacing with kernel's alsa API).
-- [libnl-tiny] drop-in replacement for netlink (libnl 1.2). may need some
+- [tinyalsa] - alternative to alsalib (interfacing with kernel's alsa API).
+- [libnl-tiny] - drop-in replacement for netlink (libnl 1.2). may need some
   [compatibility CFLAGS].
-- [uuterm] slim terminal emulator written by musl's author.
-- [udhcpc] small DHCP client, part of Busybox. use these [two][udhcpc-two]
+- [uuterm] - slim terminal emulator written by musl's author.
+- [udhcpc] - small DHCP client, part of Busybox. use these [two][udhcpc-two]
   [scripts][udhcpc-scripts] to operate it.
-- [ndhc] small DHCP client, focus on security.
-- [ubus] replacement for dbus and general-purpose IPC protocol using simple unix
+- [ndhc] - small DHCP client, focus on security.
+- [ubus] - replacement for dbus and general-purpose IPC protocol using simple unix
   domain sockets. does not require running a daemon.
-- [mandoc] alternative to massively bloated groff and accompanying manpage
+- [mandoc] - alternative to massively bloated groff and accompanying manpage
   implementation.
-- [moe] A powerful and user-friendly console text editor (alternative to GNU
+- [moe] - A powerful and user-friendly console text editor (alternative to GNU
   Nano and Joe), but written in C++...
-- [textadept] Highly configurable and customizable text editor written in C (and
+- [textadept] - Highly configurable and customizable text editor written in C (and
   lua) and based on Scintilla editor widget. Terminal version works with ncurses
   or pdcurses. Also check out Scinterm, the ncurses based version of the
   Scintilla editor component.
-- [slock] minimalist alternative to xlock and xlockmore.
-- [star] Alternative to GNU tar.
-- [uSTL] replacement for the C++ STL (Standard Template Library).
+- [slock] - minimalist alternative to xlock and xlockmore.
+- [star] - Alternative to GNU tar.
+- [uSTL] - replacement for the C++ STL (Standard Template Library).
 
 [pkgconf]: https://github.com/pkgconf/pkgconf
 [netbsd-curses]: https://github.com/sabotage-linux/netbsd-curses
