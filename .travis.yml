@@ -12,7 +12,7 @@ before_install:
     - sudo dpkg -i tidy-5.4.0-64bit.deb
     - sudo apt-get install -y discount
     - gem install mdl
-    - npm install postcss-cli autoprefixer cssnano
+    - sudo npm -g install postcss-cli autoprefixer cssnano
 
 script:
     - make lint
