@@ -22,8 +22,8 @@ install:
 
 # cssnano is ran separately because it likes to take out vendor prefixes we might still need
 %.min.css: %.css
-	postcss -u cssnano "$*.css" -o "$*.css.tmp"
-	postcss -u autoprefixer "$*.css.tmp" -o "$*.min.css"
+	postcss "$*.css" -u cssnano -o "$*.css.tmp"
+	postcss "$*.css.tmp" -u autoprefixer -o "$*.min.css"
 	rm -f "$*.css.tmp"
 
 %.html: %.md $(shell $(SRCDIR)/scripts/markdown.sh --template "$<" "$@")
