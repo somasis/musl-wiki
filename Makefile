@@ -14,7 +14,11 @@ clean:
 	find -type f -name '*.tmp' -delete -print
 
 lint:
-	@find -type f -name '*.md' -and -not -name 'bugs-found-by-musl.md' -and -not -path './node_modules/*' -print0 | xargs -t0 mdl -s .mdlstyle.rb
+	@find -type f -name '*.md' -and -not -name 'bugs-found-by-musl.md' -print0 | xargs -t0 mdl -s .mdlstyle.rb
+
+install:
+	- gem install mdl
+	- npm install -g postcss-cli cssnano autoprefixer
 
 # cssnano is ran separately because it likes to take out vendor prefixes we might still need
 %.min.css: %.css
@@ -32,6 +36,8 @@ watch:
 	done
 
 deploy: all
-	rm -f $(IMAGE)/Makefile $(shell find "$(IMAGE)" -type f -name '*.css' -and -not -name '*.min.css') $(shell find "$(IMAGE)" -type f -name '*.md' -or -name '*.theme' -or -name '*.tmp')
+	rm -f $(IMAGE)/Makefile
+	rm -f $(shell find "$(IMAGE)" -type f -name '*.css' -and -not -name '*.min.css')
+	rm -f $(shell find "$(IMAGE)" -type f -name '*.md' -or -name '*.theme' -or -name '*.tmp')
 
 .PHONY: all clean deploy lint watch
