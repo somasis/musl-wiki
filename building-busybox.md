@@ -1,19 +1,19 @@
 # Building Busybox
 
-busybox makes heavy usage of linux kernel headers, which have a tendency
+Busybox makes heavy usage of Linux kernel headers, which have a tendency
 to clash with userspace. in order to make it build almost "out of the
 box", some patches ([1], [2], [3], [4], [5]) are needed
 for the kernel headers so that they respect musl's userspace headers in
-the same way as glibc's. for convenience, sabotage linux has a
-[kernel-headers repository] based on linux 3.12.6 headers for all arches
+the same way as glibc's. for convenience, Sabotage Linux has a
+[kernel-headers repository] based on Linux 3.12.6 headers for all arches
 supported by musl, where those patches are already applied.
 
 note that these headers are "forwards and backwards-compatible"; you
-only need newer headers if you need a feature that was added to linux
+only need newer headers if you need a feature that was added to Linux
 after 3.12, which cannot be accessed using libc headers.
 
-to compile busybox 1.22.1 allyesconfig, the following config changes are
-needed to support musl
+To compile Busybox 1.22.1's `allyesconfig`, the following config changes are
+needed to support musl:
 
 ```text
 # CONFIG_EXTRA_COMPAT is not set
@@ -28,7 +28,7 @@ needed to support musl
 # CONFIG_FEATURE_MOUNT_NFS is not set
 ```
 
-additionally [this patch] for ifplugd is required, if this applet is
+Additionally [this patch] for ifplugd is required, if this applet is
 desired.
 
 [1]: https://github.com/sabotage-linux/kernel-headers/commit/583dfcafd340ffb749726fa81dcc085b79348bf1
