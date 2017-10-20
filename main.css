@@ -328,8 +328,8 @@ nav.toc ul a:visited {
         width: auto;
         border-bottom: 0px;
     }
-    nav.toc:hover:before {
-        content: unset;
+    nav.toc:hover:not(:empty):before {
+        font-size: 0px;
     }
     nav.toc:hover, nav.toc:active {
         background: #efefef;
