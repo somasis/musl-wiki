@@ -32,7 +32,7 @@ install:
 
 watch:
 	while true; do \
-	    { find . -not -name '*.min.css' -and -not -name '*.tmp' -and -not -name '*.html'; } | entr -c sh -c '$(MAKE) lint && $(MAKE)'; \
+	    { find . -not -name '*.min.css' -and -not -name '*.tmp' -and -not -name '*.html' -and -not -path './.*'; } | entr -c sh -c '$(MAKE) lint && $(MAKE)'; \
 	done
 
 deploy: all
