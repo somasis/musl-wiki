@@ -47,6 +47,6 @@ watch:
 	done
 
 deploy: all
-	rsync -v -url --delete-after $(WORK)/ "$(IMAGE)" --exclude '*.git*'
+	rsync -v -rl --delete-after $(WORK)/ "$(IMAGE)" --exclude '*.git*'
 
 .PHONY: all clean deploy lint watch
