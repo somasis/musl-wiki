@@ -17,8 +17,9 @@ useable with musl.
 - [freeglut] Replacement for glut.
 - [libutf] utf8 library (note that by using musl, UTF8 support is automatically
   enabled. no need to use any 3rd party library)
-- [gettext-tiny] gettext replacement. Provides a no-op implementation for
-  libintl, and several no-op gettext utilities. Working msgfmt program.
+- [gettext-tiny] - gettext replacement. Provides an extra-compatible implementation
+  of libintl for musl, or a no-op, along with several no-op gettext utilities, and
+  a complete msgfmt implementation.
 - [gettext-stub] Provides a stub replacement for libintl.
 - [libdrpc] Port of RPC based on Android's libdrpc. Replaces parts of older
   glibc RPC functionality and/or libtirpc.
