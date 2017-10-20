@@ -42,14 +42,14 @@ usable with musl.
 - [udhcpc] - small DHCP client, part of Busybox. use these [two][udhcpc-two]
   [scripts][udhcpc-scripts] to operate it.
 - [ndhc] - small DHCP client, focus on security.
-- [ubus] - replacement for dbus and general-purpose IPC protocol using simple unix
+- [ubus] - replacement for dbus and general-purpose IPC protocol using simple Unix
   domain sockets. does not require running a daemon.
 - [mandoc] - alternative to massively bloated groff and accompanying manpage
   implementation.
 - [moe] - A powerful and user-friendly console text editor (alternative to GNU
   Nano and Joe), but written in C++...
 - [textadept] - Highly configurable and customizable text editor written in C (and
-  lua) and based on Scintilla editor widget. Terminal version works with ncurses
+  Lua) and based on Scintilla editor widget. Terminal version works with ncurses
   or pdcurses. Also check out Scinterm, the ncurses based version of the
   Scintilla editor component.
 - [slock] - minimalist alternative to xlock and xlockmore.
@@ -91,24 +91,24 @@ usable with musl.
 
 ## Compression/Decompression
 
-- [sortix libz] cleaned up, modern fork of zlib.
+- [Sortix libz] cleaned up, modern fork of zlib.
 - [libarchive] bsdtar offers a replacement for gnu tar.
 - [Lzip] family of data compressors based on the LZMA algorithm. See [Benchmark],
   and [Quality-assurance].
-- [XZ Embedded] small xz decompressor library.
+- [XZ Embedded] small XZ decompressor library.
 - [lzo] very fast compression library.
 - [gzfile.c] C routines to read gzipped files.
 - [miniz] Single C source file Deflate/Inflate compression library with
   zlib-compatible API, ZIP archive reading/writing, PNG writing.
 - [flate] small gzip compatible compressor lib
-- [lz4][lz4-fast] extremely fast (BSD-licensed) compression algo
-- [lz4][lz4-small] alternate lz4 impl (BSD-licensed), even smaller
-- [basic compression library] non-bloated (zlib-licensed) impl of several basic
+- [lz4][lz4-fast] extremely fast (BSD-licensed) compression algorithm
+- [lz4][lz4-small] alternate lz4 implementation (BSD-licensed), even smaller
+- [basic compression library] non-bloated (zlib-licensed) implementation of several basic
   compression algorithms.
 
 [Large Text Compression Benchmark](http://mattmahoney.net/dc/text.html)
 
-[sortix libz]: https://sortix.org/libz/
+[Sortix libz]: https://sortix.org/libz/
 [libarchive]: http://www.libarchive.org/
 [Lzip]: http://lzip.nongnu.org/lzip.html
 [XZ Embedded]: http://tukaani.org/xz/embedded.html
@@ -120,21 +120,21 @@ usable with musl.
 [lz4-small]: https://github.com/htruong/lz4
 [basic compression library]: http://bcl.comli.eu/home-en.html
 
-## Crypto
+## Cryptography
 
-- [TweetNaCl] tiny, fully NaCl-compatible high-security crypto C library (single
+- [TweetNaCl] tiny, fully NaCl-compatible high-security cryptography library (single
   C file)
-- [libtomcrypt] public domain crypto library
-- [kripto] lightweight crypto library written in ISO C99. WIP.
+- [libtomcrypt] public domain cryptography library
+- [kripto] lightweight cryptography library written in ISO C99. WIP.
 - [libsodium] encryption/decryption library
-- [tropicssl] ssl library (BSD) - unmaintained and lacking a few patches for
+- [tropicssl] SSL library (BSD) - unmaintained and lacking a few patches for
   recent vulnerabilities found in PolarSSL.
-- [polarssl] ssl library (GPL) - commercialised and relicensed fork of
+- [PolarSSL] SSL library (GPL) - commercialized and relicensed fork of
   tropicssl.
-- [cyassl] ssl library (GPL)
-- [axtls] ssl library (BSD license)
-- [selene] ssl/tls library (Apache license)
-- [dropbear] replacement for OpenSSH.
+- [cyassl] SSL library (GPL)
+- [axtls] SSL library (BSD license)
+- [selene] SSL/TLS library (Apache license)
+- [Dropbear] replacement for OpenSSH.
 - [LibreSSL] drop-in replacement for (and fork of) OpenSSL.
 
 [TweetNaCl]: http://tweetnacl.cr.yp.to/
@@ -142,16 +142,16 @@ usable with musl.
 [kripto]: https://github.com/lightbit/kripto
 [libsodium]: https://github.com/jedisct1/libsodium
 [tropicssl]: http://gitorious.org/tropicssl
-[polarssl]: https://polarssl.org/
+[PolarSSL]: https://polarssl.org/
 [cyassl]: http://yassl.com/yaSSL/Home.html
 [axtls]: http://axtls.sourceforge.net/
 [selene]: https://github.com/pquerna/selene
-[dropbear]: https://matt.ucc.asn.au/dropbear/dropbear.html
+[Dropbear]: https://matt.ucc.asn.au/dropbear/dropbear.html
 [LibreSSL]: http://www.libressl.org/
 
 ## Databases
 
-- [tinyCDB] small constant database library. perl wrappers are available on
+- [tinyCDB] small constant database library. Perl wrappers are available on
   CPAN.
 - [LMDB] high-performance, mmap'd key-value store used in the OpenLDAP project.
 
@@ -161,13 +161,13 @@ usable with musl.
 ## Graphics
 
 - [Agar] MIT-licensed, lightweight GUI toolkit lib written in C
-- [iup] lighweight and portable GUI toolkit written in C, has lua bindings
-- [mtk] lightweight gui library written in C. currently writes directly to
+- [iup] lightweight and portable GUI toolkit written in C, has Lua bindings
+- [mtk] lightweight GUI library written in C. currently writes directly to
   videomem of the milkymist open source hardware platform. requires port to
   X/SDL/FB.
 - [GraphApp] Toolkit for platform-independent graphical user interface
   programming in the C language.
-- [m2tklib] Mini Interative Interface Toolkit Library - a portable graphical and
+- [m2tklib] Mini Interactive Interface Toolkit Library - a portable graphical and
   character user interface (GUI+CUI) library for embedded systems.
 - [ftk] GUI library for embedded systems.
 - [SVG library]
@@ -177,9 +177,9 @@ usable with musl.
 - [lodepng] single-file implementation to read png files. requires zlib.
 - [picojpeg]
 - [SOIL] Simple OpenGL Image Library
-- [gleri] opengl implementation for remote GL usage.
-- [TinyGL] opengl implementation with software rendering. needs some fixes to
-  work on 64bit archs.
+- [gleri] OpenGL implementation for remote GL usage.
+- [TinyGL] OpenGL implementation with software rendering. needs some fixes to
+  work on 64bit arches.
 
 [Agar]: http://libagar.org/
 [iup]: http://www.tecgraf.puc-rio.br/iup/
@@ -219,8 +219,8 @@ usable with musl.
 
 - [ucpp] C99 preprocessor library and program.
 - [mcpp] another C99 preprocessor library and program.
-- [sparse] mostly C99 compatible semantic analyser and C frontend written by
-  linus.
+- [sparse] mostly C99 compatible semantic analyzer and C frontend written by
+  Linus Torvalds.
 - [firm/cparser] C99 compatible C compiler and optimization framework. x86 and
   SPARC backends.
 - [GPP] General Purpose Preprocessor. Has added functionality not available in a
@@ -247,12 +247,12 @@ usable with musl.
   ~250KB for i386. uses C++ though.
     - [General-Purpose Squirrel] - fork to make a standalone general-purpose
       language out of Squirrel core, without compromising on lightweightedness.
-- [jim] embedded tcl scripting engine in Ansi C. compiles to 100-200KB depending
-  on featureset.
+- [jim] embedded Tcl scripting engine in ANSI C. compiles to 100-200KB depending
+  on feature set.
 - [TinyJS] An extremely simple (~2000 line) JavaScript interpreter.
 - [42TinyJS] Fork of TinyJS with more functionality.
-- [Quad-Wheel] Small but full-ecma-262 supported javascript engine, written in
-  ansi C.
+- [Quad-Wheel] Small but full-ECMA-262 supported JavaScript engine, written in
+  ANSI C.
 - [tinypy] Minimalist implementation of python in 64k of code.
 
 [Lua]: http://www.lua.org/
@@ -283,7 +283,7 @@ an implementation based on the "Sea of Stars" algorithm.
 Comparing Perl regular expressions implementations to Regex implementations
 shows pattern matching performance for various cases, but it can be like
 comparing apples to oranges. Perl regular expression pattern matching is not
-equivalent to a regular langauge which can be solved by a finite state automata.
+equivalent to a regular language which can be solved by a finite state automata.
 Some regex extensions also may not be compliant with the definition of a formal
 regular language.
 
@@ -305,23 +305,23 @@ regular language.
 - [Toybox]
 - [Busybox]
 - [Heirloom Project]
-- [Utilities Chest] - a set of unix utilities written to be simple and small
+- [Utilities Chest] - a set of Unix utilities written to be simple and small
 - [picobsd]
 - [obase] Port of OpenBSD userland to Linux
 - [noXCUse] New Open XCU Simple Edition; or, No Excuse for bloat and brokenness:
-  a set of unix utilities developed by musl's author.
-- [pikhq-coreutils] a (small) set of unix utilities.
-- [hardcore-utils] a (small) set of unix utilities.
-- [sbase] portable set of suckless unix utilities
-- [ubase] linux-specific set of suckless unix utilities (util-linux replacement)
-- [lazy-utils] a (small) set of unix utilities to complement toybox
+  a set of Unix utilities developed by musl's author.
+- [pikhq-coreutils] a (small) set of Unix utilities.
+- [hardcore-utils] a (small) set of Unix utilities.
+- [sbase] portable set of suckless Unix utilities
+- [ubase] Linux-specific set of suckless Unix utilities (util-linux replacement)
+- [lazy-utils] a (small) set of Unix utilities to complement toybox
 - [usul] From the main developer of sbase. non-POSIX tabular Unix utilities.
 - [lit cave] Has a lot of lightweight replacement programs, including a troff
   implementation, utilities using framebuffer and a C compiler.
 - [elks] The elks tarball includes a collection ("elkscmd") of very lightweight
-  standard unix programs, taken from minix and other sources. Also includes
+  standard Unix programs, taken from Minix and other sources. Also includes
   lightweight man alternative (bugfixed version is included in hardcore-utils).
-- [Skarnet software] Various utilities.
+- [skarnet software] Various utilities.
 - [Bizarre Sources] Init replacement and other small programs.
 
 [Toybox]: http://landley.net/toybox
@@ -349,7 +349,7 @@ regular language.
   libraries to avoid and what to replace them with.
 - [Puppy Linux forum thread on Unbloated resources]
 - [choosing an ssl library]
-- [BusyBox tiny utility recommendations]
+- [Busybox tiny utility recommendations]
 - [Unbloated resources in C] \(beware of stb* from nothings.org since author is
   ignorant about invoking UB\)
 - [embutils]
@@ -363,7 +363,7 @@ regular language.
 [Puppy Linux forum thread on Unbloated resources]: http://www.murga-linux.com/puppy/viewtopic.php?t=72359
 [Unbloated resources in C]: http://bashismal.blogspot.com/2011/10/unbloated-resources-in-c.html
 [choosing an ssl library]: http://teholabs.com/?p=445
-[BusyBox tiny utility recommendations]: http://busybox.net/tinyutils.html
+[Busybox tiny utility recommendations]: http://busybox.net/tinyutils.html
 [embutils]: http://www.fefe.de/embutils/
 [MinGW Useful links]: http://www.mingw.org/wiki/Community_Supplied_Links
 
