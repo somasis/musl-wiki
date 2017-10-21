@@ -3,8 +3,8 @@
 # Q: lib(m|pthread|crypt).a/so are empty?
 
 Yes, this is by design. musl puts everything into libc.a/so to avoid memory
-bloat. The empty files are only there for compatibilit reasons. The official
-explaination: <http://openwall.com/lists/musl/2012/07/25/3>
+bloat. The empty files are only there for compatibility reasons. The official
+explanation: <http://openwall.com/lists/musl/2012/07/25/3>
 more info: [Design Concepts]
 
 # Q: Why is there no `__MUSL__` macro?
@@ -12,13 +12,13 @@ more info: [Design Concepts]
 It's a bug to assume a certain implementation has particular properties rather
 than testing. So far, every time somebody's asked for this with a particular
 usage case in mind, the usage case was badly wrong, and would have broken
-support for the next release of musl. The official explaination:
+support for the next release of musl. The official explanation:
 <http://openwall.com/lists/musl/2013/03/29/13>
 
 # Q: Where is `ldd`?
 
-musl's dynlinker comes with ldd functionality built in. Just create a symlink
-from ld-musl-$ARCH.so to /bin/ldd. If the dynlinker was started as "ldd", it
+musl's dynamic linker comes with ldd functionality built in. Just create a symlink
+from ld-musl-$ARCH.so to /bin/ldd. If the dynamic linker was started as "ldd", it
 will detect that and print the appropriate DSO information.
 
 # Q: Why is `sys/queue.h` not included?
@@ -36,7 +36,7 @@ It's impossible to match the glibc ABI for fts because the glibc ABI is
 the built-in fts from glibc; anything using fts is either already including its
 own copy (there is a canonical BSD version and gnulib has it too), or is
 hopelessly broken on glibc and the maintainers are just unaware of that fact. So
-including it in musl would not help nything at this time. If glibc bug 15838 is
+including it in musl would not help anything at this time. If glibc bug 15838 is
 fixed by adding an fts64 interface in glibc, we could consider supporting it
 with a matching ABI in musl, but it seems more likely that glibc will just
 deprecate this interface.
@@ -89,14 +89,14 @@ the issue can be fixed in different ways:
 - that's a HUGE risk to pay for the sake of a basically-useless and
   possibly-harmful "feature"
 
-# Q: My dynamically linked program crashes on powerpc!
+# Q: My dynamically linked program crashes on PowerPC!
 
 Make sure you pass `-Wl,--secure-plt` when you use dynamic linking. Musl only
 supports the secure plt. To check if your binary is correct, use `readelf -a
 a.out | grep PPC_GOT`. It should list at least one line. There's also a known bug
 in binutils 2.22: <http://sourceware.org/bugzilla/show_bug.cgi?id=13470> Be sure
 to use the patches attached there. in order to test for this issue, create a
-small testprogram that uses environ:
+small test program that uses environ:
 
 ```c
 #include <stdio.h>
@@ -122,7 +122,7 @@ Use this fix: `sed -i 's,SORT_SECTION=,SORT_SECTION= #,' scripts/trylink`
 Congratulations, you have found a bug! The bug is in the application that uses
 this internal glibc header. This header is *not* intended to be used by any
 program. File a bug report. Until it gets fixed, patch the program to remove the
-include line and replace all occurences of:
+include line and replace all occurrences of:
 
 ```c
 __BEGIN_DECLS
@@ -136,7 +136,7 @@ extern "C" {
 #endif
 ```
 
-and all occurences of
+and all occurrences of
 
 ```c
 __END_DECLS
