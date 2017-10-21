@@ -169,6 +169,11 @@ pre {
     max-width: 100%;
     word-wrap: break-word;
     white-space: pre-line;
+    background: rgba(54,54,54,1);
+    color: #ededed;
+    padding: 8px;
+    border: 4px solid #d23e9c;
+    border-width: 2px 0px;
 }
 
 main > pre, pre > code {
