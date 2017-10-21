@@ -10,12 +10,11 @@ before_install:
     - sudo apt-get remove -y libtidy-0.99-0
     - wget https://github.com/htacg/tidy-html5/releases/download/5.4.0/tidy-5.4.0-64bit.deb
     - sudo dpkg -i tidy-5.4.0-64bit.deb
-    - sudo apt-get install -y discount
-    - gem install mdl
-    - npm -g install postcss-cli autoprefixer cssnano
+    - sudo apt-get install -y discount linkchecker
+    - make TRAVIS_SUDO=sudo install
 
 script:
-    - make lint
+    - make check
 
 after_success:
     - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || eval "$(ssh-agent -s)"'
