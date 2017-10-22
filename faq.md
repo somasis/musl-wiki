@@ -41,14 +41,14 @@ fixed by adding an fts64 interface in glibc, we could consider supporting it
 with a matching ABI in musl, but it seems more likely that glibc will just
 deprecate this interface.
 
-# Q: Do I need to define `_LARGEFILE64_SOURCE` to get 64bit off_t?
+# Q: Do I need to define `_LARGEFILE64_SOURCE` to get 64bit `off_t`?
 
 - Those options are for building apps, not building libc.
 - `-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE` have nothing to do with supporting
   large files properly but with exposing the idiotic legacy interfaces with 64
   on the end of their names (like open64, lseek64, etc.). only
   `-D_FILE_OFFSET_BITS=64` should ever be used, anywhere, even on glibc.
-- under musl, off_t is always 64-bit. the `-D_LARGEFILE64_SOURCE` option is
+- under musl, `off_t` is always 64-bit. the `-D_LARGEFILE64_SOURCE` option is
   however honored to support compiling applications using the legacy open64,
   etc. nonsense, but it just #defines them away to the version without 64 on the
   end.
@@ -66,7 +66,7 @@ with GLIBC because...
 
 - the userspace headers just include the kernel headers, and
 - because the kernel headers have a hardcoded compatibility fix for GLIBC to
-  prevent exactly this issue (linux/libc_compat.h)
+  prevent exactly this issue (`linux/libc_compat.h`)
 
 the issue can be fixed in different ways:
 
@@ -91,9 +91,9 @@ the issue can be fixed in different ways:
 
 # Q: My dynamically linked program crashes on powerpc!
 
-Make sure you pass -Wl,--secure-plt when you use dynamic linking. Musl only
-supports the secure plt. To check if your binary is correct, use readelf -a
-a.out | grep PPC_GOT. It should list at least one line. There's also a known bug
+Make sure you pass `-Wl,--secure-plt` when you use dynamic linking. Musl only
+supports the secure plt. To check if your binary is correct, use `readelf -a
+a.out | grep PPC_GOT`. It should list at least one line. There's also a known bug
 in binutils 2.22: <http://sourceware.org/bugzilla/show_bug.cgi?id=13470> Be sure
 to use the patches attached there. in order to test for this issue, create a
 small testprogram that uses environ:
@@ -103,15 +103,15 @@ small testprogram that uses environ:
 extern char** environ; int main() {dprintf(2, "%p\n", environ);}
 ```
 
-If that crashes, despite having PPC_GOT entries, you are affected. Further, you
-should build gcc with the option --with-long-double-64 --enable-secureplt.
+If that crashes, despite having `PPC_GOT` entries, you are affected. Further, you
+should build gcc with the option `--with-long-double-64 --enable-secureplt`.
 Additionally use [this patch].
 
 [this patch]: https://raw.github.com/rofl0r/sabotage/master/KEEP/gcc-454-stackend.patch
 
 # Q: Busybox linked against musl segfaults on ARM!
 
-The bug is probably [--sort-section renders busybox unusable on ARM][busybox-arm].
+The bug is probably [`--sort-section` renders busybox unusable on ARM][busybox-arm].
 
 Use this fix: `sed -i 's,SORT_SECTION=,SORT_SECTION= #,' scripts/trylink`
 
@@ -153,8 +153,8 @@ with
 # Q: I'm trying to compile something against musl and I get lots of error messages!
 
 musl is strict about namespaces. As a quick fix, add to your CFLAGS
--D_GNU_SOURCE for GNU- and Linux-specific functions like strndup, and add
---D_BSD_SOURCE for BSD-specific functions like strlcpy. If you are the
+`-D_GNU_SOURCE` for GNU- and Linux-specific functions like strndup, and add
+`-D_BSD_SOURCE` for BSD-specific functions like strlcpy. If you are the
 ma--intainer of the package, consider determining the correct namespace and
 adding it to the relevant .c files. [Article about feature test macros on
 lwn.net][feature-test-macros].
@@ -172,8 +172,8 @@ math support).
 Usually this is because the app has hardcoded glibc-specific assumptions or
 wrong #ifdefs. See [Functional differences from glibc]. The most common causes
 are expectations of gnu getopt behaviour, iconv usage on UCS2 with assumptions
-that BOM is processed and the byte order detected, assuming that off_t is 32
-bit, and assumptions that pthread_create will create sufficiently large stacks
+that BOM is processed and the byte order detected, assuming that `off_t` is 32
+bit, and assumptions that `pthread_create` will create sufficiently large stacks
 by default (crash situation). A good approach to solving the issue is to watch
 out for #if and #ifdefs in the code and placing some debug #warning there to see
 which code paths are enabled by the preprocessor. Often the logic taken by
@@ -206,7 +206,7 @@ To fix it, either update the in-tree gnulib (no idea how to do that), or use a
 hack: each one of the gnulib function is triggered by a configure test, the
 condition being either "libc doesnt have this function" or "this libc function
 doesnt behave like GNUlib dictators want it to be". All of those configure
-checks use a cache variable like "gl_cv_func_isnanl_works=yes" [bigger list].
+checks use a cache variable like "`gl_cv_func_isnanl_works=yes`" [bigger list].
 
 So, you can prevent their code getting compiled in when you start configure with
 `./configure gl_cv_func_isnanl_works=yes`. Alternatively, you can put all of
@@ -215,7 +215,7 @@ makes configure pick up the cache), so all these checks will be skipped.
 
 To prevent additional breakage, [overwrite all .c files in the gnulib folder that try to replace libc functionality with an empty file][overwrite].
 If that's still not enough to make gnulib happy, you may have to do additional preprocessor hacks so
-their "rpl_" functions get again mapped to the real libc thing.
+their "`rpl_`" functions get again mapped to the real libc thing.
 
 For example: `CFLAGS="-Dgnu_fnmatch=fnmatch -Drpl_getgroups=getgroups
 -Drpl_nanosleep=nanosleep -Drpl_futimens=futimens" ./configure` ... [1].
