@@ -155,7 +155,7 @@ with
 musl is strict about namespaces. As a quick fix, add to your CFLAGS
 `-D_GNU_SOURCE` for GNU- and Linux-specific functions like strndup, and add
 `-D_BSD_SOURCE` for BSD-specific functions like strlcpy. If you are the
-ma--intainer of the package, consider determining the correct namespace and
+maintainer of the package, consider determining the correct namespace and
 adding it to the relevant .c files. [Article about feature test macros on
 lwn.net][feature-test-macros].
 
