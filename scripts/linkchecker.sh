@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set -x
-linkchecker --check-extern --no-robots --threads 1 --ignore-url="https://github.com/somasis/musl-wiki/.*" "$2" &
+linkchecker --check-extern --no-robots --ignore-url="https://github.com/somasis/musl-wiki/.*" "$2" &
 linkchecker_pid=$!
 trap 'kill $linkchecker_pid' SIGINT
 wait
