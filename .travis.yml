@@ -12,8 +12,7 @@ before_install:
     - sudo dpkg -i tidy-5.4.0-64bit.deb
     - sudo apt-get install -y discount linkchecker
     - gem install mdl
-    - sudo npm install -g postcss-cli cssnano autoprefixer
-#    - make TRAVIS_SUDO=sudo install
+    - npm install -g postcss-cli cssnano autoprefixer
 
 script:
     - make check
