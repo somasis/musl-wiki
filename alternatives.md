@@ -42,8 +42,6 @@ usable with musl.
 - [udhcpc] - small DHCP client, part of Busybox. use these [two][udhcpc-two]
   [scripts][udhcpc-scripts] to operate it.
 - [ndhc] - small DHCP client, focus on security.
-- [ubus] - replacement for dbus and general-purpose IPC protocol using simple Unix
-  domain sockets. does not require running a daemon.
 - [mandoc] - alternative to massively bloated groff and accompanying manpage
   implementation.
 - [moe] - A powerful and user-friendly console text editor (alternative to GNU
