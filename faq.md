@@ -223,7 +223,7 @@ For example: `CFLAGS="-Dgnu_fnmatch=fnmatch -Drpl_getgroups=getgroups
 [1]: https://github.com/sabotage-linux/sabotage/blob/master/pkg/coreutils#L16
 [bigger list]: https://github.com/sabotage-linux/sabotage/blob/master/KEEP/config.cache#L1430
 [gnulib]: https://gitlab.com/sortix/sortix/wikis/Gnulib
-[overwrite]: https://github.com/sabotage-linux/sabotage/blob/master/KEEP/bin/gnulibfix
+[overwrite]: https://github.com/sabotage-linux/sabotage/blob/master/KEEP/gnulibfix
 
 # Q: None of these are questions!
 

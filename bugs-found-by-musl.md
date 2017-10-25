@@ -1,6 +1,6 @@
 # Bugs found by musl
 
-(originally created for [slcon 2013](http://suckless.org/conference))
+(originally created for [slcon 2013](https://suckless.org/conferences/2013))
 
 ## Bugs found and reported
 

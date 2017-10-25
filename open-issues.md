@@ -85,7 +85,7 @@ communicating with a daemon that would serve as the backend. Candidates are:
 The current plan is to implement this in a libc-agnostic way as a second set of
 headers on top of the libc headers, using "GNU C" features such as `#include_next`
 and `__builtin_object_size` to provide a fully-inline (no use of special libc
-functions) version of FORTIFY. [Implementation](http://git.2f30.org/fortify).
+functions) version of FORTIFY. [Implementation](https://git.2f30.org/fortify-headers).
 
 ## Building musl itself with stack-protector
 
