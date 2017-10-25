@@ -11,7 +11,9 @@ before_install:
     - wget https://github.com/htacg/tidy-html5/releases/download/5.4.0/tidy-5.4.0-64bit.deb
     - sudo dpkg -i tidy-5.4.0-64bit.deb
     - sudo apt-get install -y discount linkchecker
-    - make TRAVIS_SUDO=sudo install
+    - gem install mdl
+    - sudo npm install -g postcss-cli cssnano autoprefixer
+#    - make TRAVIS_SUDO=sudo install
 
 script:
     - make check
