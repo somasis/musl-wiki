@@ -58,9 +58,9 @@ $(WORK)/%.html: $(SRCDIR)/%.md $(shell $(SRCDIR)/scripts/markdown.sh --template 
 $(WORK)/%: $(SRCDIR)/%
 	cp -f "$<" "$@"
 
-watch:
+watch: all
 	while true; do \
-	    { find $(SRCDIR) -not -name '*.min.css' -and -not -name '*.tmp' -and -not -name '*.html' -and -not -path '*/.*'; } | entr -c sh -c '$(MAKE) WORK=$(WORK) lint && $(MAKE) WORK=$(WORK)'; \
+	    { find $(SRCDIR) -not -name '*.min.css' -and -not -name '*.tmp' -and -not -name '*.html' -and -not -path '*/.*'; } | entr -c sh -c '$(MAKE) WORK=$(WORK) check && $(MAKE) WORK=$(WORK)'; \
 	done
 
 deploy: all
