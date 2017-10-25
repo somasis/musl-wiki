@@ -113,7 +113,7 @@ usable with musl.
 [lzo]: http://www.oberhumer.com/opensource/lzo/
 [gzfile.c]: http://wizard.ae.krakow.pl/~jb/gzfile/
 [miniz]: http://code.google.com/p/miniz/
-[flate]: http://git.suckless.org/flate
+[flate]: https://oldgit.suckless.org/flate/
 [lz4-fast]: https://github.com/Cyan4973/lz4
 [lz4-small]: https://github.com/htruong/lz4
 [basic compression library]: http://bcl.comli.eu/home-en.html
@@ -139,7 +139,7 @@ usable with musl.
 [libtomcrypt]: https://github.com/libtom/libtomcrypt
 [kripto]: https://github.com/lightbit/kripto
 [libsodium]: https://github.com/jedisct1/libsodium
-[tropicssl]: http://gitorious.org/tropicssl
+[tropicssl]: https://github.com/axic/tropicssl
 [PolarSSL]: https://polarssl.org/
 [cyassl]: http://yassl.com/yaSSL/Home.html
 [axtls]: http://axtls.sourceforge.net/
