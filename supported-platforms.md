@@ -24,10 +24,12 @@ applications.
   (you can use musl-cross)) and linux 3.13 or [this patch].
 - powerpc (needs gcc built with --enable-secureplt --with-long-double-64, and
   -Wl,--secure-plt to link dynamic binaries.)
+- powerpc64
 - x32 (experimental, due to a number of kernel issues) - requires GCC 4.7 or
   later (musl-cross is already capable of building a toolchain), you need at
   least linux 3.4, but note that there were [security issues].
 - openrisc 1000
+- s390x
 - sh (experimental) with sh, sheb, sh-nofpu, and sheb-nofpu subarchs (currently
   this [kernel-patch] is required for multithread usage)
 
