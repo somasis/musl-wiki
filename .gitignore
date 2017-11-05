@@ -1,6 +1,6 @@
-*.tmp
-*.html
-*.min.css
 *.bak
+*.html
+*.tmp
 *~
+
 work/

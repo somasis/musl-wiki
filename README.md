@@ -7,6 +7,29 @@ A community-maintained wiki detailing things such as implementation details,
 frequently asked questions, open issues, users of musl, and other information to
 the [musl libc](https://www.musl-libc.org/) project.
 
+## Cloning
+
+Make sure to get the `makedown` submodule, you'll need it to make the HTML.
+
+```sh
+git clone --recursive https://github.com/somasis/musl-wiki
+```
+
+## Build requirements
+
+- [Discount]'s `markdown`
+
+### Testing/checking/linting
+
+- [markdownlint]
+- [devd]
+- [linkchecker]
+
+[Discount]: http://www.pell.portland.or.us/~orc/Code/discount/
+[markdownlint]: https://github.com/markdownlint/markdownlint
+[devd]: https://github.com/cortesi/devd
+[linkchecker]: https://wummel.github.io/linkchecker
+
 ## Contributing
 
 [Pull requests](https://github.com/somasis/musl-wiki/pulls) are welcomed.
@@ -19,7 +42,7 @@ correct and reasonably good quality.
 When making edits for submission, you may want to run `make lint` in order to ensure
 that your newly-added documentation or edits are adherent to the markdown
 style. However, it's not really necessary to test locally; Travis CI tests all
-pull-requests and runs lint on them, and fails if the new commits introduce warnings.
+pull-requests and runs `lint` on them, and fails if the new commits introduce warnings.
 
 In addition to editing locally, you can also edit online.
 For creating new pages, click GitHub's "Create New File" button, type the page
