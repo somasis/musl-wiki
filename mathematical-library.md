@@ -15,7 +15,7 @@ IEEE-754 binary128 (ld128).
 Supported arithmetics evaluations (provided by the underlying platform and
 compiler) are FLT_EVAL_METHOD 0, 1 or 2 (when FLT_EVAL_METHOD!=0 the excess
 precision and range should be handled according to the ISO C semantics: rounded
-away at assingments and casts).
+away at assignments and casts).
 
 The four rounding modes (FE_TONEAREST, FE_UPWARD, FE_DOWNWARD, FE_TOWARDZERO)
 are supported on all platforms with fenv support.
@@ -249,7 +249,7 @@ The standard does not require correct rounding for decimal float constants (the
 converted floating-point value can be the nearest or any neighbor of the nearest
 representible number, but the recommended practice is correct rounding according
 to nearest rounding mode), however hexfloats can represent all values of a type
-exactly and unambigously, so the convention is to prefer hexfloat representation
+exactly and unambiguously, so the convention is to prefer hexfloat representation
 in the math code internally especially when it makes the intention clearer (eg
 0x1p52 instead of 4503599627370496.0). (In public header files they must not be
 used as they are not C++ or C89 compatible).
