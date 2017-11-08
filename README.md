@@ -17,7 +17,7 @@ ensure that all documentation and information on the wiki is verified to be
 correct and reasonably good quality.
 
 When making edits for submission, you may want to run `make lint` in order to ensure
-that your newly-added documentation or edits are adherant to the markdown
+that your newly-added documentation or edits are adherent to the markdown
 style. However, it's not really necessary to test locally; Travis CI tests all
 pull-requests and runs lint on them, and fails if the new commits introduce warnings.
 
@@ -25,5 +25,5 @@ In addition to editing locally, you can also edit online.
 For creating new pages, click GitHub's "Create New File" button, type the page
 filename (so, \<filename\>.md), and begin editing there. You can also edit pages
 the same way by going into the wiki directory, clicking a page (the filenames
-corrispond to the page titles) and clicking the edit button next to history.
+correspond to the page titles) and clicking the edit button next to history.
 
