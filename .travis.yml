@@ -4,11 +4,21 @@ dist: trusty
 notifications:
     - email: false
 
+
+# oh my god travis' discount package is so OLD.
 before_install:
     - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || openssl aes-256-cbc -K $encrypted_481248b6289f_key -iv $encrypted_481248b6289f_iv -in .travis.id_rsa.enc -out id_rsa -d'
-    - sudo apt-get -q update
-    - sudo apt-get install -y discount linkchecker
+    - sudo apt-get -qq update
+    - sudo apt-get install -y linkchecker
     - gem install mdl
+    - wget http://www.pell.portland.or.us/~orc/Code/discount/discount-2.2.2.tar.bz2
+    - tar xf discount-2.2.2.tar.bz2
+    - cd discount-2.2.2
+    - ./configure.sh --prefix=/usr/local --enable-all-features --with-fenced-code
+    - make -j2
+    - sudo make install
+    - cd ..
+    - rm -rf discount-2.2.2
 
 script:
     - make lint
