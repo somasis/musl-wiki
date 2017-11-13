@@ -15,20 +15,9 @@ Make sure to get the `makedown` submodule, you'll need it to make the HTML.
 git clone --recursive https://github.com/somasis/musl-wiki
 ```
 
-## Build requirements
+Make sure to look at [makedown]'s requirements for building and testing.
 
-- [Discount]'s `markdown`
-
-### Testing/checking/linting
-
-- [markdownlint]
-- [devd]
-- [linkchecker]
-
-[Discount]: http://www.pell.portland.or.us/~orc/Code/discount/
-[markdownlint]: https://github.com/markdownlint/markdownlint
-[devd]: https://github.com/cortesi/devd
-[linkchecker]: https://wummel.github.io/linkchecker
+[makedown]: https://github.com/somasis/makedown
 
 ## Contributing
 
