@@ -12,6 +12,8 @@ usable with musl.
   netbsd. considerably smaller than ncurses.
 - [mlibtool] - Drop-in replacement for libtool. can speed up builds significantly
   as it's written in C.
+- [slibtool] - Independent reimplementation of slibtool, aiming to maintain compatibility
+  and removing features that are unneeded are modern systems.
 - [cDetect] - C replacement for feature detection generally provided by utilities
   like GNU autotools.
 - [freeglut] - Replacement for glut.
@@ -56,7 +58,7 @@ usable with musl.
 
 [pkgconf]: https://github.com/pkgconf/pkgconf
 [netbsd-curses]: https://github.com/sabotage-linux/netbsd-curses
-[mlibtool]: https://github.com/GregorR/mlibtool
+[slibtool]: http://git.midipix.org/cgit.cgi/slibtool
 [cDetect]: http://sourceforge.net/projects/cdetect/
 [freeglut]: http://freeglut.sourceforge.net/
 [libutf]: https://github.com/cls/libutf
