@@ -5,102 +5,13 @@ non-trivial to fix. Before adding an issue here, it should have been discussed
 at least once on the mailing list or IRC channel. Simple bugs found can usually
 be fixed right away.
 
-# C locale conformance
-
-Presently, musl's C locale is not quite conforming (to ISO C or POSIX), and the
-situation will be worse in the future once the resolution to issue #663 is
-applied to POSIX, disallowing multibyte characters in the C locale. The present
-issues are:
-
-- `setlocale()` returns "C.UTF-8" even if "C" was passed to it. (This is barely a
-  functional issue; fixing it would just require saving a flag for which to
-  return.)
-- The character classes (wctype.h) contain characters not allowed to be present
-  in the C locale by ISO C.
-
-Fixing the second issue depends on fixing the first, but there are two possible
-ways it could be fixed. One is to make the wctype.h functions stateful and
-dependent on the current locale, so that they reject non-ASCII characters in the
-pure "C" locale (which would only be active if you never call `setlocale` at all,
-or explicitly pass "C" as an argument). The other possible fix would be to make
-the encoding (UTF-8 vs abstract 8-bit) dependent on the locale. This would meet
-the requirements of the POSIX interpretation for issue #663, and by making it so
-that Unicode-range values of `wchar_t` never arise in the C locale, would
-eliminate the need to make any changes to the current Unicode-aware wctype.h
-functions.
-
-This whole issue is very controversial. The argument on the Austin Group list
-leading up to the resolution of issue #663 was heated itself, and the musl
-community has differing opinions on whether we should ignore POSIX on this (and
-keep the UTF-8 purity like Plan 9 has) or follow.
-
-Any action on this item is dependent both upon policy-type discussions and upon
-implementing a minimal locale framework that would allow for setting and keeping
-global and thread-local locale state.
-
-# Stateful encodings in iconv
-
-Right now, musl's iconv descriptors are not identifiers for an allocated
-resource, but just bitfields identifying the source and destination charset.
-There has been some demand for stateful encodings, however:
-
-- UTF-16 with BOM (yes, disgusting...)
-    - ISO-2022 Japanese text (common on IRC still)
-
-It's still an open question whether these are worth supporting.
-
-# Publishing source code used to generate charset/Unicode data
-
-There are a number of include files in the musl source tree full of numeric
-tables used for processing character properties and conversions. These were
-generated from published Unicode data using a mix of automated and manual
-processes which should be published for the sake of completeness and so that
-users can feel confident that they are not dependent on upstream for
-maintenance.
-
-# NIS/LDAP/other user databases
-
-glibc supports alternate user databases via NSS (copied from Solaris);
-traditional implementations have NIS support hard-coded in along with flat
-files. musl does not support anything but flat files.
-
-The direction planned in musl is not to add in the bloat of additional backends
-or dynamically loading backends, but to offer a single protocol for
-communicating with a daemon that would serve as the backend. Candidates are:
-
-- nscd, the protocol used by the daemon that caches results of such lookups in
-  glibc. The biggest advantage of this option is that you could use ANY backend
-  supported by glibc by just installing the real glibc nscd. The protocol is
-  mildly ugly but not bad.
-- LDAP protocol with a daemon to translate LDAP to the desired backend.
-- Trivial text-based protocol where query is sent as a string (username or uid)
-  and the result comes back formatted exactly as it would be in a flat passwd
-  file. This option is in some ways optimal because almost no additional code is
-  needed.
-
-# Security/hardening features
-
-## Substitute for `_FORTIFY_SOURCE`
-
-The current plan is to implement this in a libc-agnostic way as a second set of
-headers on top of the libc headers, using "GNU C" features such as `#include_next`
-and `__builtin_object_size` to provide a fully-inline (no use of special libc
-functions) version of FORTIFY. [Implementation](https://git.2f30.org/fortify-headers).
-
-## Building musl itself with stack-protector
-
-This requires analysis of which library components are needed prior to
-initialization of the stack-protector canary and TLS, and possibly special code
-to use a temporary thread pointer while the dynamic linker is running, prior to
-allocating the real TLS block, if omitting stack protector from all functions
-used by the dynamic linker would be too great an omission.
-
-## Further malloc hardening
+# Further malloc hardening
 
 It may be desirable to change malloc's bookkeeping so that the chunk footer
 contains a pointer back to the header, rather than containing the size. This
 would make it significantly harder for an attacker performing a buffer overflow
-to avoid checks for the footer having been clobbered.
+to avoid checks for the footer having been clobbered. Probably will be defered
+until the time of a major malloc overhaul/redesign.
 
 # Complex math
 
@@ -113,7 +24,7 @@ musl.
 
 # fnmatch logic
 
-The `fnmatch_internal` function can be simplified (the check of the last '*'
+The `fnmatch_internal` function can be simplified (the check of the last `'*'`
 pattern component can be removed) and it has corner-cases where EILSEQ might not
 be handled correctly.
 
@@ -229,3 +140,47 @@ implementation.
 Details are available on this mailing list thread:
 <http://www.openwall.com/lists/musl/2013/06/16/18>
 
+## C locale conformance
+
+Starting with version 1.1.11, musl's C locale conforms to the future POSIX requirement
+(resolution to Austin Group issue #663) that the C locale's character encoding be
+single-byte. Previously, the default locale was called "C.UTF-8", was fully multibyte,
+and the results of some of the `wctype.h` functions in this locale were not conforming
+to the C language's requirements on the C locale.
+
+## Stateful encodings in iconv
+
+Up through 1.1.18, musl's `iconv` implementation did not support stateful
+encodings; `iconv_t` descriptors were pure values encoding the source and
+destination charsets. Beginning with 1.1.19, stateful encodings will also
+be supported, most notably ISO-2022-JP.
+
+## Source code used to generate charset/Unicode data
+
+This code was previously unpublished, making it difficult for anyone but the maintainer
+to update or customize the tables. It is now available on GitHub at:
+
+<https://github.com/richfelker/musl-chartable-tools>
+
+## NIS/LDAP/other user databases
+
+Up through 1.1.6, only the `passwd`/`group` files were supported for user and
+group database functionality. musl 1.1.7 added support for alternative backends
+via the NSCD protocol. There is an implementation of the server side of this
+protocol that can use glibc-style NSS modules for backends at:
+
+<https://github.com/pikhq/musl-nscd>
+
+## Substitute for `_FORTIFY_SOURCE`
+
+This has been implemented in a libc-agnostic way as a second set of
+headers on top of the libc headers, using "GNU C" features such as `#include_next`
+and `__builtin_object_size` to provide a fully-inline (no use of special libc
+functions) version of FORTIFY. See:
+
+<https://git.2f30.org/fortify-headers>
+
+## Building musl itself with stack-protector
+
+musl 1.1.9 introduced the ability to build libc itself with stack protector
+options. Previously, early-init-stage considerations precluded this.
