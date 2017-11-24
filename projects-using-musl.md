@@ -27,8 +27,7 @@
 - [morpheus] - suckless linux distro
 - [Bedrock Linux] - as of version 1.0alpha4
 - [Alpine Linux] - based on musl since the 3.0 release.
-- [DSLR] - DSL remake based on musl, tinyxserver, and GTK+1
-- [void linux] provides official musl based images.
+- [Void Linux] provides official musl based images.
 - [Exherbo] has an x86_64 musl stage.
 
 [sabotage]: http://sabotage.tech/
@@ -40,7 +39,6 @@
 [morpheus]: http://git.2f30.org/morpheus/
 [Bedrock Linux]: http://bedrocklinux.org/introduction.html
 [Alpine Linux]: http://alpinelinux.org/
-[DSLR]: http://dslr.dimakrasner.com/
 [void linux]: http://www.voidlinux.eu/
 [Exherbo]: http://www.exherbo.org/
 [CLFS-announcement]: http://openwall.com/lists/musl/2013/10/16/1
@@ -73,7 +71,7 @@
   system.
 
 [Gentoo]: http://www.gentoo.org/
-[musl overlay]: http://git.overlays.gentoo.org/gitweb/?p=proj/hardened-dev.git;a=shortlog;h=refs/heads/musl
+[musl overlay]: https://gitweb.gentoo.org/proj/musl.git
 [Arch Linux]: https://www.archlinux.org/
 [Debian]: http://packages.debian.org/search?keywords=musl&searchon=names&suite=all&section=all
 [Ubuntu]: http://packages.ubuntu.com/search?keywords=musl&searchon=names&suite=all&section=all
