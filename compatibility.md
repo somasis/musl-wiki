@@ -45,5 +45,5 @@ software packages.
 [Dragora recipes]: http://git.savannah.gnu.org/cgit/dragora.git/tree/recipes
 [Dragora patches]: http://git.savannah.gnu.org/cgit/dragora.git/tree/patches
 [Alpine ports]: http://git.alpinelinux.org/cgit/aports/tree/main/
-[Gentoo overlay with musl support]: http://git.overlays.gentoo.org/gitweb/?p=proj/hardened-dev.git;a=shortlog;h=refs/heads/musl
+[Gentoo overlay with musl support]: https://gitweb.gentoo.org/proj/musl.git
 
