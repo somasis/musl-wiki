@@ -88,8 +88,6 @@ Third-party projects using or building on musl:
 - [simplecct] simple cross compiler toolchain
 - [ELLCC] is a Clang/LLVM and musl based cross compilation toolchain for
   embedded systems
-- [ELK] an [ELLCC] subproject. ELK is a linux compatible environment for
-  embedded systems using musl as its libc.
 - [Emscripten] is a LLVM-based compiler from C to C++ to JavaScript, using most
   of musl (some filesystem parts are written in JavaScript)
 - [Dwarf Fortress port]
