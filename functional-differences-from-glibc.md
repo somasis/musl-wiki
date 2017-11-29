@@ -51,8 +51,9 @@ for applications which do not care and which are using the interfaces correctly.
 # Regular expressions
 
 musl's regex implementation is based on TRE, with significant modifications.
-Some popular extensions are supported, but not all; in particular, it lacks some
-of the GNU extensions to POSIX BRE that add ERE-like capabilities to BRE.
+Some popular extensions are supported, but not all; in particular, up until
+version 1.1.13 it lacked some of the common extensions to POSIX BRE that add
+ERE-like capabilities to BRE.
 
 The GNU regex implementation also has an alternate API which can be used instead
 of the POSIX API. This alternate API is not supported by musl at all.
@@ -86,16 +87,14 @@ lazy binding is impossible) and because it greatly reduces the amount of
 fragile, arch-dependent code needed in the dynamic linker. Such code has been a
 perpetual source of bugs in the glibc implementation.
 
-The one place this difference is visible to applications is when applications
+Until version 1.1.17, this difference was visible to applications which
 call dlopen on multiple libraries without proper dependency information, such
 that, once all libraries are loaded, they all satisfy each other's dependencies,
 but individually, the first library has unresolved symbols. This is erroneous
 usage and could also break on archs where full lazy binding is not possible or
-practical. It would be possible to add support for this dlopen usage case via
-emulation of lazy bindings, where binding is deferred until a subsequent dlopen
-call rather than the point of the function call; however, it's unclear whether
-the implementation cost and complexity are justified in order to support broken
-applications.
+practical. Newer versions of musl implement "deferred binding" in place of lazy
+binding, whereby binding is deferred until a subsequent dlopen call that
+introduces new symbols, rather than at the point of the function call.
 
 ## Unloading libraries
 
@@ -211,6 +210,15 @@ surrogates range). All other locales are still processed as multibyte UTF-8, and
 the intent is that the plain C locale's character set be thought of as "UTF-8,
 but processed byte-by-byte and without validation".
 
+## Default locale
+
+In the absence of the `LANG` and `LC_*` environment variables, POSIX leaves the
+default locale (used when `""` is passed to `setlocale`) implementation-defined.
+Under glibc versions at least up through 2.26, this default is `"C"`. musl on
+the other hand always uses `"C.UTF-8"` as the default. There has been discussion
+on the glibc side of possibly adopting the musl behavior here once the `"C.UTF-8"`
+locale is an established feature of glibc.
+
 ## UTF-8 definition
 
 musl uses the Unicode and modern ISO 10646 definition of UTF-8, which is a
@@ -231,13 +239,15 @@ The iconv implementation musl is very small and oriented towards being
 unobtrusive to static link. Its character set/encoding coverage is very strong
 for its size, but not comprehensive like glibc's. In particular:
 
-- Legacy double-byte and multi-byte East Asian encodings are supported only as
-  the source charset, not the destination charset.
+- Many legacy double-byte and multi-byte East Asian encodings are supported
+  only as the source charset, not the destination charset. At least JIS-based ones
+  will be supported as the destination beginning with version 1.1.19.
 - Transliterations (//TRANSLIT suffix) are not supported.
 - Converting to legacy 8-bit charsets is significantly slower than converting
   from them.
 - Stateful conversions are not supported, and plain UTF-16 and UTF-32 do not
-  process or honor BOM. This may change in the future.
+  process or honor BOM, as of version 1.1.18. Future versions will support
+  ISO-2022-JP (stateful) and possibly other encodings.
 - Misleading, deprecated charset aliases like UNICODE as an alias for UCS-2 are
   not supported. The IANA preferred MIME charset names should be used instead.
 - Contrary to POSIX, glibc iconv generates EILSEQ when a character is not
