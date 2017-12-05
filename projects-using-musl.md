@@ -29,6 +29,8 @@
 - [Alpine Linux] - based on musl since the 3.0 release.
 - [Void Linux] provides official musl based images.
 - [Exherbo] has an x86_64 musl stage.
+- [oasis] - statically linked linux distribution based on musl and other
+  lightweight components.
 
 [sabotage]: http://sabotage.tech/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
@@ -42,6 +44,7 @@
 [void linux]: http://www.voidlinux.eu/
 [Exherbo]: http://www.exherbo.org/
 [CLFS-announcement]: http://openwall.com/lists/musl/2013/10/16/1
+[oasis]: https://github.com/michaelforney/oasis
 
 # Linux distros that plan to switch to musl
 
