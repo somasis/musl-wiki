@@ -55,6 +55,7 @@ usable with musl.
 - [slock] - minimalist alternative to xlock and xlockmore.
 - [star] - Alternative to GNU tar.
 - [uSTL] - replacement for the C++ STL (Standard Template Library).
+- [samurai] - drop-in replacement for ninja written in C.
 
 [pkgconf]: https://github.com/pkgconf/pkgconf
 [netbsd-curses]: https://github.com/sabotage-linux/netbsd-curses
@@ -88,6 +89,7 @@ usable with musl.
 [slock]: http://tools.suckless.org/slock
 [star]: http://freecode.com/projects/star
 [uSTL]: https://github.com/msharov/ustl
+[samurai]: https://github.com/michaelforney/samurai
 
 ## Compression/Decompression
 
