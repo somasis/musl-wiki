@@ -13,7 +13,7 @@ usable with musl.
 - [mlibtool] - Drop-in replacement for libtool. can speed up builds significantly
   as it's written in C.
 - [slibtool] - Independent reimplementation of slibtool, aiming to maintain compatibility
-  and removing features that are unneeded are modern systems.
+  and removing features that are unneeded on modern systems.
 - [cDetect] - C replacement for feature detection generally provided by utilities
   like GNU autotools.
 - [freeglut] - Replacement for glut.
