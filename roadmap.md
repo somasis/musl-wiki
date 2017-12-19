@@ -23,8 +23,6 @@ Goals & Focus:
 - Merging `strftime` extensions
 - Debugging and merging `fopencookie` implementation
 - Merging new internal lock implementation
-- Debugging and fixing mips64 `utime` breakage
-- Merging riscv port
 
 # musl 1.1.20
 
@@ -43,6 +41,8 @@ Goals & Focus:
 - Using stdio buffer provided to `setvbuf`
 - Adding `GLOB_TILDE` to glob implementation
 - UB-correctness fixes including string functions and stdio
+- Debugging and fixing mips64 `utime` breakage
+- Merging riscv port
 
 
 # Open future goals
