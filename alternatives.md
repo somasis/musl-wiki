@@ -10,8 +10,6 @@ usable with musl.
   Does not require glib.
 - [netbsd-curses] - Drop in replacement for ncurses and ncursesw, ported from
   netbsd. considerably smaller than ncurses.
-- [mlibtool] - Drop-in replacement for libtool. can speed up builds significantly
-  as it's written in C.
 - [slibtool] - Independent reimplementation of slibtool, aiming to maintain compatibility
   and removing features that are unneeded on modern systems.
 - [cDetect] - C replacement for feature detection generally provided by utilities
