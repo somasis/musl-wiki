@@ -1,5 +1,8 @@
-All content is licensed under the Creative Commons Attribution-ShareAlike 3.0
+Wiki content is licensed under the Creative Commons Attribution-ShareAlike 3.0
 Unported License unless otherwise noted. To view a copy of it, visit
 http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative
 Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
+CSS styling/design, makedown (the build system), and page templates are licensed
+under the 0BSD license, copyright Kylie McClain <kylie@somasis.com>.
+https://github.com/somasis/makedown/blob/master/LICENSE
