@@ -204,8 +204,8 @@ error message suggests to do. See
 
 To fix it, either update the in-tree gnulib (no idea how to do that), or use a
 hack: each one of the gnulib function is triggered by a configure test, the
-condition being either "libc doesnt have this function" or "this libc function
-doesnt behave like GNUlib dictators want it to be". All of those configure
+condition being either "libc doesn't have this function" or "this libc function
+doesn't behave like GNUlib dictators want it to be". All of those configure
 checks use a cache variable like "`gl_cv_func_isnanl_works=yes`" [bigger list].
 
 So, you can prevent their code getting compiled in when you start configure with
