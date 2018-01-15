@@ -290,7 +290,7 @@
 - isoc: underflow omission in annex f with FLT\_EVAL\_METHOD!=0 ([comp.lang.c discussion](https://groups.google.com/forum/#!topic/comp.std.c/oosKDrY28E8))
 - glibc: fegetenv/fesetenv does not save/restore sse exception flags on i386
 - gcc: peephole optimization on i386 (i64 &= -1ULL&lt;&lt;32; turns into "andl \$-1,4(%esp); movl \$0,(%esp)")
-- gcc: optimization for fmod loop: superflous fldl/fstpl in loop
+- gcc: optimization for fmod loop: superfluous fldl/fstpl in loop
 - glibc, gnulib: invalid ld80 on i386 printf'd incorrectly, gnulib tests this case, but not correctly
 - glibc: -lxnet fails (posix requirement)
 - glibc vs linux: on microblaze struct elf\_prpsinfo does not match the in-kernel definition.

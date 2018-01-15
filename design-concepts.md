@@ -61,7 +61,7 @@ implementation.
 Adapted from <http://www.openwall.com/lists/musl/2011/04/18/1>
 
 The current thread cancellation design in musl is the second in a series of
-designs to rememdy two critical flaws in the classic way cancellation is
+designs to remedy two critical flaws in the classic way cancellation is
 implemented by glibc and other libraries:
 
 1. Cancellation can act after the syscall has returned successfully from
