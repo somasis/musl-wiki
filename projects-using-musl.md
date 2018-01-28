@@ -31,7 +31,7 @@
 - [Exherbo] has an x86_64 musl stage.
 - [oasis] - statically linked linux distribution based on musl and other
   lightweight components.
-- [JanusLinux] - Fast and mini Linux distribution which uses musl libc and busybox userland tools.
+- [JanusLinux] - Fast and mini Linux distribution which uses musl libc.
 
 [sabotage]: http://sabotage.tech/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
