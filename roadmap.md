@@ -5,35 +5,12 @@ focus and goals for current and upcoming release cycles, but these may change in
 interest of keeping releases moving or meeting areas of user and developer interest.
 
 
-# musl 1.1.19
-
-Estimated release: Mid December
-
-Goals & Focus:
-
-- `iconv` improvements:
-    - Stateful encoding framework
-    - ISO-2022-JP support
-    - Reverse mappings (Unicode-to-legacy) for JIS-based encodings
-    - Support for 8bit encodings that are not ASCII supersets (EBCDIC, etc.)
-    - Possibly BOMful UTF-16 and -32
-- Updating character data to current Unicode
-- Wide stdio improvements
-- Linux uapi updates
-- Merging `strftime` extensions
-- Debugging and merging `fopencookie` implementation
-- Merging new internal lock implementation
-
 # musl 1.1.20
 
-Estimated release: Late January
+Estimated release: Early April
 
 Goals & Focus:
 
-- Dynamic linker improvements:
-    - Dependency ordering of dynamic-linked constructors
-    - Resolving recursive `dlopen` locking issues
-    - Code cleanup & deduplication
 - Locale support polishing:
     - Handling for MON_5/ABMON_5 translation ambiguity ("May")
     - `LC_NUMERIC`, `LC_MONETARY`, and `LC_COLLATE` functionality
@@ -42,7 +19,22 @@ Goals & Focus:
 - Adding `GLOB_TILDE` to glob implementation
 - UB-correctness fixes including string functions and stdio
 - Debugging and fixing mips64 `utime` breakage
+- Linux uapi updates
+- Adding getrandom/getentropy functions
 - Merging riscv port
+- Merging further improvements associated with new internal lock implementation
+
+
+# musl 1.1.21
+
+Estimated release: Late May
+
+Goals & Focus:
+
+- Dynamic linker improvements:
+    - Dependency ordering of dynamic-linked constructors
+    - Resolving recursive `dlopen` locking issues
+    - Code cleanup & deduplication
 
 
 # Open future goals
