@@ -24,21 +24,6 @@ header.pageheader {
     display: block;
 }
 
-main ul, main ul li {
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-}
-
-li > ul {
-    margin-left: 24px;
-}
-
-main ul li:before {
-    content: "\2013";
-    padding-right: 4px;
-}
-
 /* Headings */
 
 main > header h1 {
