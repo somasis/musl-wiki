@@ -26,7 +26,7 @@ static linking support, and clean code.
 
 - [Reporting bugs]
 - [Writing tests]
-- [Funding maintenance and development][Funding]
+- [Funding maintenance and development]
 
 # Development
 
