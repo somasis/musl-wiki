@@ -5,7 +5,7 @@ can make to musl. Insufficient testing makes it hard to ensure that
 new ports are correct, and hard to overhaul existing code.
 
 The official test suite for musl is the libc-agnostic `libc-test`
-repository, available at [http://nsz.repo.hu/git/?p=libc-test].
+repository, available at <http://nsz.repo.hu/git/?p=libc-test>.
 
 
 ## Tests needed
