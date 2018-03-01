@@ -22,6 +22,12 @@ static linking support, and clean code.
 - [Functional differences from glibc]
 - [Guidelines for Distributions]
 
+# Contributing
+
+- [Reporting bugs]
+- [Writing tests]
+- [Funding maintenance and development][Funding]
+
 # Development
 
 - [Open issues]
