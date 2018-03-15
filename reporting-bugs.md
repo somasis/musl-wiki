@@ -1,7 +1,7 @@
 # Reporting Bugs
 
 Bug reports should be sent to the musl mailing list,
-`musl@lists.openwall.net`. You do not need to be subscribed to post to
+`musl@lists.openwall.com`. You do not need to be subscribed to post to
 the list, but posts from non-subscribers may experience short delays
 pending moderation. If you want to subscribe, visit the [Openwall
 lists page](http://www.openwall.com/lists/). If you are not subscribed
