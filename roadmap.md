@@ -7,34 +7,39 @@ interest of keeping releases moving or meeting areas of user and developer inter
 
 # musl 1.1.20
 
-Estimated release: Early April
+Estimated release: Late April
 
 Goals & Focus:
 
-- Locale support polishing:
-    - Handling for MON_5/ABMON_5 translation ambiguity ("May")
-    - `LC_NUMERIC`, `LC_MONETARY`, and `LC_COLLATE` functionality
-- Resolver support for non-ASCII domains (IDN)
-- Using stdio buffer provided to `setvbuf`
-- Adding `GLOB_TILDE` to glob implementation
-- UB-correctness fixes including string functions and stdio
-- Debugging and fixing mips64 `utime` breakage
-- Linux uapi updates
 - Adding getrandom/getentropy functions
-- Merging riscv port
+- Support for `malloc` replacement.
+- Using stdio buffer provided to `setvbuf`
+- General stdio cleanup and internal consistency fixes
+- Linux uapi updates
+- NOMMU/FDPIC improvements
 - Merging further improvements associated with new internal lock implementation
+- Complex trig/hyperbolic function basic correctness fixes
 
 
 # musl 1.1.21
 
-Estimated release: Late May
+Estimated release: Early June
 
 Goals & Focus:
 
+- Locale support polishing:
+    - Handling for `MON_5`/`ABMON_5` translation ambiguity ("May")
+    - `LC_NUMERIC`, `LC_MONETARY`, and `LC_COLLATE` functionality
+- Resolver support for non-ASCII domains (IDN)
 - Dynamic linker improvements:
     - Dependency ordering of dynamic-linked constructors
     - Resolving recursive `dlopen` locking issues
     - Code cleanup & deduplication
+- Adding `GLOB_TILDE` to glob implementation
+- UB-correctness fixes including string functions and stdio
+- Merging riscv port
+
+
 
 
 # Open future goals
