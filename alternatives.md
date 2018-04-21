@@ -54,6 +54,7 @@ usable with musl.
 - [star] - Alternative to GNU tar.
 - [uSTL] - replacement for the C++ STL (Standard Template Library).
 - [samurai] - drop-in replacement for ninja written in C.
+- [ETL] - Embedded Template Library. A C++ template library for embedded applications.
 
 [pkgconf]: https://github.com/pkgconf/pkgconf
 [netbsd-curses]: https://github.com/sabotage-linux/netbsd-curses
@@ -88,6 +89,7 @@ usable with musl.
 [star]: http://freecode.com/projects/star
 [uSTL]: https://github.com/msharov/ustl
 [samurai]: https://github.com/michaelforney/samurai
+[ETL]: https://www.etlcpp.com
 
 ## Compression/Decompression
 
