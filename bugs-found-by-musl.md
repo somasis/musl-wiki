@@ -38,7 +38,7 @@
 - [libtool (makes static linking impossible)](http://debbugs.gnu.org/cgi/bugreport.cgi?bug=11064)
 - [glibc 13959 (namespace pollution when \_GNU\_SOURCE is defined)](http://sourceware.org/bugzilla/show_bug.cgi?id=13959)
 - [glibc 13988 (scanf %f handles +.e incorrectly)](http://sourceware.org/bugzilla/show_bug.cgi?id=13988)
-- [gcc 52451 (float nan comparision without raising invalid and broken -mno-ieee-fp)](http://gcc.gnu.org/bugzilla/show_bug.cgi?id=52451)
+- [gcc 52451 (float nan comparison without raising invalid and broken -mno-ieee-fp)](http://gcc.gnu.org/bugzilla/show_bug.cgi?id=52451)
 - [glib 672665 (race in dlsym error detection)](https://bugzilla.gnome.org/show_bug.cgi?id=672665)
 - [glib 674446 (g\_malloc aborts on allocation failure)](https://bugzilla.gnome.org/show_bug.cgi?id=674446)
 - [glib 674540 (incorrect assert in gconvert)](https://bugzilla.gnome.org/show_bug.cgi?id=674540)

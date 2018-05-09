@@ -192,7 +192,7 @@ Look at the definition of fflush, fread, ungetc on your system, then report this
 ```
 
 Congratulations, you have just encountered [gnulib], the GNU "portability"
-library! The special "appeal of this "portability" library is that it has been
+library! The special "appeal" of this "portability" library is that it has been
 copied into the source tree of many programs (especially GNU ones). Thus you
 can't fix it once and be done, you have to fix it in every single program that
 uses it. The authors of this library think it is a good idea to let you run into
