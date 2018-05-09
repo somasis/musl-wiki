@@ -41,7 +41,7 @@ CC="musl-gcc -static" ./configure --prefix=$HOME/musl && make
 
 Use the pre-built cross compilers at [musl-cross] or built it yourself using the
 supplied scripts ([git mirror][musl-cross-git]). This gives you a full musl
-toolchain, including C+ support. Note that although the scripts are capable of
+toolchain, including C++ support. Note that although the scripts are capable of
 building compilers targeting other architectures, a cross compiler targeting
 your host architecture with musl libc is also useful, as the whole toolchain is
 aware of its target libc.

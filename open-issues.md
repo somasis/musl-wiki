@@ -10,7 +10,7 @@ be fixed right away.
 It may be desirable to change malloc's bookkeeping so that the chunk footer
 contains a pointer back to the header, rather than containing the size. This
 would make it significantly harder for an attacker performing a buffer overflow
-to avoid checks for the footer having been clobbered. Probably will be defered
+to avoid checks for the footer having been clobbered. Probably will be deferred
 until the time of a major malloc overhaul/redesign.
 
 # Complex math

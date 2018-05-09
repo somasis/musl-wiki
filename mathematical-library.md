@@ -108,7 +108,7 @@ misimplemented, some examples:
   comparisons, inconsistent behaviour on different target archs, broken -mieee
   and -mno-ieee flag)
 - even experts misinterpret FLT_EVAL_METHOD==2 as "non-deterministic" excess
-  precision, eventhough the excess precision semantics is well-defined (most
+  precision, even though the excess precision semantics is well-defined (most
   relevant example is gcc spilling x87 registers at double precision by default
   instead of extended precision)
 - various libraries/tools changing x87 precision setting to non-conformant
@@ -353,7 +353,7 @@ do such optimizations.
 
 Neither gcc nor clang supports the FENV_ACCESS pragma, in which case they should
 assume FENV_ACCESS ON for all code for safety, however both compilers assume
-FENV_ACCESS OFF and do agressive fp optimizations which cannot be turned off.
+FENV_ACCESS OFF and do aggressive fp optimizations which cannot be turned off.
 
 For the gcc issues see <http://gcc.gnu.org/wiki/FloatingPointMath>
 
@@ -405,7 +405,7 @@ fenv_t e;
 long i;
 feholdexcept(&e);
 i = rint(x);
-/* dont raise inexact on overflow */
+/* don't raise inexact on overflow */
 if (fetestexcept(FE_INVALID))
     feclearexcept(FE_INEXACT);
 feupdateenv(&e);
