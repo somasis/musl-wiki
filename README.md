@@ -36,6 +36,6 @@ pull-requests and runs `lint` on them, and fails if the new commits introduce wa
 In addition to editing locally, you can also edit online.
 For creating new pages, click GitHub's "Create New File" button, type the page
 filename (so, \<filename\>.md), and begin editing there. You can also edit pages
-the same way by going into the wiki directory, clicking a page (the filenames
-correspond to the page titles) and clicking the edit button next to history.
+the same way by clicking a page (the filenames correspond to the page titles) and
+clicking the edit icon next to history.
 
