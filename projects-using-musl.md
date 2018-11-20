@@ -19,6 +19,7 @@
     - Uses pkgsrc for additional packages, so supports thousands of packages
     - Mainly a platform for testing usrview, a system for per-process views of
       /usr, for very fine-grained control of package management.
+- [TAZ] - a gentoo-based livecd/livedvd
 - [Embedded Linux From Scratch] - a fork of CLFS embedded using musl libc
     - 2013-09-28 Updated to correct name of toolchain used
     - 2013-09-14 Updated to musl-0.9.13. Supports \*-\*-musl\* toolchains.
@@ -38,6 +39,7 @@
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
 [LightCube OS]: https://github.com/jhuntwork/lightcube-bootstrap-musl
 [Snowflake]: https://bitbucket.org/GregorR/snowflake
+[TAZ]: https://github.com/Sharrisii/TAZ
 [Embedded Linux From Scratch]: http://kanj.github.io/elfs/book/
 [Cross Linux From Scratch]: http://cross-lfs.org/view/clfs-embedded/
 [morpheus]: http://git.2f30.org/morpheus/
