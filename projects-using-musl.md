@@ -34,6 +34,7 @@
   lightweight components.
 - [januslinux] - Fast and compact Linux distribution which uses musl libc and busybox userland tools.
     - About 300-400 packages including X11, Wayland, Mesa3D, ALSA, SDL, SDL2, rust and go
+- [Talos] - A modern Linux distribution for Kubernetes.
 
 [sabotage]: http://sabotage.tech/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
@@ -50,6 +51,7 @@
 [CLFS-announcement]: http://openwall.com/lists/musl/2013/10/16/1
 [oasis]: https://github.com/michaelforney/oasis
 [januslinux]: https://januslinux.github.io/
+[Talos]: https://github.com/autonomy/talos
 
 # Linux distros that plan to switch to musl
 
