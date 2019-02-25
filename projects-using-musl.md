@@ -79,6 +79,7 @@
   [r45995].
 - [openadk] Embedded Linux buildsystem, musl can be selected as the libc of the
   system.
+- [Chromebrew] provides an official musl package.
 
 [Gentoo]: http://www.gentoo.org/
 [musl overlay]: https://gitweb.gentoo.org/proj/musl.git
@@ -88,6 +89,7 @@
 [OpenWrt]: https://openwrt.org/
 [r45995]: https://dev.openwrt.org/changeset/45995
 [openadk]: http://openadk.org/
+[Chromebrew]: https://skycocker.github.io/chromebrew/
 
 # Other Projects
 
