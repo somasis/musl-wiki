@@ -5,39 +5,42 @@ focus and goals for current and upcoming release cycles, but these may change in
 interest of keeping releases moving or meeting areas of user and developer interest.
 
 
-# musl 1.1.20
+# musl 1.1.22
 
-Estimated release: Late April
-
-Goals & Focus:
-
-- Adding getrandom/getentropy functions
-- Support for `malloc` replacement.
-- Using stdio buffer provided to `setvbuf`
-- General stdio cleanup and internal consistency fixes
-- Linux uapi updates
-- NOMMU/FDPIC improvements
-- Merging further improvements associated with new internal lock implementation
-- Complex trig/hyperbolic function basic correctness fixes
-
-
-# musl 1.1.21
-
-Estimated release: Early June
+Estimated release: Late March
 
 Goals & Focus:
 
-- Locale support polishing:
-    - Handling for `MON_5`/`ABMON_5` translation ambiguity ("May")
-    - `LC_NUMERIC`, `LC_MONETARY`, and `LC_COLLATE` functionality
-- Resolver support for non-ASCII domains (IDN)
+- Maintaining always-consistent thread list.
+- Overhauling `__synccall` mechanism.
 - Dynamic linker improvements:
-    - Dependency ordering of dynamic-linked constructors
-    - Resolving recursive `dlopen` locking issues
-    - Code cleanup & deduplication
-- Adding `GLOB_TILDE` to glob implementation
-- UB-correctness fixes including string functions and stdio
+    - Correct dependency-order of `dlsym` symbol resolution
+    - Dependency-order execution of shared library constructors
+    - Concurrent execution of unrelated constructors when multiple
+      threads call `dlopen`.
+    - Safe recursive `dlopen` (`dlopen` from constructors).
+    - Synchronous dynamic TLS installation.
+- Merging new math library implementations.
+
+
+# musl 1.1.23
+
+Estimated release: Mid May
+
+Goals & Focus:
+
 - Merging riscv port
+- Hostname resolver support for non-ASCII domains (IDN)
+- Adding `GLOB_TILDE` to glob implementation
+
+    
+# musl 1.1.24
+
+Estimated release: Summer
+
+Goals & Focus:
+
+- Locale support overhaul.
 
 
 
