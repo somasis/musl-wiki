@@ -21,6 +21,14 @@ musl's dynamic linker comes with ldd functionality built in. Just create a symli
 from ld-musl-$ARCH.so to /bin/ldd. If the dynamic linker was started as "ldd", it
 will detect that and print the appropriate DSO information.
 
+# Q: Where is `ldconfig`?
+
+There isn't one. You can specify the library search path by creating or editing
+the file `/etc/ld-musl-$ARCH.path`, where `$ARCH` is the string identifying your
+architecture (look at what `/lib/ld-musl-*.so.1` uses if uncertain).  Paths can
+be separated by newlines or colons. The environment variables `LD_PRELOAD` and
+`LD_LIBRARY_PATH` are also supported for one-off cases.
+
 # Q: Why is `sys/queue.h` not included?
 
 sys/queue.h is a full library implemented in a header file, and there's no
