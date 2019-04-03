@@ -51,7 +51,7 @@
 [CLFS-announcement]: http://openwall.com/lists/musl/2013/10/16/1
 [oasis]: https://github.com/michaelforney/oasis
 [Ataraxia Linux]: https://ataraxialinux.github.io/
-[Talos]: https://github.com/autonomy/talos
+[Talos]: https://github.com/talos-systems/talos
 
 # Linux distros that plan to switch to musl
 
