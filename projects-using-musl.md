@@ -10,9 +10,9 @@
     - Per-package directories following stow/gobolinux spirit
 - [bootstrap-linux] - consists only of a minimal set of packages that can be
   crosscompiled. kernel, toolchain, busybox.
-- [LightCube OS] - for now there are only scripts to bootstrap a working
-  environment with musl. This environment will be used to build out a full
-  server-centric distribution with a centralized package repository.
+- [Mere Linux]
+    - Uses pacman for package management and s6 for process supervision
+    - Contains instructions for bootstrapping LFS-style
 - [Snowflake]
     - Includes only of a minimal set of packages that can be crosscompiled.
       (Kernel, toolchain, busybox, gawk, make and sed)
@@ -38,7 +38,7 @@
 
 [sabotage]: http://sabotage.tech/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
-[LightCube OS]: https://github.com/jhuntwork/lightcube-bootstrap-musl
+[Mere Linux]: https://merelinux.org
 [Snowflake]: https://bitbucket.org/GregorR/snowflake
 [TAZ]: https://github.com/Sharrisii/TAZ
 [Embedded Linux From Scratch]: http://kanj.github.io/elfs/book/

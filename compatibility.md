@@ -30,7 +30,7 @@ software packages.
       [musl-pkgsrc-patches (git)].
 - Build instructions and patches for various software packages:
     - [sabotage recipes], [patches][sabotage patches]
-    - [LightCube packages]
+    - [Mere Linux packages]
     - [Dragora recipes], [patches][Dragora patches]
     - [Alpine ports]
     - [Gentoo overlay with musl support]
@@ -41,7 +41,7 @@ software packages.
 [musl-pkgsrc-patches (git)]: https://github.com/GregorR/musl-pkgsrc-patches
 [sabotage recipes]: http://github.com/sabotage-linux/sabotage/tree/master/pkg
 [sabotage patches]: http://github.com/sabotage-linux/sabotage/tree/master/KEEP
-[LightCube packages]: https://github.com/jhuntwork/lightcube-bootstrap-musl/tree/master/packages
+[Mere Linux packages]: https://github.com/jhuntwork/merelinux/tree/master/packages
 [Dragora recipes]: http://git.savannah.gnu.org/cgit/dragora.git/tree/recipes
 [Dragora patches]: http://git.savannah.gnu.org/cgit/dragora.git/tree/patches
 [Alpine ports]: http://git.alpinelinux.org/cgit/aports/tree/main/
