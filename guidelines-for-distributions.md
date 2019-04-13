@@ -61,3 +61,20 @@ your local changes don't conflict with future plans upstream).
 When a feature does affect public API (example: additional `GLOB_*` flags) it's
 effectively much closer to adding a function (see above).
 
+# Multilib/multi-arch
+
+musl does not support sharing an include directory between archs (or
+32-/64-bit "versions of the same target" in GCC multilib framing), and
+thus is not compatible with GCC-style multilib. It is recommended that
+distributions build GCC with multilib disabled, and use library
+directories named `lib`, not `lib64` or `lib32`. Most importantly (see
+above) distributions should not change the dynamic linker location to
+`/lib64` or anything else, since this breaks ABI.
+
+musl does support full multiarch with separate include and lib paths
+for each separate arch/ABI in the same filesystem, similar but not
+exactly the same as what Debian does. (Debian shares top-level include
+just not `sys` and `bits`; for musl this may unofficially work but
+it's not officially supported and there's no reason to believe it's
+compatible with 3rd-party libs that may install arch-dependent headers
+generated at build time into that dir.)
