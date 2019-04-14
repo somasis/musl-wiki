@@ -10,9 +10,9 @@
     - Per-package directories following stow/gobolinux spirit
 - [bootstrap-linux] - consists only of a minimal set of packages that can be
   crosscompiled. kernel, toolchain, busybox.
-- [LightCube OS] - for now there are only scripts to bootstrap a working
-  environment with musl. This environment will be used to build out a full
-  server-centric distribution with a centralized package repository.
+- [Mere Linux]
+    - Uses pacman for package management and s6 for process supervision
+    - Contains instructions for bootstrapping LFS-style
 - [Snowflake]
     - Includes only of a minimal set of packages that can be crosscompiled.
       (Kernel, toolchain, busybox, gawk, make and sed)
@@ -32,13 +32,13 @@
 - [Exherbo] has an x86_64 musl stage.
 - [oasis] - statically linked linux distribution based on musl and other
   lightweight components.
-- [januslinux] - Fast and compact Linux distribution which uses musl libc and busybox userland tools.
+- [Ataraxia Linux] - Fast and compact Linux distribution which uses musl libc and busybox userland tools.
     - About 300-400 packages including X11, Wayland, Mesa3D, ALSA, SDL, SDL2, rust and go
 - [Talos] - A modern Linux distribution for Kubernetes.
 
 [sabotage]: http://sabotage.tech/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
-[LightCube OS]: https://github.com/jhuntwork/lightcube-bootstrap-musl
+[Mere Linux]: https://merelinux.org
 [Snowflake]: https://bitbucket.org/GregorR/snowflake
 [TAZ]: https://github.com/Sharrisii/TAZ
 [Embedded Linux From Scratch]: http://kanj.github.io/elfs/book/
@@ -50,7 +50,7 @@
 [Exherbo]: http://www.exherbo.org/
 [CLFS-announcement]: http://openwall.com/lists/musl/2013/10/16/1
 [oasis]: https://github.com/michaelforney/oasis
-[januslinux]: https://januslinux.github.io/
+[Ataraxia Linux]: https://ataraxialinux.github.io/
 [Talos]: https://github.com/talos-systems/talos
 
 # Linux distros that plan to switch to musl
