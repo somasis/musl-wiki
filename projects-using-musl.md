@@ -110,6 +110,9 @@ Third-party projects using or building on musl:
 - [NodeOS] linux with Node.js as userspace
 - [Rust] is a programming language with musl supported as a cross-compilation
   option
+- [Firecracker VMM] is an open source virtualization technology that
+  is purpose-built for creating and managing secure, multi-tenant
+  container and function-based services.
 
 [simplecct]: https://code.google.com/p/simplecct/
 [ELLCC]: http://ellcc.org/
@@ -123,4 +126,4 @@ Third-party projects using or building on musl:
 [seL4]: https://github.com/seL4/libmuslc
 [NodeOS]: https://github.com/NodeOS/NodeOS
 [Rust]: http://www.rust-lang.org/
-
+[Firecracker VMM]: https://firecracker-microvm.github.io/
