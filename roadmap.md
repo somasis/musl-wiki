@@ -5,24 +5,6 @@ focus and goals for current and upcoming release cycles, but these may change in
 interest of keeping releases moving or meeting areas of user and developer interest.
 
 
-# musl 1.1.22
-
-Estimated release: Late March
-
-Goals & Focus:
-
-- Maintaining always-consistent thread list.
-- Overhauling `__synccall` mechanism.
-- Dynamic linker improvements:
-    - Correct dependency-order of `dlsym` symbol resolution
-    - Dependency-order execution of shared library constructors
-    - Concurrent execution of unrelated constructors when multiple
-      threads call `dlopen`.
-    - Safe recursive `dlopen` (`dlopen` from constructors).
-    - Synchronous dynamic TLS installation.
-- Merging new math library implementations.
-
-
 # musl 1.1.23
 
 Estimated release: Mid May
@@ -30,8 +12,8 @@ Estimated release: Mid May
 Goals & Focus:
 
 - Merging riscv port
-- Hostname resolver support for non-ASCII domains (IDN)
-- Adding `GLOB_TILDE` to glob implementation
+- Merging new math library implementations.
+- Experimental no-`PT_INTERP` dynamic linking mode
 
     
 # musl 1.1.24
@@ -41,6 +23,7 @@ Estimated release: Summer
 Goals & Focus:
 
 - Locale support overhaul.
+- Hostname resolver support for non-ASCII domains (IDN)
 
 
 
@@ -48,7 +31,7 @@ Goals & Focus:
 # Open future goals
 
 - IEEE quad math correctness
-- Complex math correctness Complex math correctness
+- Complex math correctness
 - Enhanced LSB/glibc ABI-compat, especially fortify `__*_chk` symbols
 - Remapping of glibc-ABI-incompatible symbols (regexec, etc.) by dynamic linker
 - New `getlogin[_r]` with lookup via controlling tty
@@ -57,6 +40,7 @@ Goals & Focus:
 - Resolving GCC symbol-versioning incompatibility issue - see
   <http://www.openwall.com/lists/musl/2015/05/10/1>
 - Message translation support for dynamic linker
+- Adding `GLOB_TILDE` to glob implementation
 
 
 # Milestone goals for musl 1.2.0
