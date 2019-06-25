@@ -4,13 +4,6 @@ This page is intended to collect relevant information on the AArch64
 architecture. AArch64 is the 64bit architecture first released as part of the
 armv8 design.
 
-The porting effort has been started by 2 parties, but left unfinished
-(completion status probably less than 30%). If someone is interested to continue
-or restart the effort, please leave a message on the musl mailing list or join
-the #musl IRC channel. At this point it is probably best to restart, since there
-have been changes in master's bits headers which would require several changes
-to the existing unfinished ports.
-
 # Reference documents
 
 ## Procedure Call Standards
@@ -46,29 +39,10 @@ There are 2 official proprietary emulators called Versatile Express "fast model"
 and "foundation model". The latter is available for free after registering on
 the ARM website.
 
-# Repositories
-
-## unfinished musl ports
-
-<https://github.com/wermut/musl-aarch64> Feel free to fork and send pull requests.
-
-<https://github.com/crxz0193/musl-aarch64> Continuation of the above, left stale
-after encountering an issue with syscalls that were removed in the aarch64
-kernel. the issue was fixed in musl master, but the port was not continued.
-
 ## toolchain
 
-Use Gregor Richards [musl-cross] [git-mirror] and just set ARCH to aarch64 to
+Use Rich Felker's [musl-cross-make] and just set ARCH to aarch64 to
 build the stage1 toolchain for testing (build errors will happen as soon as
 stage1 gcc is compiled and kernel headers are installed, that is expected.)
 
-[musl-cross]: https://bitbucket.org/GregorR/musl-cross
-[git-mirror]: https://github.com/GregorR/musl-cross
-
-|Stage           | Status    | Comment                                  |
-|----------------|-----------|------------------------------------------|
-|binutils        | OK        | binutils >= 2.24                         |
-|gcc - stage 1   | OK        | gcc >= 4.8.2                             |
-|linux headers   | OK        | Use minimum linux 3.10 / default >= 3.12 |
-|musl            | FAIL      | Porting in progress                      |
-|gcc - stage 2   | PENDING   | Requires ported musl                     |
+[musl-cross-make]: https://github.com/richfelker/musl-cross-make
