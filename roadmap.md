@@ -7,23 +7,42 @@ interest of keeping releases moving or meeting areas of user and developer inter
 
 # musl 1.1.23
 
-Estimated release: Mid May
+Estimated release: Mid July
 
 Goals & Focus:
 
 - Merging riscv port
 - Merging new math library implementations.
-- Experimental no-`PT_INTERP` dynamic linking mode
 
     
 # musl 1.1.24
 
-Estimated release: Summer
+Estimated release: Late August
 
 Goals & Focus:
 
-- Locale support overhaul.
+- Attempted removal of LFS64 APIs (not ABIs)
+- Working (non-stub) `catgets` implementation
+- Experimental no-`PT_INTERP` dynamic linking mode
+- Initial work on converting 32-bit archs to 64-bit `time_t`
+- Initial work on next-gen `malloc`, at first out-of-tree
+
+
+# musl 1.1.25
+
+Estimated release: October
+
+- 64-bit `time_t` on 32-bit archs
 - Hostname resolver support for non-ASCII domains (IDN)
+- ARM Cortex-M FDPIC ABI
+
+
+# musl 1.1.26
+
+Estimated release: December
+
+- Next-gen `malloc` implementation
+- Locale support overhaul.
 
 
 
@@ -36,7 +55,6 @@ Goals & Focus:
 - Remapping of glibc-ABI-incompatible symbols (regexec, etc.) by dynamic linker
 - New `getlogin[_r]` with lookup via controlling tty
 - Possible non-stub utmp backends
-- ARM Cortex-M FDPIC ABI
 - Resolving GCC symbol-versioning incompatibility issue - see
   <http://www.openwall.com/lists/musl/2015/05/10/1>
 - Message translation support for dynamic linker
