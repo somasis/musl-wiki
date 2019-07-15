@@ -35,6 +35,8 @@
 - [Ataraxia Linux] - Fast and compact Linux distribution which uses musl libc and busybox userland tools.
     - About 300-400 packages including X11, Wayland, Mesa3D, ALSA, SDL, SDL2, rust and go
 - [Talos] - A modern Linux distribution for Kubernetes.
+- [Vanilla] - A radically different, new, simple, customizable Linux
+  distribution based on musl, busybox using LLVM/Clang as toolchain.
 
 [sabotage]: http://sabotage.tech/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
@@ -52,6 +54,7 @@
 [oasis]: https://github.com/michaelforney/oasis
 [Ataraxia Linux]: https://ataraxialinux.github.io/
 [Talos]: https://github.com/talos-systems/talos
+[Vanilla]: http://projects.malikania.fr/vanilla
 
 # Linux distros that plan to switch to musl
 
