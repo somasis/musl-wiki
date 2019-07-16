@@ -5,16 +5,6 @@ focus and goals for current and upcoming release cycles, but these may change in
 interest of keeping releases moving or meeting areas of user and developer interest.
 
 
-# musl 1.1.23
-
-Estimated release: Mid July
-
-Goals & Focus:
-
-- Merging riscv port
-- Merging new math library implementations.
-
-    
 # musl 1.1.24
 
 Estimated release: Late August
