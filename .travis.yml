@@ -4,10 +4,8 @@ dist: trusty
 notifications:
     - email: false
 
-
 # oh my god travis' discount package is so OLD.
 before_install:
-    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || openssl aes-256-cbc -K $encrypted_481248b6289f_key -iv $encrypted_481248b6289f_iv -in .travis.id_rsa.enc -out id_rsa -d'
     - sudo apt-get -qq update
     - sudo apt-get install -y linkchecker
     - gem install mdl
@@ -24,9 +22,10 @@ script:
     - make lint
 
 after_success:
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || openssl aes-256-cbc -K $encrypted_6c58d1d9a0be_key -iv $encrypted_6c58d1d9a0be_iv -in .travis.id_rsa.enc -out id_rsa -d >/dev/null 2>&1'
     - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || eval "$(ssh-agent -s)"'
     - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || chmod 600 id_rsa'
     - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || ssh-add id_rsa'
-    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || echo -e "Host somas.is\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config'
-    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || git remote add deploy muslwiki@somas.is:/srv/http/wiki.musl-libc.org.git'
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || echo -e "Host wiki.musl-libc.org\n\tStrictHostKeyChecking no\nPort 3483\n" >> ~/.ssh/config'
+    - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || git remote add deploy muslwiki@wiki.musl-libc.org:/srv/www/wiki.musl-libc.org.git'
     - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || git push deploy -vf master'
