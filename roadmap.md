@@ -11,28 +11,45 @@ Estimated release: Late August
 
 Goals & Focus:
 
-- Attempted removal of LFS64 APIs (not ABIs)
 - Working (non-stub) `catgets` implementation
-- Experimental no-`PT_INTERP` dynamic linking mode
-- Initial work on converting 32-bit archs to 64-bit `time_t`
-- Initial work on next-gen `malloc`, at first out-of-tree
+- Adding `GLOB_TILDE` to glob implementation
+- Complete preparation work for time64 syscall support and converting
+  32-bit archs to 64-bit `time_t`
+- Removal of mips and x32 `syscall_arch.h` hacks, replacement with
+  high-level code aligned with 64-bit `time_t` work
+- Fixing broken functions on mipsn32 and x32 due to kernel ABI quirks:
+  `lseek`, `struct timex`, `struct rusage`, etc.
 
 
 # musl 1.1.25
 
-Estimated release: October
+Estimated release: September
+
+Goals & Focus:
 
 - 64-bit `time_t` on 32-bit archs
-- Hostname resolver support for non-ASCII domains (IDN)
-- ARM Cortex-M FDPIC ABI
+- Removal of LFS64 APIs (not ABIs)
+- Reduction in asm source files, replacement with inline asm in C
+  source files.
+- Experimental no-`PT_INTERP` dynamic linking mode
+- Prep work for next-gen `malloc` implementation
 
 
 # musl 1.1.26
 
-Estimated release: December
+Estimated release: November
+
+- Initial work on next-gen `malloc`, at first out-of-tree
+- Locale support overhaul.
+- Hostname resolver support for non-ASCII domains (IDN)
+- ARM Cortex-M FDPIC ABI
+
+
+# musl 1.1.27
+
+Estimated release: January 2020
 
 - Next-gen `malloc` implementation
-- Locale support overhaul.
 
 
 
@@ -48,7 +65,6 @@ Estimated release: December
 - Resolving GCC symbol-versioning incompatibility issue - see
   <http://www.openwall.com/lists/musl/2015/05/10/1>
 - Message translation support for dynamic linker
-- Adding `GLOB_TILDE` to glob implementation
 
 
 # Milestone goals for musl 1.2.0
