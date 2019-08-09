@@ -46,7 +46,7 @@
 [morpheus]: http://git.2f30.org/morpheus/
 [Bedrock Linux]: http://bedrocklinux.org/introduction.html
 [Alpine Linux]: http://alpinelinux.org/
-[void linux]: http://www.voidlinux.eu/
+[void linux]: http://voidlinux.org/
 [Exherbo]: http://www.exherbo.org/
 [CLFS-announcement]: http://openwall.com/lists/musl/2013/10/16/1
 [oasis]: https://github.com/michaelforney/oasis
