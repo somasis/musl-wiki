@@ -116,6 +116,9 @@ Third-party projects using or building on musl:
 - [Firecracker VMM] is an open source virtualization technology that
   is purpose-built for creating and managing secure, multi-tenant
   container and function-based services.
+- [Mission Pinball Framework] is an open source framework to program real
+  pinball machines. It uses musl to cross-compile binaries for embedded
+  targets such as Stern Spike.
 
 [simplecct]: https://code.google.com/p/simplecct/
 [ELLCC]: http://ellcc.org/
@@ -130,3 +133,4 @@ Third-party projects using or building on musl:
 [NodeOS]: https://github.com/NodeOS/NodeOS
 [Rust]: http://www.rust-lang.org/
 [Firecracker VMM]: https://firecracker-microvm.github.io/
+[Mission Pinball Framework]: https://missionpinball.org/
