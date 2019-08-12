@@ -327,6 +327,11 @@ are used. An ideal configuration is:
   size, and moderate performance for queries not serviceable from cache)
 - 8.8.8.8 (somewhat higher latency but tends to have the whole DNS tree cached)
 
+If musl's resolver is requested to translate a hostname to IPv4 and IPv6, both
+requests will use the same socket, same as glibc. glibc could be configured to
+send those requests sequentially, with "single-request" and
+"single-request-reopen" options, but musl cannot.
+
 musl's resolver previously did not support the "domain" and "search" keywords in
 resolv.conf. This feature was added in version 1.1.13, but its behavior differs
 slightly from glibc's: queries with fewer dots than the ndots configuration
