@@ -16,8 +16,8 @@ musl's floating point conversions honor rounding mode. glibc's do not.
 
 ISO C and POSIX require the end-of-file status for a FILE to be sticky, i.e. for
 it to preclude further reads once it's set, unless it's explicitly cleared. musl
-honors this requirement. glibc ignores it and always returns new input, if
-available, even after the EOF flag is set.
+has always honored this requirement. glibc versions prior to 2.28 ignored it and
+always returned new input, if available, even after the EOF flag is set.
 
 ## Read and write patterns
 
