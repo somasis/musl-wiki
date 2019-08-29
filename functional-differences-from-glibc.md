@@ -240,14 +240,16 @@ unobtrusive to static link. Its character set/encoding coverage is very strong
 for its size, but not comprehensive like glibc's. In particular:
 
 - Many legacy double-byte and multi-byte East Asian encodings are supported
-  only as the source charset, not the destination charset. At least JIS-based ones
-  will be supported as the destination beginning with version 1.1.19.
+  only as the source charset, not the destination charset. JIS-based ones
+  are supported as the destination as of version 1.1.19.
+- Conversion to ISO-2022-JP is stateless and produces shifts in/out of
+  nondefault states around each character.
 - Transliterations (//TRANSLIT suffix) are not supported.
 - Converting to legacy 8-bit charsets is significantly slower than converting
   from them.
-- Stateful conversions are not supported, and plain UTF-16 and UTF-32 do not
-  process or honor BOM, as of version 1.1.18. Future versions will support
-  ISO-2022-JP (stateful) and possibly other encodings.
+- Prior to version 1.1.19, conversions from plain UTF-16 or UTF-32
+  without an explicit endianness assumed big endian and did not honor
+  BOM. Now they honor BOM, but BOM is never produced in output.
 - Misleading, deprecated charset aliases like UNICODE as an alias for UCS-2 are
   not supported. The IANA preferred MIME charset names should be used instead.
 - Contrary to POSIX, glibc iconv generates EILSEQ when a character is not
