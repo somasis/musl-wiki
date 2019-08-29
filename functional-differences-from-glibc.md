@@ -12,11 +12,6 @@ musl does not support glibc's custom format specifier registration system.
 
 musl's floating point conversions honor rounding mode. glibc's do not.
 
-## Buffering
-
-musl's `setbuf` and `setvbuf` functions ignore the caller-provided buffer and only
-switch between fully-buffered, line-buffered, and non-buffered modes.
-
 ## Behavior on end of file
 
 ISO C and POSIX require the end-of-file status for a FILE to be sticky, i.e. for
