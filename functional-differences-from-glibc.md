@@ -153,16 +153,21 @@ The default stack size for new threads on glibc is determined based on the
 resource limit governing the main thread's stack (`RLIMIT_STACK`). It generally
 ends up being 2-10 MB.
 
-musl provides a default stack size of 80k. This does not include the guard page,
+musl provides a default stack size of 128k (80k prior to 1.1.21).
+This does not include the guard page,
 nor does it include the space used for TLS unless total TLS size is very small.
-So the actual map size may appear closer to 90k, with around 80k usable by the
-application. This size was determined empirically with the goals of not
+So the actual map size may appear closer to 1400k, with around 128k usable by
+the application. This size was determined empirically with the goals of not
 gratuitously breaking applications but also not causing large amounts of memory
 and virtual address space to be committed in programs with large numbers of
 threads. Programs needing larger stacks, or which explicitly want a smaller
 stack, should make this explicit with `pthread_attr_setstacksize`. For largely
 unrestrained use of the standard library, a minimum of 12k is recommended, but
 stack sizes down to 2k are allowed.
+
+Since 1.1.21, musl supports increasing the default stack size via the
+`PT_GNU_STACK` program header, which can be set at link time via
+`-Wl,-z,stack=size=N`.
 
 ## Thread cancellation
 
