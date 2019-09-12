@@ -69,9 +69,11 @@ and recommended as long as you have multiple cores and plenty ram.
 
 ## Notes on ARM Float Mode
 
-Note: this information may be outdated or imprecise; it was converted
-over from old instructions for the obsolete and unmaintained
-"musl-cross" build scripts.
+Note: This information may be outdated or imprecise. It was converted
+over from instructions for the older
+[musl-cross](https://github.com/GregorR/musl-cross) build script
+project, which is still maintained but lacks support for newer gcc
+versions and may have other limitations.
 
 There are three float modes available on modern ARM SoC's:
 
