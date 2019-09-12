@@ -121,6 +121,13 @@ can activate the even more powerful VFPv4.
 # Using a distro targeting musl
 
 If your distro uses musl natively, then naturally, anything compiled on that
-distro will use musl. Several distros using musl, such as sabotage, are listed
+distro will use musl. Multiple distros using musl are listed
 on the [Projects using musl page of this wiki][Projects using musl].
+Some of the most well-known and widely-used are:
 
+- [Sabotage](http://sabotage.tech/), the original build-from-source
+  distro based on musl
+- [Adélie Linux](http://www.adelielinux.org/), [Alpine
+  Linux](https://alpinelinux.org/), and 
+  [Void Linux](https://voidlinux.org/), binary-package based distros
+  with lots of packaged software
