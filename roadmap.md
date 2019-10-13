@@ -5,25 +5,9 @@ focus and goals for current and upcoming release cycles, but these may change in
 interest of keeping releases moving or meeting areas of user and developer interest.
 
 
-# musl 1.1.24
+# musl 1.2.0
 
-Estimated release: Late August
-
-Goals & Focus:
-
-- Working (non-stub) `catgets` implementation
-- Adding `GLOB_TILDE` to glob implementation
-- Complete preparation work for time64 syscall support and converting
-  32-bit archs to 64-bit `time_t`
-- Removal of mips and x32 `syscall_arch.h` hacks, replacement with
-  high-level code aligned with 64-bit `time_t` work
-- Fixing broken functions on mipsn32 and x32 due to kernel ABI quirks:
-  `lseek`, `struct timex`, `struct rusage`, etc.
-
-
-# musl 1.1.25
-
-Estimated release: September
+Estimated release: November
 
 Goals & Focus:
 
@@ -35,9 +19,9 @@ Goals & Focus:
 - Prep work for next-gen `malloc` implementation
 
 
-# musl 1.1.26
+# musl 1.2.1
 
-Estimated release: November
+Estimated release: January 2020
 
 - Initial work on next-gen `malloc`, at first out-of-tree
 - Locale support overhaul.
@@ -45,12 +29,18 @@ Estimated release: November
 - ARM Cortex-M FDPIC ABI
 
 
-# musl 1.1.27
+# musl 1.2.2
 
-Estimated release: January 2020
+Estimated release: February 2020
 
 - Next-gen `malloc` implementation
 
+
+
+# musl 1.1.25
+
+On an as-needed basis, backport of post-1.1.24 fixes to
+32-bit-`time_t` archs.
 
 
 
