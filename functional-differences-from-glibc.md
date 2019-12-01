@@ -167,7 +167,7 @@ stack sizes down to 2k are allowed.
 
 Since 1.1.21, musl supports increasing the default stack size via the
 `PT_GNU_STACK` program header, which can be set at link time via
-`-Wl,-z,stack=size=N`.
+`-Wl,-z,stack-size=N`.
 
 ## Thread cancellation
 
