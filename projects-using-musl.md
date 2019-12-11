@@ -71,7 +71,7 @@
     - <http://distfiles.gentoo.org/experimental/x86/musl/>
     - <http://distfiles.gentoo.org/experimental/arm/musl/>
 - [Arch Linux]
-- [Debian] package can now be found in sid (unstable).
+- [Debian] package is available.
 - [Ubuntu] package is included in the universe section of the repository
   starting with Ubuntu 14.04 Trusty Tahr. There is also a PPA available
   (ppa:bortis/musl) for Saucy Salamander.
