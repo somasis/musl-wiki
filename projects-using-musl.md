@@ -35,6 +35,8 @@
 - [Ataraxia Linux] - Fast and compact Linux distribution which uses musl libc and busybox userland tools.
     - About 300-400 packages including X11, Wayland, Mesa3D, ALSA, SDL, SDL2, rust and go
 - [Talos] - A modern Linux distribution for Kubernetes.
+- [Vanilla] - A radically different, new, simple, customizable Linux
+  distribution based on musl, busybox using LLVM/Clang as toolchain.
 
 [sabotage]: http://sabotage.tech/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
@@ -52,6 +54,7 @@
 [oasis]: https://github.com/michaelforney/oasis
 [Ataraxia Linux]: https://ataraxialinux.github.io/
 [Talos]: https://github.com/talos-systems/talos
+[Vanilla]: http://projects.malikania.fr/vanilla
 
 # Linux distros that plan to switch to musl
 
@@ -113,6 +116,9 @@ Third-party projects using or building on musl:
 - [Firecracker VMM] is an open source virtualization technology that
   is purpose-built for creating and managing secure, multi-tenant
   container and function-based services.
+- [Mission Pinball Framework] is an open source framework to program real
+  pinball machines. It uses musl to cross-compile binaries for embedded
+  targets such as Stern Spike.
 
 [simplecct]: https://code.google.com/p/simplecct/
 [ELLCC]: http://ellcc.org/
@@ -127,3 +133,4 @@ Third-party projects using or building on musl:
 [NodeOS]: https://github.com/NodeOS/NodeOS
 [Rust]: http://www.rust-lang.org/
 [Firecracker VMM]: https://firecracker-microvm.github.io/
+[Mission Pinball Framework]: https://missionpinball.org/
