@@ -35,22 +35,6 @@
 - [Ataraxia Linux] - Fast and compact Linux distribution which uses musl libc and busybox userland tools.
     - About 300-400 packages including X11, Wayland, Mesa3D, ALSA, SDL, SDL2, rust and go
 - [Talos] - A modern Linux distribution for Kubernetes.
-- [Dragora] - An independent GNU/Linux-Libre distribution based on concepts of simplicity.
-    - Dragora migrated to musl in 2012.  The same one is used by default for 3.0 series.
-    - Contains 100% free software.  Dragora is one of the free (as in freedom) GNU/Linux distributions
-      (see [List of Free GNU/Linux Distributions]).
-    - Per-package directories using qi (an own package manager) and graft following the GNU stow's spirit.
-    - It's optimized for size rather than speed.
-    - As a startup system it uses sysvinit combined with perp for the supervision of critical services.
-    - It has emphasis on security: SSP and PIE by default.  LibreSSL plus lightweight replacements.
-    - The default shell is mksh.
-    - Dragora has user tools based on the text mode to configure the mouse, the keyboard map.
-    - It can be run live and can also be installed on the disk via the installer.
-    - Dragora can be built from scratch (bootstrap process).
-    - Currently available for x86 (i586+) and x86_64 architecture, although it provides targets for
-      other architectures such as: aarch64, armv7a_fp, armv7a_hf, armv7hl, microblaze, mips, powerpc,
-      powerpc64le, riscv64, s390x, x32.  Targets can be built during the bootrap process as well as used
-      from the (provided) pre-built cross-compilers.
 
 [sabotage]: http://sabotage.tech/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
@@ -68,13 +52,17 @@
 [oasis]: https://github.com/michaelforney/oasis
 [Ataraxia Linux]: https://ataraxialinux.github.io/
 [Talos]: https://github.com/talos-systems/talos
-[Dragora]: https://dragora.org
 
 # Linux distros that plan to switch to musl
 
 - [Aboriginal] - next major release will be based on musl
+- [Dragora] release based on musl is in the works since 2012.
+  [README][Dragora-README], [BOOTSTRAPPING][Dragora-BOOTSTRAPPING]
 
 [Aboriginal]: http://landley.net/aboriginal/
+[Dragora]: http://www.dragora.org/
+[Dragora-README]: http://git.savannah.gnu.org/cgit/dragora.git/plain/README
+[Dragora-BOOTSTRAPPING]: http://git.savannah.gnu.org/cgit/dragora.git/plain/BOOTSTRAPPING
 
 # Linux distros shipping musl as an optional package
 
@@ -102,7 +90,6 @@
 [r45995]: https://dev.openwrt.org/changeset/45995
 [openadk]: http://openadk.org/
 [Chromebrew]: https://skycocker.github.io/chromebrew/
-[List of Free GNU/Linux Distributions]: https://www.gnu.org/distros/free-distros.html
 
 # Other Projects
 
