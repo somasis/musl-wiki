@@ -37,6 +37,12 @@
 - [Talos] - A modern Linux distribution for Kubernetes.
 - [Vanilla] - A radically different, new, simple, customizable Linux
   distribution based on musl, busybox using LLVM/Clang as toolchain.
+- [Dragora] - An independent GNU/Linux-Libre distribution based on concepts of simplicity.
+    - Contains 100% free software.  Musl is included in Dragora for the 3.0 series (back in 2012).
+    - Per-package directories using qi (an own package manager) and graft following the GNU stow's spirit.
+    - /usr merge, offering compatibility with the Filesystem Hierarchy Standard (FHS).
+    - Uses sysvinit combined with perp for the supervision of critical services.
+    - Supports several architectures via bootstrap, but is currently available for x86 (i586+), x86_64.
 
 [sabotage]: http://sabotage.tech/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
@@ -55,17 +61,13 @@
 [Ataraxia Linux]: https://ataraxialinux.github.io/
 [Talos]: https://github.com/talos-systems/talos
 [Vanilla]: http://projects.malikania.fr/vanilla
+[Dragora]: https://dragora.org
 
 # Linux distros that plan to switch to musl
 
 - [Aboriginal] - next major release will be based on musl
-- [Dragora] release based on musl is in the works since 2012.
-  [README][Dragora-README], [BOOTSTRAPPING][Dragora-BOOTSTRAPPING]
 
 [Aboriginal]: http://landley.net/aboriginal/
-[Dragora]: http://www.dragora.org/
-[Dragora-README]: http://git.savannah.gnu.org/cgit/dragora.git/plain/README
-[Dragora-BOOTSTRAPPING]: http://git.savannah.gnu.org/cgit/dragora.git/plain/BOOTSTRAPPING
 
 # Linux distros shipping musl as an optional package
 
