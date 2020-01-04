@@ -43,6 +43,7 @@
     - /usr merge, offering compatibility with the Filesystem Hierarchy Standard (FHS).
     - Uses sysvinit combined with perp for the supervision of critical services.
     - Supports several architectures via bootstrap, but is currently available for x86 (i586+), x86_64.
+- [Abyss] - An independent Linux distribution based on musl and pure LLVM.
 
 [sabotage]: http://sabotage.tech/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
@@ -62,6 +63,7 @@
 [Talos]: https://github.com/talos-systems/talos
 [Vanilla]: http://projects.malikania.fr/vanilla
 [Dragora]: https://dragora.org
+[Abyss]: https://abyss.run
 
 # Linux distros that plan to switch to musl
 
