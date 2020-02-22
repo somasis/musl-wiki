@@ -5,20 +5,9 @@ focus and goals for current and upcoming release cycles, but these may change in
 interest of keeping releases moving or meeting areas of user and developer interest.
 
 
-# musl 1.2.0
-
-Estimated release: Late January
-
-Goals & Focus:
-
-- 64-bit `time_t` on 32-bit archs
-- Initial work on next-gen `malloc`, at first out-of-tree
-- Unicode 12.1 update and related character handling work
-
-
 # musl 1.2.1
 
-Estimated release: February
+Estimated release: April
 
 - Integration of next-gen `malloc` implementation
 - Reduction in asm source files, replacement with inline asm in C
@@ -27,7 +16,7 @@ Estimated release: February
 
 # musl 1.2.2
 
-Estimated release: April 2020
+Estimated release: June
 
 - Removal of LFS64 APIs (not ABIs)
 - Experimental no-`PT_INTERP` dynamic linking mode
