@@ -17,7 +17,7 @@ git clone --recursive https://github.com/somasis/musl-wiki
 
 Make sure to look at [makedown]'s requirements for building and testing.
 
-[makedown]: https://gitlab.com/somasis/makedown
+[makedown]: https://github.com/somasis/makedown
 
 ## Contributing
 
