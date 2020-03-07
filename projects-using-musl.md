@@ -32,8 +32,7 @@
 - [Exherbo] has an x86_64 musl stage.
 - [oasis] - statically linked linux distribution based on musl and other
   lightweight components.
-- [Ataraxia Linux] - Fast and compact Linux distribution which uses musl libc and busybox userland tools.
-    - About 300-400 packages including X11, Wayland, Mesa3D, ALSA, SDL, SDL2, rust and go
+- [Ataraxia Linux] - Independent, multi-platform, general purpose operating system based on the Linux kernel and musl libc.
 - [Talos] - A modern Linux distribution for Kubernetes.
 - [Vanilla] - A radically different, new, simple, customizable Linux
   distribution based on musl, busybox using LLVM/Clang as toolchain.
