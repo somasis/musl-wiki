@@ -33,6 +33,10 @@
 - [oasis] - statically linked linux distribution based on musl and other
   lightweight components.
 - [Ataraxia Linux] - Independent, multi-platform, general purpose operating system based on the Linux kernel and musl libc.
+    - Supports 17 different CPU architectures
+    - Has merged /usr for better compatibility
+    - Extremely bleeding edge
+    - Uses ZSTD where it's possible. Kernel, modules and initrd are using ZSTD by default.
 - [Talos] - A modern Linux distribution for Kubernetes.
 - [Vanilla] - A radically different, new, simple, customizable Linux
   distribution based on musl, busybox using LLVM/Clang as toolchain.
