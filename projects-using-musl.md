@@ -48,10 +48,10 @@
     - Supports several architectures via bootstrap, but is currently available for x86 (i586+), x86_64.
 - [Abyss] - An independent Linux distribution based on musl and pure LLVM.
 
-[sabotage]: http://sabotage.tech/
+[sabotage]: http://sabo.xyz/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
 [Mere Linux]: https://merelinux.org
-[Snowflake]: https://bitbucket.org/GregorR/snowflake
+[Snowflake]: https://github.com/GregorR/snowflake
 [TAZ]: https://github.com/Sharrisii/TAZ
 [Embedded Linux From Scratch]: http://kanj.github.io/elfs/book/
 [Cross Linux From Scratch]: http://cross-lfs.org/view/clfs-embedded/
