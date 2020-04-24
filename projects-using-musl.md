@@ -47,6 +47,8 @@
     - Uses sysvinit combined with perp for the supervision of critical services.
     - Supports several architectures via bootstrap, but is currently available for x86 (i586+), x86_64.
 - [Abyss] - An independent Linux distribution based on musl and pure LLVM.
+- [solyste] - statically linked linux distribution targetting embedded hardware
+and various architectures
 
 [sabotage]: http://sabo.xyz/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
@@ -67,6 +69,7 @@
 [Vanilla]: http://projects.malikania.fr/vanilla
 [Dragora]: https://dragora.org
 [Abyss]: https://abyss.run
+[solyste]: https://framagit.org/Ypnose/solyste
 
 # Linux distros that plan to switch to musl
 
