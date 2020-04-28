@@ -49,6 +49,7 @@
 - [Abyss] - An independent Linux distribution based on musl and pure LLVM.
 - [solyste] - statically linked linux distribution targetting embedded hardware
 and various architectures
+- [glaucus] - An independent, open-source, general-purpose, bleeding-edge, rolling-release, source-based Linux® distribution based on musl libc and toybox, built from scratch around the suckless philosophy without sacrificing convenience.
 
 [sabotage]: http://sabo.xyz/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
@@ -70,6 +71,7 @@ and various architectures
 [Dragora]: https://dragora.org
 [Abyss]: https://abyss.run
 [solyste]: https://framagit.org/Ypnose/solyste
+[glaucus]: https://www.glaucuslinux.org/
 
 # Linux distros that plan to switch to musl
 
