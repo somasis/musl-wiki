@@ -40,7 +40,7 @@ definitions)
 # Q: Why is `fts.h` not included?
 
 It's impossible to match the glibc ABI for fts because the glibc ABI is
-[unusably broken]. This also means that no working software can be built using
+unusably broken. This also means that no working software can be built using
 the built-in fts from glibc; anything using fts is either already including its
 own copy (there is a canonical BSD version and gnulib has it too), or is
 hopelessly broken on glibc and the maintainers are just unaware of that fact. So
