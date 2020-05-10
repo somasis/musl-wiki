@@ -60,6 +60,8 @@ As of 2013-09-29, the following compilers are known to be able to compile musl:
     - <http://ellcc.org/> ELLCC is a Clang and musl based cross-compiler
       toolchain for embedded development.
 - PCC (>=1.1.0.DEVEL)
+    - No longer true as of 2020 (at least as of musl 1.2.0 and PCC 1.2.0.DEVEL,
+      but likely much earlier)
 - [CParser/firm]
     - configure musl with --disable-shared, since firm does not yet have
       position-independent code generation.
