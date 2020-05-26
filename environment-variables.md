@@ -45,7 +45,7 @@ other elevated capabilities.
 
 Colon-separated list of pathnames that will be searched for shared libraries
 requested without an explicit pathname. This path is searched prior to the
-default path (which is specified in `$(syslibdir)/../etc.ld-musl-$(ARCH).path`
+default path (which is specified in `$(syslibdir)/../etc/ld-musl-$(ARCH).path`
 with built-in default fallback if this file is missing).
 
 This variable is completely ignored in programs invoked setuid, setgid, or with
