@@ -86,6 +86,7 @@ and various architectures
     - <http://distfiles.gentoo.org/experimental/x86/musl/>
     - <http://distfiles.gentoo.org/experimental/arm/musl/>
 - [Arch Linux]
+- [Fedora] package is available starting with Fedora 30.
 - [Debian] package is available.
 - [Ubuntu] package is included in the universe section of the repository
   starting with Ubuntu 14.04 Trusty Tahr. There is also a PPA available
@@ -99,6 +100,7 @@ and various architectures
 [Gentoo]: http://www.gentoo.org/
 [musl overlay]: https://gitweb.gentoo.org/proj/musl.git
 [Arch Linux]: https://www.archlinux.org/
+[Fedora]: https://src.fedoraproject.org/rpms/musl
 [Debian]: http://packages.debian.org/search?keywords=musl&searchon=names&suite=all&section=all
 [Ubuntu]: http://packages.ubuntu.com/search?keywords=musl&searchon=names&suite=all&section=all
 [OpenWrt]: https://openwrt.org/
