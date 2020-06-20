@@ -123,6 +123,7 @@ Third-party projects using or building on musl:
   code is from musl.
 - [docker-muslbase] minimal musl-based docker container
 - [buildroot] toolchain has musl libc option
+- [mussel] The shortest and fastest script to build working cross compilers targeting musl libc
 - [seL4] seL4 kernel ships with musl
 - [NodeOS] linux with Node.js as userspace
 - [Rust] is a programming language with musl supported as a cross-compilation
@@ -143,6 +144,7 @@ Third-party projects using or building on musl:
 [Mirage OS]: http://www.openmirage.org/
 [docker-muslbase]: https://github.com/mwcampbell/docker-muslbase
 [buildroot]: http://buildroot.org/
+[mussel]: https://github.com/firasuke/mussel
 [seL4]: https://github.com/seL4/libmuslc
 [NodeOS]: https://github.com/NodeOS/NodeOS
 [Rust]: http://www.rust-lang.org/
