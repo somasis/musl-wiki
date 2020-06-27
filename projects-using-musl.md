@@ -3,6 +3,9 @@
 # Linux distributions using musl
 
 - [Abyss] - An independent Linux distribution based on musl and pure LLVM.
+- [Adélie Linux] - A small, independent Linux distribution focused on delivering a high quality
+  operating environment, aiming for POSIX® compliance, compatibility with a wide variety of
+  computers, and ease of use without sacrificing features.
 - [Alpine Linux] - based on musl since the 3.0 release.
 - [Ataraxia Linux] - Independent, multi-platform, general purpose operating system based on the Linux kernel and musl libc.
     - Supports 17 different CPU architectures
