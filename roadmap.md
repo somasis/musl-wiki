@@ -5,25 +5,25 @@ focus and goals for current and upcoming release cycles, but these may change in
 interest of keeping releases moving or meeting areas of user and developer interest.
 
 
-# musl 1.2.1
-
-Estimated release: April
-
-- Integration of next-gen `malloc` implementation
-- Reduction in asm source files, replacement with inline asm in C
-  source files.
-
-
 # musl 1.2.2
 
-Estimated release: June
+Estimated release: September
+
+- Fixing `sqrtl` for on archs with IEEE quad for `long double`
+- Upstreaming Hexagon port
+- ARM Cortex-M FDPIC ABI
+- Further reduction in asm source files, replacement with inline asm
+  in C source files.
+
+
+# musl 1.2.3
+
+Estimated release: November
 
 - Removal of LFS64 APIs (not ABIs)
 - Experimental no-`PT_INTERP` dynamic linking mode
 - Locale support overhaul.
 - Hostname resolver support for non-ASCII domains (IDN)
-- ARM Cortex-M FDPIC ABI
-
 
 
 # musl 1.1.25
