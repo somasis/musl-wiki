@@ -5,6 +5,25 @@ non-trivial to fix. Before adding an issue here, it should have been discussed
 at least once on the mailing list or IRC channel. Simple bugs found can usually
 be fixed right away.
 
+# Locale limitations
+
+Locale support is very limited, and barely works. Translation of
+`LC_TIME` is not possible because the key strings for `ABMON_5` and
+`MON_5` ("May") are identical. Custom collation orders (`LC_COLLATE`)
+are not implemented at all, despite there always having been an intent
+to support them. `LC_NUMERIC` and `LC_MONETARY` also admit no
+variation by locale. Solving these problems requires a major overhaul,
+but the main missing prerequisite is involvement from users who want
+the functionality.
+
+Building officially recognized locales for musl is also a recognized
+open problem. The bulk of the data should be derived mechanically from
+the Unicode CLDR where possible, but the CLDR seems to lack certain
+time format variants corresponding to the ones C/POSIX needs for
+`nl_langinfo`/`strftime`. This probably requires a great deal of
+manual work to remedy, ideally getting the missing formats added
+upstream with Unicode.
+
 # Sanitizer compatibility
 
 The upstream GCC and LLVM sanitizer library-side implementations rely
