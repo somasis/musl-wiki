@@ -5,14 +5,6 @@ non-trivial to fix. Before adding an issue here, it should have been discussed
 at least once on the mailing list or IRC channel. Simple bugs found can usually
 be fixed right away.
 
-# Further malloc hardening
-
-It may be desirable to change malloc's bookkeeping so that the chunk footer
-contains a pointer back to the header, rather than containing the size. This
-would make it significantly harder for an attacker performing a buffer overflow
-to avoid checks for the footer having been clobbered. Probably will be deferred
-until the time of a major malloc overhaul/redesign.
-
 # Complex math
 
 Currently most complex functions have dummy implementations. Correct
@@ -184,3 +176,9 @@ functions) version of FORTIFY. See:
 
 musl 1.1.9 introduced the ability to build libc itself with stack protector
 options. Previously, early-init-stage considerations precluded this.
+
+## Further malloc hardening
+
+The adoption of mallocng in musl 1.2.1 mostly resolved the existing
+malloc-hardening wishlist. Still, further gains may be possible in the
+future including of MTE and other hardware-assisted protection.
