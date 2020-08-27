@@ -63,9 +63,14 @@ The following issue was fixed across musl 1.1.2 and subsequent work on 1.1.3:
 >code on which it depends; it should probably be done at the same time as the
 >libresolv functions.
 
-After some discussion, search domains were deemed a largely-harmful feature, so
-support for them was not added. All other major features have now been
-implemented, however.
+After some discussion, search domains were deemed a largely-harmful
+feature, so support for them was not initially added. Later, version
+1.1.13 introduced search domains, but with stronger constraints than
+traditional implementations designed so that transient, potentially
+attacked-controlled failures cannot alter the results of a query. This
+establishes compatibility with systems using search domains in many
+but not all ways; the use cases that do not work were always unsafe
+and should be changed.
 
 ## C++ ABI compatibility
 
