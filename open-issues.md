@@ -5,6 +5,16 @@ non-trivial to fix. Before adding an issue here, it should have been discussed
 at least once on the mailing list or IRC channel. Simple bugs found can usually
 be fixed right away.
 
+# Sanitizer compatibility
+
+The upstream GCC and LLVM sanitizer library-side implementations rely
+heavily on access to libc internals and are not compatible with musl.
+UBSan is usable in trap-only mode but the other sanitizers are mostly
+unusable. Support for these tools is desired, but exposing internals
+as public interfaces is not, and sanitizer support will probably
+eventually be implemented as providing the necessary library functions
+in musl itself rather than use of the compiler-provided libraries.
+
 # Complex math
 
 Currently most complex functions have dummy implementations. Correct
