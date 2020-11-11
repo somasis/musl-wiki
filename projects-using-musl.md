@@ -96,6 +96,10 @@ and various architectures
 - [openadk] Embedded Linux buildsystem, musl can be selected as the libc of the
   system.
 - [Chromebrew] provides an official musl package.
+- [Yocto] - OpenEmbeeded based Yocto Project supports generated embedded Linux distributions based on musl C library
+    - Set TCLIBC = "musl" to switch default C library to musl for building embedded linux platforms
+    - poky-tiny ( Yocto Project Reference Distribution ) is now based on musl
+    - [Yoe] Distro - Fully supports Generating musl based images
 
 [Gentoo]: http://www.gentoo.org/
 [musl overlay]: https://gitweb.gentoo.org/proj/musl.git
@@ -107,6 +111,8 @@ and various architectures
 [r45995]: https://dev.openwrt.org/changeset/45995
 [openadk]: http://openadk.org/
 [Chromebrew]: https://skycocker.github.io/chromebrew/
+[Yocto]: https://www.yoctoproject.org/
+[Yoe]: https://www.yoedistro.org/
 
 # Other Projects
 
