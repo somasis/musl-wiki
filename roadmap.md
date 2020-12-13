@@ -7,23 +7,25 @@ interest of keeping releases moving or meeting areas of user and developer inter
 
 # musl 1.2.2
 
-Estimated release: September
+Estimated release: Mid December
 
 - Fixing `sqrtl` for on archs with IEEE quad for `long double`
-- Upstreaming Hexagon port
-- ARM Cortex-M FDPIC ABI
-- Further reduction in asm source files, replacement with inline asm
-  in C source files.
+- Fixing interactions of `fork` with other libc components
+- Lifting restrictions on forked child of multithreaded parent
 
 
 # musl 1.2.3
 
-Estimated release: November
+Estimated release: Late January
 
 - Removal of LFS64 APIs (not ABIs)
 - Experimental no-`PT_INTERP` dynamic linking mode
 - Locale support overhaul.
 - Hostname resolver support for non-ASCII domains (IDN)
+- Further reduction in asm source files, replacement with inline asm
+  in C source files.
+- Upstreaming Hexagon port
+- ARM Cortex-M FDPIC ABI
 
 
 # musl 1.1.25
