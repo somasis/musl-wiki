@@ -50,6 +50,7 @@
 - [solyste] - statically linked linux distribution targetting embedded hardware
 and various architectures
 - [glaucus] - An independent, open-source, general-purpose, bleeding-edge, rolling-release, source-based Linux® distribution based on musl libc and toybox, built from scratch around the suckless philosophy without sacrificing convenience.
+- [Adélie Linux] - A completely independent, Libre operating system with focus on reliability, security, compatibility, portability, and usability.
 
 [sabotage]: http://sabo.xyz/
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
@@ -72,6 +73,7 @@ and various architectures
 [Abyss]: https://abyss.run
 [solyste]: https://framagit.org/Ypnose/solyste
 [glaucus]: https://www.glaucuslinux.org/
+[Adélie Linux]: https://adelielinux.org
 
 # Linux distros that plan to switch to musl
 
