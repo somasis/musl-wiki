@@ -32,7 +32,7 @@ applications.
 - s390x
 - sh (experimental) with sh, sheb, sh-nofpu, and sheb-nofpu subarchs (currently
   this [kernel-patch] is required for multithread usage)
-- risc64 ( support added since 1.1.23 release ) currently softfp,
+- riscv64 ( support added since 1.1.23 release ) currently softfp,
   single-precision, double-precision floating point supported
 
 [ABI/ASM manuals][ABI Manuals]
