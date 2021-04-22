@@ -52,6 +52,7 @@
 - [Void Linux] provides official musl based images.
 
 [Abyss]: https://abyss.run
+[Adélie Linux]: https://adelielinux.org
 [Alpine Linux]: http://alpinelinux.org/
 [Ataraxia Linux]: https://ataraxialinux.github.io/
 [Bedrock Linux]: http://bedrocklinux.org/introduction.html
