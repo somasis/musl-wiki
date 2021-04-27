@@ -35,8 +35,8 @@
     </main>
     <footer>
         You can contribute to this wiki! Submit pull-requests to <a href='https://github.com/somasis/musl-wiki'>somasis/musl-wiki</a>.<br />
-        <a href='https://travis-ci.org/somasis/musl-wiki'><img alt='Build Status' src='https://img.shields.io/travis/somasis/musl-wiki.svg?style=flat-square' /></a>
-        <a href='https://github.com/somasis/musl-wiki/issues'><img alt='GitHub Issues' src='https://img.shields.io/github/issues/somasis/musl-wiki.svg?style=flat-square' /></a><br />
+        <a href='https://github.com/somasis/musl-wiki/actions/workflows/main.yml'><img alt='Build status' src='https://github.com/somasis/musl-wiki/actions/workflows/main.yml/badge.svg' /></a>
+        <a href='https://github.com/somasis/musl-wiki/issues'><img alt='GitHub issues' src='https://img.shields.io/github/issues/somasis/musl-wiki.svg?style=flat-square' /></a><br />
         <small>
             This work is licensed under the <a href='http://creativecommons.org/licenses/by-sa/3.0'>Creative Commons Attribution-ShareAlike 3.0 Unported license</a>, unless otherwise noted.<br />
         </small>

@@ -1,0 +1,32 @@
+name: CI
+
+on:
+    push:
+        branches: [ gh-actions-test ]
+
+    workflow_dispatch:
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                submodules: true
+
+            - name: Install dependencies
+              run: |
+                sudo apt-get -y install discount
+
+            - name: Build site
+              run: make
+
+            - name: Deploy
+              uses: netlify/actions/cli@master
+              if: github.event_name == 'push'
+              with:
+                args: deploy --prod --dir=work
+              env:
+                NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+                NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
