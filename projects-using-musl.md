@@ -28,6 +28,7 @@
     - 2013-09-14 Updated to musl-0.9.13. Supports \*-\*-musl\* toolchains.
 - [Exherbo] has an x86_64 musl stage.
 - [glaucus] - An independent, open-source, general-purpose, bleeding-edge, rolling-release, source-based Linux® distribution based on musl libc and toybox, built from scratch around the suckless philosophy without sacrificing convenience.
+- [KISS Linux] - An independent Linux distribution with a focus on simplicity and the concept of "less is more".
 - [Mere Linux]
     - Uses pacman for package management and s6 for process supervision
     - Contains instructions for bootstrapping LFS-style
@@ -63,6 +64,7 @@
 [Embedded Linux From Scratch]: http://kanj.github.io/elfs/book/
 [Exherbo]: http://www.exherbo.org/
 [glaucus]: https://www.glaucuslinux.org/
+[KISS Linux]: https://k1sslinux.org/
 [Mere Linux]: https://merelinux.org
 [morpheus]: http://git.2f30.org/morpheus/
 [oasis]: https://github.com/michaelforney/oasis
