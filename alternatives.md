@@ -80,7 +80,7 @@ usable with musl.
 [udhcpc]: http://en.wikipedia.org/wiki/Udhcpc
 [udhcpc-two]: https://github.com/sabotage-linux/sabotage/blob/master/KEEP/etc/udhcpc-script
 [udhcpc-scripts]: https://github.com/sabotage-linux/sabotage/blob/master/KEEP/bin/dhclient
-[ndhc]: https://code.google.com/p/ndhcp/
+[ndhc]: https://github.com/niklata/ndhc
 [ubus]: http://www.unixbus.org/ubus/
 [mandoc]: http://mdocml.bsd.lv/
 [moe]: http://gnu.org/software/moe
