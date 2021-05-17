@@ -7,7 +7,8 @@
   operating environment, aiming for POSIX® compliance, compatibility with a wide variety of
   computers, and ease of use without sacrificing features.
 - [Alpine Linux] - based on musl since the 3.0 release.
-- [Ataraxia Linux] - Independent, multi-platform, general purpose operating system based on the Linux kernel and musl libc.
+- [Ataraxia Linux] - Independent, multi-platform, general purpose operating system based on the
+  Linux kernel and musl libc.
     - Supports 17 different CPU architectures
     - Has merged /usr for better compatibility
     - Extremely bleeding edge
@@ -27,8 +28,11 @@
     - 2013-09-28 Updated to correct name of toolchain used
     - 2013-09-14 Updated to musl-0.9.13. Supports \*-\*-musl\* toolchains.
 - [Exherbo] has an x86_64 musl stage.
-- [glaucus] - An independent, open-source, general-purpose, bleeding-edge, rolling-release, source-based Linux® distribution based on musl libc and toybox, built from scratch around the suckless philosophy without sacrificing convenience.
-- [KISS Linux] - An independent Linux distribution with a focus on simplicity and the concept of "less is more".
+- [glaucus] - An independent, open-source, general-purpose, bleeding-edge, rolling-release,
+  source-based Linux® distribution based on musl libc and toybox, built from scratch around the
+  suckless philosophy without sacrificing convenience.
+- [KISS Linux] - An independent Linux distribution with a focus on simplicity and the concept of
+  "less is more".
 - [Mere Linux]
     - Uses pacman for package management and s6 for process supervision
     - Contains instructions for bootstrapping LFS-style
@@ -46,10 +50,12 @@
     - Uses pkgsrc for additional packages, so supports thousands of packages
     - Mainly a platform for testing usrview, a system for per-process views of
       /usr, for very fine-grained control of package management.
-- [solyste] - statically linked linux distribution targetting embedded hardware and various architectures
+- [solyste] - statically linked linux distribution targetting embedded hardware and various
+  architectures
 - [Talos] - A modern Linux distribution for Kubernetes.
 - [TAZ] - a Gentoo-based livecd/livedvd
-- [Vanilla] - A radically different, new, simple, customizable Linux distribution based on musl, busybox using LLVM/Clang as toolchain.
+- [Vanilla] - A radically different, new, simple, customizable Linux distribution based on musl,
+  busybox using LLVM/Clang as toolchain.
 - [Void Linux] provides official musl based images.
 
 [Abyss]: https://abyss.run
