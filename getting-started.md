@@ -125,7 +125,7 @@ distro will use musl. Multiple distros using musl are listed
 on the [Projects using musl page of this wiki][Projects using musl].
 Some of the most well-known and widely-used are:
 
-- [Sabotage](http://sabotage.tech/), the original build-from-source
+- [Sabotage](https://sabotage-linux.github.io/), the original build-from-source
   distro based on musl
 - [Adélie Linux](http://www.adelielinux.org/), [Alpine
   Linux](https://alpinelinux.org/), and 
