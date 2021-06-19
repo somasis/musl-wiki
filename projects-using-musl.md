@@ -31,6 +31,7 @@
 - [glaucus] - An independent, open-source, general-purpose, bleeding-edge, rolling-release,
   source-based Linux® distribution based on musl libc and toybox, built from scratch around the
   suckless philosophy without sacrificing convenience.
+- [Iglunix] - An independent, self-hosting, Linux distribution with no GNU software
 - [KISS Linux] - An independent Linux distribution with a focus on simplicity and the concept of
   "less is more".
 - [Mere Linux]
@@ -70,6 +71,7 @@
 [Embedded Linux From Scratch]: http://kanj.github.io/elfs/book/
 [Exherbo]: http://www.exherbo.org/
 [glaucus]: https://www.glaucuslinux.org/
+[Iglunix]: https://iglunix.xyz/
 [KISS Linux]: https://k1sslinux.org/
 [Mere Linux]: https://merelinux.org
 [morpheus]: http://git.2f30.org/morpheus/
