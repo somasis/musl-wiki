@@ -229,6 +229,18 @@ usable with musl.
   standard C preprocessor. Can be used as a preprocessor or working with
   templates.
 - [vbcc] mostly C99 compatible C compiler. open source but non-free LICENSE.
+- [cproc] very promising and clean C11 compiler, using QBE as its backend.
+  can compile most C codebases, including GCC 4.7.4. roughly 10x faster than GCC 8.
+- [lacc] very fast C11 compiler, targetting amd64. not far away from approaching TCC's speed.
+- [pcc] fast C99 compiler, targetting various archs. about 20x faster than gcc while
+  achieving ~80% of its performance.
+- [qbe] codegen backend for compiler projects. current emits code for amd64 and aarch64.
+  achieves ~70% of performance of GCC -O2, with roughly 10KLOC.
+- [mir] JIT codegen backend. supports most 64bit archs, and features a full C11 compiler
+  frontend to generate mir bytecode, and an interpreter for the bytecode. targets
+  70% of GCC -O2 performance.
+- [lightning] very versatile JIT codegen backend, using a single input RISC mnemonic
+  language, and featuring codegen for almost all existing architectures.
 
 [ucpp]: http://code.google.com/p/ucpp/
 [mcpp]: http://mcpp.sourceforge.net/
@@ -236,6 +248,12 @@ usable with musl.
 [firm/cparser]: http://pp.info.uni-karlsruhe.de/firm/
 [GPP]: http://en.nothingisreal.com/wiki/GPP
 [vbcc]: https://github.com/kusma/vbcc
+[cproc]: https://git.sr.ht/~mcf/cproc/
+[lacc]: https://github.com/larmel/lacc
+[pcc]: http://pcc.ludd.ltu.se/
+[qbe]: http://c9x.me/compile/
+[mir]: https://github.com/vnmakarov/mir/
+[lightning]: https://www.gnu.org/software/lightning/
 
 ## Scripting languages
 
