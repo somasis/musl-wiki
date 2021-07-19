@@ -55,6 +55,9 @@ usable with musl.
 - [uSTL] - replacement for the C++ STL (Standard Template Library).
 - [samurai] - drop-in replacement for ninja written in C.
 - [ETL] - Embedded Template Library. A C++ template library for embedded applications.
+- [svn-lite] - read-only replacement for bloated apache.org SVN client.
+  includes svn2git tool.
+  useful for checking out that occasional repo still not migrated to git.
 
 [pkgconf]: https://github.com/pkgconf/pkgconf
 [netbsd-curses]: https://github.com/sabotage-linux/netbsd-curses
@@ -90,6 +93,7 @@ usable with musl.
 [uSTL]: https://github.com/msharov/ustl
 [samurai]: https://github.com/michaelforney/samurai
 [ETL]: https://www.etlcpp.com
+[svn-lite]: https://github.com/rofl0r/svn-lite
 
 ## Compression/Decompression
 
