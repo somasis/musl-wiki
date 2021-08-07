@@ -347,8 +347,7 @@ regular language.
 # General Suggestions/Recommendations
 
 - [Stuff that rocks] Suckless.org recommendations on libraries they prefer.
-- [Harmful software] More recommendations from suckless.org and plan 9 for
-  libraries to avoid and what to replace them with.
+- [Harmful software] Uriel's alternatives list. Not maintained.
 - [Puppy Linux forum thread on Unbloated resources]
 - [choosing an ssl library]
 - [Busybox tiny utility recommendations]
