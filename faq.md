@@ -65,7 +65,7 @@ note that if you're building a whole system with musl you never need any of
 them. you don't need them for building musl, and you don't need them for
 building apps against musl (but they won't hurt, generally, either).
 
-# Q: why is dlcose() a NO-OP ?
+# Q: Why is dlclose() a no-op?
 
 C does not have any model for functions or pseudo-static data whose lifetimes are not the lifetime of the whole process.
 Any attempt to add them is pretty much ad hoc and underspecified because doing it right would require a detailed model compatible with the rest of the language.
