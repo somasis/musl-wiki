@@ -69,8 +69,7 @@ building apps against musl (but they won't hurt, generally, either).
 
 C does not have any model for functions or pseudo-static data whose lifetimes are not the lifetime of the whole process.
 , and any attempt to add them is ad hoc and underspecified because doing it right would require a detailed model compatible with the rest of the language.
-It's possible to write individual libraries that are meant to be used with such a model, but it requires explicit care to do it right:
-Documenting that you can't keep pointers to their functions or data after unload, etc.
+It's possible to write individual libraries that are meant to be used with such a model, but it requires explicit care to do it right, including documenting that you can't keep pointers to their functions or data after unload, among others.
 But the problem is that dlopen is recursive, and loading such a module usually involves loading of libraries it depends on.
 Libraries which were written to standard C, not this underspecified "C with unloading modules".
 They might have registered atexit handlers or otherwise stored pointers to their code or data in places it persists beyond the caller's knowledge of it.
