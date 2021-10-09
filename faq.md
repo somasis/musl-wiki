@@ -76,8 +76,8 @@ Glibc 'takes care of' the atexit (and dtor) case by doing something wild: execut
 This has all sorts of weirdness and violates the principle that all dtors (destructors) are executed in reverse order of ctors (constructors). Furthermore, if the library was written assuming dtors run at process exit time, it may be doing something that's not appropriate to happen while the process is continuing to run.
 One possible implementation could be 'unload modules meant to be loaded as modules, but refuse to unload recursive dependencies and anything with dtors'.
 Unfortunately, GCC and GNU Binutils make all libraries appear to have dtors as far as the dynamic linker can tell; the dtors might just be a no-op, and to know that you'd have to interpret code.
-The ELF headers actually have a way to signal "never unload this library".
-The problem is that the default is backwards; only libraries explicitly created with that flag set have it, whereas, semantically, the default is "unsafe to unload"
+ELF headers actually have a way to signal "never unload this library".
+The problem is that the default is backwards: only libraries explicitly created with that flag set have it, whereas, semantically, the default is "unsafe to unload".
 Further, managing thread-local-storage lifetime is a lot more problematic when slots can be freed and reused. (actually a lot of ppl think this is why musl doesn't unload libraries, which isn't the case. it's possible to do right, just more work).
 On glibc this actually makes for some weird race conditions where a library that 'could be' unloaded doesn't get unloaded, and unloading it either never happens or gets deferred to the next dlclose operation - which breaks anything assuming that dlclose will actually unload.
 So programs making this assumption are already broken on glibc too, just with random rare failures rather than failure every time.
