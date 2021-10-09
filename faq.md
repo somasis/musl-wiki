@@ -80,8 +80,8 @@ ELF headers actually have a way to signal "never unload this library".
 The problem is that the default is backwards: only libraries explicitly created with that flag set have it, whereas, semantically, the default is "unsafe to unload".
 Furthermore, managing thread-local-storage lifetime is a lot more problematic when slots can be freed and reused.
 It seems to be a common misconception that this is why musl doesn't unload libraries, which isn't the case. It is possible to do right, just more work.
-On glibc this actually makes for some weird race conditions where a library that 'could be' unloaded doesn't get unloaded, and unloading it either never happens or gets deferred to the next dlclose operation - which breaks anything assuming that dlclose will actually unload.
-So programs making this assumption are already broken on glibc too, just with random rare failures rather than failure every time.
+On glibc this actually makes for some weird race conditions where a library that 'could be' unloaded doesn't get unloaded, and unloading it either never happens or gets deferred to the next `dlclose` operation, which breaks anything assuming that `dlclose` will actually unload.
+Therefore, programs making this assumption are already broken on glibc, just with random rare failures rather than failure every time.
 
 # Q: Why am I getting "error: redefinition of struct ethhdr/tcphdr/etc"?
 
