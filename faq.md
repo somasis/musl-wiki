@@ -71,7 +71,7 @@ C does not have any model for functions or pseudo-static data whose lifetimes ar
 , and any attempt to add them is ad hoc and underspecified because doing it right would require a detailed model compatible with the rest of the language.
 It's possible to write individual libraries that are meant to be used with such a model, but it requires explicit care to do it right, including documenting that you can't keep pointers to their functions or data after unload, among others.
 But the problem is that dlopen is recursive, and loading such a module usually involves loading the libraries it depends on, which were written to standard C, not this underspecified "C with unloading modules".
-They might have registered atexit handlers or otherwise stored pointers to their code or data in places it persists beyond the caller's knowledge of it.
+They might have registered `atexit` handlers or otherwise stored pointers to their code or data in places it persists beyond the caller's knowledge of it.
 Glibc 'takes care of' the atexit (and dtor) case by doing something wild: executing global ctors at a time other than process termination: at unload time.
 This has all sorts of weirdness and violates the principle that all dtors (destructors) are executed in reverse order of ctors (constructors). Furthermore, if the library was written assuming dtors run at process exit time, it may be doing something that's not appropriate to happen while the process is continuing to run.
 One possible implementation could be 'unload modules meant to be loaded as modules, but refuse to unload recursive dependencies and anything with dtors'.
