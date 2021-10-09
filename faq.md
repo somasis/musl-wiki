@@ -73,7 +73,7 @@ It's possible to write individual libraries that are meant to be used with such 
 But the problem is that dlopen is recursive, and loading such a module usually involves loading the libraries it depends on, which were written to standard C, not this underspecified "C with unloading modules".
 They might have registered atexit handlers or otherwise stored pointers to their code or data in places it persists beyond the caller's knowledge of it.
 Glibc 'takes care of' the atexit (and dtor) case by doing something wild: executing global ctors at a time other than process termination: at unload time.
-This has all sorts of weirdness and violates principle that all dtors are executed in reverse order of ctors<dalias> and if the library was written assuming dtors run at process exit time, it may be doing something that's not appropriate to happen while the process is continuing to run.
+This has all sorts of weirdness and violates the principle that all dtors (destructors) are executed in reverse order of ctors (constructors). Furthermore, if the library was written assuming dtors run at process exit time, it may be doing something that's not appropriate to happen while the process is continuing to run.
 Now, you could try to say "ok let's just unload modules meant to be loaded as modules, but refuse to unload recursive deps and anything with dtors"
 Well, bad news: gcc/binutils make *all libraries* appear to have dtors as far as the dynamic linker can tell; the dtors might just be a no-op -
 and to know that you'd have to interpret code.
