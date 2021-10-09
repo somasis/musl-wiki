@@ -68,7 +68,7 @@ building apps against musl (but they won't hurt, generally, either).
 # Q: Why is dlclose() a no-op?
 
 C does not have any model for functions or pseudo-static data whose lifetimes are not the lifetime of the whole process.
-Any attempt to add them is pretty much ad hoc and underspecified because doing it right would require a detailed model compatible with the rest of the language.
+, and any attempt to add them is ad hoc and underspecified because doing it right would require a detailed model compatible with the rest of the language.
 It's possible to write individual libraries that are meant to be used with such a model, but it requires explicit care to do it right:
 Documenting that you can't keep pointers to their functions or data after unload, etc.
 But the problem is that dlopen is recursive, and loading such a module usually involves loading of libraries it depends on.
