@@ -97,9 +97,9 @@
 - [Debian] package is available.
 - [Fedora] package is available starting with Fedora 30.
 - [Gentoo] (see [musl overlay])
-    - <http://distfiles.gentoo.org/experimental/amd64/>
-    - <http://distfiles.gentoo.org/experimental/x86/musl/>
-    - <http://distfiles.gentoo.org/experimental/arm/musl/>
+    - <https://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64-musl/>
+    - <https://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686-musl/>
+    - <https://distfiles.gentoo.org/releases/arm/autobuilds/>
 - [Ubuntu] package is included in the universe section of the repository
   starting with Ubuntu 14.04 Trusty Tahr. There is also a PPA available
   (ppa:bortis/musl) for Saucy Salamander.
