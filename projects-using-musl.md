@@ -66,7 +66,7 @@
 [Bedrock Linux]: https://bedrocklinux.org/introduction.html
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
 [CLFS-announcement]: https://openwall.com/lists/musl/2013/10/16/1
-[Cross Linux From Scratch]: http://cross-lfs.org/view/clfs-embedded/
+[Cross Linux From Scratch]: https://clfs.org/
 [Dragora]: https://dragora.org
 [Embedded Linux From Scratch]: https://kanj.github.io/elfs/book/
 [Exherbo]: https://www.exherbo.org/
