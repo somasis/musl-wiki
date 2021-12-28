@@ -28,6 +28,10 @@
     - 2013-09-28 Updated to correct name of toolchain used
     - 2013-09-14 Updated to musl-0.9.13. Supports \*-\*-musl\* toolchains.
 - [Exherbo] has an x86_64 musl stage.
+- [Gentoo] has stages for most architectures (has [musl overlay] for packages without mainline support yet)
+    - <https://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64-musl/>
+    - <https://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686-musl/>
+    - <https://distfiles.gentoo.org/releases/arm/autobuilds/>
 - [glaucus] - An independent, open-source, general-purpose, bleeding-edge, rolling-release,
   source-based Linux® distribution based on musl libc and toybox, built from scratch around the
   suckless philosophy without sacrificing convenience.
@@ -96,10 +100,6 @@
 - [Chromebrew] provides an official musl package.
 - [Debian] package is available.
 - [Fedora] package is available starting with Fedora 30.
-- [Gentoo] (see [musl overlay])
-    - <https://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64-musl/>
-    - <https://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686-musl/>
-    - <https://distfiles.gentoo.org/releases/arm/autobuilds/>
 - [Ubuntu] package is included in the universe section of the repository
   starting with Ubuntu 14.04 Trusty Tahr. There is also a PPA available
   (ppa:bortis/musl) for Saucy Salamander.
