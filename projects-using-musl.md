@@ -116,7 +116,7 @@
 [Chromebrew]: https://skycocker.github.io/chromebrew/
 [Debian]: http://packages.debian.org/search?keywords=musl&searchon=names&suite=all&section=all
 [Fedora]: https://src.fedoraproject.org/rpms/musl
-[Gentoo]: http://www.gentoo.org/
+[Gentoo]: https://www.gentoo.org/
 [musl overlay]: https://gitweb.gentoo.org/proj/musl.git
 [openadk]: http://openadk.org/
 [OpenWrt]: https://openwrt.org/
