@@ -65,20 +65,20 @@
 
 [Abyss]: https://abyss.run
 [Adélie Linux]: https://adelielinux.org
-[Alpine Linux]: http://alpinelinux.org/
+[Alpine Linux]: https://alpinelinux.org/
 [Ataraxia Linux]: https://ataraxialinux.github.io/
-[Bedrock Linux]: http://bedrocklinux.org/introduction.html
+[Bedrock Linux]: https://bedrocklinux.org/introduction.html
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
-[CLFS-announcement]: http://openwall.com/lists/musl/2013/10/16/1
+[CLFS-announcement]: https://openwall.com/lists/musl/2013/10/16/1
 [Cross Linux From Scratch]: http://cross-lfs.org/view/clfs-embedded/
 [Dragora]: https://dragora.org
-[Embedded Linux From Scratch]: http://kanj.github.io/elfs/book/
-[Exherbo]: http://www.exherbo.org/
+[Embedded Linux From Scratch]: https://kanj.github.io/elfs/book/
+[Exherbo]: https://www.exherbo.org/
 [glaucus]: https://www.glaucuslinux.org/
 [Iglunix]: https://iglunix.xyz/
 [KISS Linux]: https://k1sslinux.org/
 [Mere Linux]: https://merelinux.org
-[morpheus]: http://git.2f30.org/morpheus/
+[morpheus]: https://git.2f30.org/morpheus/
 [oasis]: https://github.com/michaelforney/oasis
 [sabotage]: http://sabo.xyz/
 [Snowflake]: https://github.com/GregorR/snowflake
@@ -114,11 +114,11 @@
 
 [Arch Linux]: https://www.archlinux.org/
 [Chromebrew]: https://skycocker.github.io/chromebrew/
-[Debian]: http://packages.debian.org/search?keywords=musl&searchon=names&suite=all&section=all
+[Debian]: https://packages.debian.org/search?keywords=musl&searchon=names&suite=all&section=all
 [Fedora]: https://src.fedoraproject.org/rpms/musl
 [Gentoo]: https://www.gentoo.org/
 [musl overlay]: https://gitweb.gentoo.org/proj/musl.git
-[openadk]: http://openadk.org/
+[openadk]: https://openadk.org/
 [OpenWrt]: https://openwrt.org/
 [r45995]: https://dev.openwrt.org/changeset/45995
 [Ubuntu]: http://packages.ubuntu.com/search?keywords=musl&searchon=names&suite=all&section=all
@@ -152,9 +152,9 @@ Third-party projects using or building on musl:
 - [seL4] seL4 kernel ships with musl
 - [simplecct] simple cross compiler toolchain
 
-[buildroot]: http://buildroot.org/
+[buildroot]: https://buildroot.org/
 [docker-muslbase]: https://github.com/mwcampbell/docker-muslbase
-[Dwarf Fortress port]: http://openwall.com/lists/sabotage/2013/11/01/1
+[Dwarf Fortress port]: https://openwall.com/lists/sabotage/2013/11/01/1
 [ELLCC]: http://ellcc.org/
 [Emscripten]: http://emscripten.org/
 [Firecracker VMM]: https://firecracker-microvm.github.io/
@@ -163,6 +163,6 @@ Third-party projects using or building on musl:
 [mussel]: https://github.com/firasuke/mussel
 [NodeOS]: https://github.com/NodeOS/NodeOS
 [OSv]: https://github.com/cloudius-systems/osv/
-[Rust]: http://www.rust-lang.org/
+[Rust]: https://www.rust-lang.org/
 [seL4]: https://github.com/seL4/libmuslc
 [simplecct]: https://code.google.com/p/simplecct/
