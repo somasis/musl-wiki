@@ -15,5 +15,4 @@ The archive is browsable online at <http://www.openwall.com/lists/musl/>
 
 # IRC
 
-The #musl channel on the Freenode IRC network is where we discuss musl.
-
+The #musl channel on the Libera IRC network is where we discuss musl.
