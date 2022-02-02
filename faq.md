@@ -74,7 +74,7 @@ with GLIBC because...
 
 - the userspace headers just include the kernel headers, and
 - because the kernel headers have a hardcoded compatibility fix for GLIBC to
-  prevent exactly this issue (`linux/libc_compat.h`)
+  prevent exactly this issue (`linux/libc-compat.h`)
 
 the issue can be fixed in different ways:
 
