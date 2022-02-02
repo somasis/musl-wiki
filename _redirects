@@ -1,4 +1,7 @@
 # See https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file
+
+http://wiki.musl-libc.org/* https://wiki.musl-libc.org/:splat 301!
+
 /home /index.html
 /wiki/ABI_Manuals /abi-manuals.html
 /wiki/Alternative_libraries /alternatives.html
