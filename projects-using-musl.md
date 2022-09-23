@@ -16,6 +16,7 @@
 - [Bedrock Linux] - as of version 1.0alpha4
 - [bootstrap-linux] - consists only of a minimal set of packages that can be
   crosscompiled. kernel, toolchain, busybox.
+- [Chimera Linux] - use musl, LLVM toolchain and FreeBSD userland with Linux kernel
 - [Cross Linux From Scratch] - CLFS uses musl since 16.10.2013
   ([Announcement][CLFS-announcement])
 - [Dragora] - An independent GNU/Linux-Libre distribution based on concepts of simplicity.
@@ -69,6 +70,7 @@
 [Ataraxia Linux]: https://ataraxialinux.github.io/
 [Bedrock Linux]: https://bedrocklinux.org/introduction.html
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
+[Chimera Linux]: https://chimera-linux.org/
 [CLFS-announcement]: https://openwall.com/lists/musl/2013/10/16/1
 [Cross Linux From Scratch]: https://clfs.org/
 [Dragora]: https://dragora.org
