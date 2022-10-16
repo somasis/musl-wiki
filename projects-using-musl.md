@@ -33,9 +33,9 @@
     - <https://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64-musl/>
     - <https://distfiles.gentoo.org/releases/x86/autobuilds/current-stage3-i686-musl/>
     - <https://distfiles.gentoo.org/releases/arm/autobuilds/>
-- [glaucus] - An independent, open-source, general-purpose, bleeding-edge, rolling-release,
-  source-based Linux® distribution based on musl libc and toybox, built from scratch around the
-  suckless philosophy without sacrificing convenience.
+- [glaucus] - An independent, open-source, rolling-release lightweight Linux® distribution
+  based on musl libc and toybox, designed from scratch for optimum performance without
+  sacrificing convenience.
 - [Iglunix] - An independent, self-hosting, Linux distribution with no GNU software
 - [KISS Linux] - An independent Linux distribution with a focus on simplicity and the concept of
   "less is more".
