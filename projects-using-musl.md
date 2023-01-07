@@ -78,7 +78,7 @@
 [Exherbo]: https://www.exherbo.org/
 [glaucus]: https://www.glaucuslinux.org/
 [Iglunix]: https://iglunix.xyz/
-[KISS Linux]: https://k1sslinux.org/
+[KISS Linux]: https://kisslinux.org/
 [Mere Linux]: https://merelinux.org
 [morpheus]: https://git.2f30.org/morpheus/
 [oasis]: https://github.com/michaelforney/oasis
