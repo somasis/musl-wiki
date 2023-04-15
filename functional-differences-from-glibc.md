@@ -314,7 +314,7 @@ errno nor fp exceptions are supported).
 # Name Resolver/DNS
 
 Traditional resolvers, including glibc's, make use of multiple nameserver lines
-in resolv.conf by trying each one in sequence and falling to the next after one
+in `resolv.conf` by trying each one in sequence and falling to the next after one
 times out. musl's resolver queries them all in parallel and accepts whichever
 response arrives first. This can increase network load (this is mitigated by
 only supporting up to three nameservers, and can be mitigated further at the
@@ -331,12 +331,12 @@ are used. An ideal configuration is:
 
 If musl's resolver is requested to translate a hostname to IPv4 and IPv6, both
 requests will use the same socket, same as glibc. glibc could be configured to
-send those requests sequentially, with "single-request" and
-"single-request-reopen" options, but musl cannot.
+send those requests sequentially, with `single-request` and
+`single-request-reopen` options, but musl cannot.
 
-musl's resolver previously did not support the "domain" and "search" keywords in
+musl's resolver previously did not support the `domain` and `search` keywords in
 resolv.conf. This feature was added in version 1.1.13, but its behavior differs
-slightly from glibc's: queries with fewer dots than the ndots configuration
+slightly from glibc's: queries with fewer dots than the `ndots` configuration
 variable are processed with search first then tried literally (just like glibc),
 but those with at least as many dots as ndots are only tried in the global
 namespace (never falling back to search, which glibc would do if the name is not
@@ -345,12 +345,16 @@ requirement not to return different results subject to transient failures or to
 global DNS namespace changes outside of one's control (addition of new TLDs).
 
 glibc supports IDN (non-ASCII name lookups via DNS) but requires the use of
-custom non-standard flags to getaddrinfo and getnameinfo to convert such names
+custom non-standard flags to `getaddrinfo` and `getnameinfo` to convert such names
 to/from the internal representation used in the DNS system (Punycode). musl does
 not yet support IDN conversions at all (but programs that know about
 IDN/Punycode and do the conversions themselves can of course lookup such names),
 but when support is added, it will always be enabled rather than requiring
 explicit options from the application.
+
+musl's resolver did not support the use of DNS over TCP until version 1.2.4. This
+difference prevented the use of larger packets produced by protocols such as
+DNSSEC and DKIM.
 
 # Miscellaneous functions with GNU quirks
 
