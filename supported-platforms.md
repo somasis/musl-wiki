@@ -17,8 +17,10 @@ applications.
 - arm eabi (armv4t or later, requires gcc >= 4.2.4 for softfp, gcc >= 4.5.4 for
   hardfloat)
 - aarch64
+- m68k
 - mips/mipsel o32 (MIPS1 with kernel emulation of ll and sc instructions, or
   MIPS2 or later, softfloat is supported as well)
+- mips n32
 - mips n64
 - microblaze (~~needs toolchain from xilinx, [xilinx gitweb]~~ needs gcc >= 4.8
   (you can use musl-cross)) and linux 3.13 or [this patch].
