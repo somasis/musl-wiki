@@ -151,6 +151,7 @@ Third-party projects using or building on musl:
   option
 - [seL4] seL4 kernel ships with musl
 - [simplecct] simple cross compiler toolchain
+- [skarnet software] recommends musl for static linking
 
 [buildroot]: https://buildroot.org/
 [docker-muslbase]: https://github.com/mwcampbell/docker-muslbase
@@ -166,3 +167,4 @@ Third-party projects using or building on musl:
 [Rust]: https://www.rust-lang.org/
 [seL4]: https://github.com/seL4/libmuslc
 [simplecct]: https://code.google.com/p/simplecct/
+[skarnet software]: https://skarnet.org/software/
