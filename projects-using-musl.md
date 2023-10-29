@@ -28,6 +28,7 @@
 - [Embedded Linux From Scratch] - a fork of CLFS embedded using musl libc
     - 2013-09-28 Updated to correct name of toolchain used
     - 2013-09-14 Updated to musl-0.9.13. Supports \*-\*-musl\* toolchains.
+- [EvolutionOS] uses musl for it's x86_64 images
 - [Exherbo] has an x86_64 musl stage.
 - [Gentoo] has stages for most architectures (has [musl overlay] for packages without mainline support yet)
     - <https://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64-musl/>
