@@ -62,10 +62,10 @@
   busybox using LLVM/Clang as toolchain.
 - [Void Linux] provides official musl based images.
 
-[Abyss]: https://abyss.run
+[Abyss]: https://github.com/abyss-os
 [Adélie Linux]: https://adelielinux.org
 [Alpine Linux]: https://alpinelinux.org/
-[Ataraxia Linux]: https://ataraxialinux.github.io/
+[Ataraxia Linux]: https://github.com/ataraxialinux/ataraxia
 [Bedrock Linux]: https://bedrocklinux.org/introduction.html
 [bootstrap-linux]: https://github.com/pikhq/bootstrap-linux
 [Chimera Linux]: https://chimera-linux.org/
@@ -73,7 +73,8 @@
 [Cross Linux From Scratch]: https://clfs.org/
 [Dragora]: https://dragora.org
 [Embedded Linux From Scratch]: https://kanj.github.io/elfs/book/
-[Exherbo]: https://www.exherbo.org/
+[Exherbo]: https://www.exherbolinux.org/
+[Gentoo]: https://www.gentoo.org/
 [glaucus]: https://glaucuslinux.org/
 [Iglunix]: https://iglunix.xyz/
 [KISS Linux]: https://kisslinux.org/
@@ -87,12 +88,6 @@
 [TAZ]: https://github.com/Sharrisii/TAZ
 [Vanilla]: http://projects.malikania.fr/vanilla
 [Void Linux]: https://voidlinux.org/
-
-# Linux distros that plan to switch to musl
-
-- [Aboriginal] - next major release will be based on musl
-
-[Aboriginal]: http://landley.net/aboriginal/
 
 # Linux distros shipping musl as an optional package
 
@@ -112,11 +107,10 @@
     - poky-tiny ( Yocto Project Reference Distribution ) is now based on musl
     - [Yoe] Distro - Fully supports Generating musl based images
 
-[Arch Linux]: https://www.archlinux.org/
-[Chromebrew]: https://skycocker.github.io/chromebrew/
+[Arch Linux]: https://archlinux.org/packages/extra/x86_64/musl/
+[Chromebrew]: https://chromebrew.github.io/
 [Debian]: https://packages.debian.org/search?keywords=musl&searchon=names&suite=all&section=all
 [Fedora]: https://src.fedoraproject.org/rpms/musl
-[Gentoo]: https://www.gentoo.org/
 [musl overlay]: https://gitweb.gentoo.org/proj/musl.git
 [openadk]: https://openadk.org/
 [OpenWrt]: https://openwrt.org/
@@ -151,6 +145,7 @@ Third-party projects using or building on musl:
   option
 - [seL4] seL4 kernel ships with musl
 - [simplecct] simple cross compiler toolchain
+- [toybox] simple Unix command-line utilities
 
 [buildroot]: https://buildroot.org/
 [docker-muslbase]: https://github.com/mwcampbell/docker-muslbase
@@ -158,11 +153,12 @@ Third-party projects using or building on musl:
 [ELLCC]: http://ellcc.org/
 [Emscripten]: http://emscripten.org/
 [Firecracker VMM]: https://firecracker-microvm.github.io/
-[Mirage OS]: http://www.openmirage.org/
+[Mirage OS]: https://mirage.io/
 [Mission Pinball Framework]: https://missionpinball.org/
 [mussel]: https://github.com/firasuke/mussel
 [NodeOS]: https://github.com/NodeOS/NodeOS
 [OSv]: https://github.com/cloudius-systems/osv/
 [Rust]: https://www.rust-lang.org/
-[seL4]: https://github.com/seL4/libmuslc
+[seL4]: https://github.com/seL4/musllibc
 [simplecct]: https://code.google.com/p/simplecct/
+[toybox]: https://landley.net/toybox/
