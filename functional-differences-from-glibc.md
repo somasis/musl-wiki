@@ -329,6 +329,10 @@ are used. An ideal configuration is:
   size, and moderate performance for queries not serviceable from cache)
 - 8.8.8.8 (somewhat higher latency but tends to have the whole DNS tree cached)
 
+Try to make sure that your nameservers agree on the answers they give, as it's
+[not guaranteed](https://github.com/louislam/uptime-kuma/issues/4798) that the
+first response will be from a local nameserver.
+
 If musl's resolver is requested to translate a hostname to IPv4 and IPv6, both
 requests will use the same socket, same as glibc. glibc could be configured to
 send those requests sequentially, with `single-request` and
@@ -355,6 +359,14 @@ explicit options from the application.
 musl's resolver did not support the use of DNS over TCP until version 1.2.4. This
 difference prevented the use of larger packets produced by protocols such as
 DNSSEC and DKIM.
+
+musl also does not implement the following glibc bugs:
+* When the `hints` parameter for `getaddrinfo` is unset, glibc sets the
+  `ai_protocol` field, which is
+  [non-complaint](https://github.com/libuv/libuv/issues/2225#issuecomment-765808228).
+* When `getaddrinfo` is called with `AF_UNSPEC`, glibc returns a result
+  even if one of the address families returns `ServFail`.  This is a bug
+  (glibc #27929) and may undermine DNSSEC.
 
 # Miscellaneous functions with GNU quirks
 

@@ -214,6 +214,7 @@
 - [posix 861 (no way to query active locale name when uselocale is used)](http://austingroupbugs.net/view.php?id=861)
 - [asterisk 24154 (use of PTHREAD\_MUTEX\_INITIALIZER as if it provided a recursive mutex](https://issues.asterisk.org/jira/browse/ASTERISK-24154)
 - [asterisk 24155 (invalid use of backtrace() to check for recursion](https://issues.asterisk.org/jira/browse/ASTERISK-24155)
+- [glibc 27929 (lax stub resolver interpretation of ServFail allows DNSSEC bypass)](https://sourceware.org/bugzilla/show_bug.cgi?id=27929).
 
 ## Bugs relevant to musl
 
