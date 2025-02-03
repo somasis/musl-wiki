@@ -62,5 +62,5 @@ static linking support, and clean code.
 [README]: https://git.musl-libc.org/cgit/musl/tree/README
 [release notes]: https://git.musl-libc.org/cgit/musl/tree/WHATSNEW
 [generating-cross]: https://bitbucket.org/GregorR/musl-cross
-[pre-built-cross]: http://musl.codu.org/
+[pre-built-cross]: https://musl.cc
 
