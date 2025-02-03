@@ -25,7 +25,6 @@ software packages.
 
 - pkgsrc based software compatibility table:
     - ~~Pkgsrc results~~ outdated.
-    - pkgsrc results are archived at <http://musl.codu.org>.
     - The necessary patches are at [musl-pkgsrc-patches (hg)] or
       [musl-pkgsrc-patches (git)].
 - Build instructions and patches for various software packages:
