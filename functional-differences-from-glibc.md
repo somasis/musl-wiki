@@ -360,6 +360,11 @@ musl's resolver did not support the use of DNS over TCP until version 1.2.4. Thi
 difference prevented the use of larger packets produced by protocols such as
 DNSSEC and DKIM.
 
+Similar to glibc <2.26, musl has a restriction of 256 characters for the list of 
+`search` domains. While glibc <2.26 truncates this list, musl ignores the entire
+line, resulting in no `search` domains being applied.
+This limit no longer exists since glibc 2.26 and still remains in musl.
+
 musl also does not implement the following glibc bugs:
 
 - When the `hints` parameter for `getaddrinfo` is unset, glibc sets the
