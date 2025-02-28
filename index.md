@@ -43,7 +43,8 @@ static linking support, and clean code.
 
 - [Comparison] with other Linux libc implementations
 - [Install notes], [readme], and [release notes] in the official repo.
-- [Musl cross make][generating-cross] - advanced makefile-based approach for producing musl-targeting cross compilers
+- [Musl cross][musl-cross] - `GregorR/musl-cross` First generation advanced makefile-based approach for producing musl-targeting cross compilers
+- [Musl cross make][musl-cross-make] - `richfelker/musl-cross-make ` Second genratiion advanced makefile-based approach for producing musl-targeting cross compilers
 - [musl.cc pre-built cross compiler downloads][musl-cc-pre-built-cross] for different arches
 - [skarnet pre-built cross compiler downloads][skarnet-pre-built-cross] for different arches
 - Lightweight [alternatives to common libraries and software][Alternatives]
@@ -62,7 +63,8 @@ static linking support, and clean code.
 [Install notes]: https://git.musl-libc.org/cgit/musl/tree/INSTALL
 [README]: https://git.musl-libc.org/cgit/musl/tree/README
 [release notes]: https://git.musl-libc.org/cgit/musl/tree/WHATSNEW
-[generating-cross]: https://github.com/richfelker/musl-cross-make
+[musl-cross]: https://github.com/GregorR/musl-cross
+[musl-cross-make]: https://github.com/richfelker/musl-cross-make
 [musl-cc-pre-built-cross]: https://musl.cc
 [skarnet-pre-built-cross]: https://skarnet.org/toolchains/
 
