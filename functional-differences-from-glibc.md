@@ -349,7 +349,7 @@ requirement not to return different results subject to transient failures or to
 global DNS namespace changes outside of one's control (addition of new TLDs).
 `search` lines in musl are ignored if they exceed 256 chars. Newer versions
 of glibc do not have this limitation. Generally it's recommended to avoid
-`search` use as it results in abysmal performance.
+long `search` lists as it results in abysmal performance.
 
 glibc supports IDN (non-ASCII name lookups via DNS) but requires the use of
 custom non-standard flags to `getaddrinfo` and `getnameinfo` to convert such names
