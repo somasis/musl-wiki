@@ -97,6 +97,11 @@ the issue can be fixed in different ways:
 - that's a HUGE risk to pay for the sake of a basically-useless and
   possibly-harmful "feature"
 
+# Q: My writes to /proc using stdio don't work as intended
+
+These are special files that need atomic write()s.
+The relationship between stdio output and writes on the underlying fd is not specified.
+
 # Q: My dynamically linked program crashes on PowerPC!
 
 Make sure you pass `-Wl,--secure-plt` when you use dynamic linking. Musl only
