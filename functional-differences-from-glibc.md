@@ -367,7 +367,7 @@ musl also does not implement the following glibc bugs:
 
 - When the `hints` parameter for `getaddrinfo` is unset, glibc sets the
   `ai_protocol` field, which is
-  [non-complaint](https://github.com/libuv/libuv/issues/2225#issuecomment-765808228).
+  [non-compliant](https://github.com/libuv/libuv/issues/2225#issuecomment-765808228).
 - When `getaddrinfo` is called with `AF_UNSPEC`, glibc returns a result
   even if one of the address families returns `ServFail`.  This is a bug
   (glibc #27929) and may undermine DNSSEC.
