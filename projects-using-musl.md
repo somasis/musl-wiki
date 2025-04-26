@@ -42,6 +42,7 @@
     - Contains instructions for bootstrapping LFS-style
 - [morpheus] - suckless linux distro
 - [oasis] - statically linked linux distribution based on musl and other lightweight components.
+- [OpenWrt] - defaults to musl as libc since 2015 ([OpenWrt-commit]) except for (as of April 2025) arc CPU ISA ([OpenWrt-reference])
 - [sabotage] - experimental Linux distribution based on busybox and musl.
     - About 700 packages including X11, LXDE, alsa, SDL, C++.
     - Supports i386, x86_64, arm, mips, powerpc
@@ -81,6 +82,9 @@
 [Mere Linux]: https://merelinux.org
 [morpheus]: https://git.2f30.org/morpheus/
 [oasis]: https://github.com/michaelforney/oasis
+[OpenWrt]: https://openwrt.org/
+[OpenWrt-commit]: https://git.openwrt.org/?p=openwrt/openwrt.git;a=commitdiff;h=a7780603923fddec225c9f4b0990fede4c2695a9
+[OpenWrt-reference]: https://git.openwrt.org/?p=openwrt/openwrt.git;a=blob;f=toolchain/Config.in;h=71ebbeb47bf2a024ba070ac02bf0c07a10227c14;hb=HEAD#l285
 [sabotage]: http://sabo.xyz/
 [Snowflake]: https://github.com/GregorR/snowflake
 [solyste]: https://framagit.org/Ypnose/solyste
@@ -100,8 +104,6 @@
   (ppa:bortis/musl) for Saucy Salamander.
 - [openadk] Embedded Linux buildsystem, musl can be selected as the libc of the
   system.
-- [OpenWrt] packages musl and uses musl as default libc except for mips64 since
-  [r45995].
 - [Yocto] - OpenEmbeeded based Yocto Project supports generated embedded Linux distributions based on musl C library
     - Set TCLIBC = "musl" to switch default C library to musl for building embedded linux platforms
     - poky-tiny ( Yocto Project Reference Distribution ) is now based on musl
@@ -113,8 +115,6 @@
 [Fedora]: https://src.fedoraproject.org/rpms/musl
 [musl overlay]: https://gitweb.gentoo.org/proj/musl.git
 [openadk]: https://openadk.org/
-[OpenWrt]: https://openwrt.org/
-[r45995]: https://dev.openwrt.org/changeset/45995
 [Ubuntu]: http://packages.ubuntu.com/search?keywords=musl&searchon=names&suite=all&section=all
 [Yocto]: https://www.yoctoproject.org/
 [Yoe]: https://www.yoedistro.org/
