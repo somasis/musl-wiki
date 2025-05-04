@@ -65,6 +65,24 @@ note that if you're building a whole system with musl you never need any of
 them. you don't need them for building musl, and you don't need them for
 building apps against musl (but they won't hurt, generally, either).
 
+# Q: Why is dlclose() a no-op?
+
+C does not have any model for functions or pseudo-static data whose lifetimes are not the lifetime of the whole process.
+, and any attempt to add them is ad hoc and underspecified because doing it right would require a detailed model compatible with the rest of the language.
+It's possible to write individual libraries that are meant to be used with such a model, but it requires explicit care to do it right, including documenting that you can't keep pointers to their functions or data after unload, among others.
+But the problem is that dlopen is recursive, and loading such a module usually involves loading the libraries it depends on, which were written to standard C, not this underspecified "C with unloading modules".
+They might have registered `atexit` handlers or otherwise stored pointers to their code or data in places it persists beyond the caller's knowledge of it.
+Glibc 'takes care' of the `atexit` (and destructor) case by diverging from the expected behavior, by executing global destructors at a time other than process termination: at unload time.
+This has all sorts of weirdness and violates the principle that all dtors (destructors) are executed in reverse order of ctors (constructors). Furthermore, if the library was written assuming dtors run at process exit time, it may be doing something that's not appropriate to happen while the process is continuing to run.
+One possible implementation could be 'unload modules meant to be loaded as modules, but refuse to unload recursive dependencies and anything with dtors'.
+Unfortunately, GCC and GNU Binutils make all libraries appear to have dtors as far as the dynamic linker can tell; the dtors might just be a no-op, and to know that you'd have to interpret code.
+ELF headers actually have a way to signal "never unload this library".
+The problem is that the default is backwards: only libraries explicitly created with that flag set have it, whereas, semantically, the default is "unsafe to unload".
+Furthermore, managing thread-local-storage lifetime is a lot more problematic when slots can be freed and reused.
+It seems to be a common misconception that this is why musl doesn't unload libraries, which isn't the case. It is possible to do right, just more work.
+On glibc this actually makes for some weird race conditions where a library that 'could be' unloaded doesn't get unloaded, and unloading it either never happens or gets deferred to the next `dlclose` operation, which breaks anything assuming that `dlclose` will actually unload.
+Therefore, programs making this assumption are already broken on glibc, just with random rare failures rather than failure every time.
+
 # Q: Why am I getting "error: redefinition of struct ethhdr/tcphdr/etc"?
 
 The application you're trying to compile mixes userspace and kernel headers
