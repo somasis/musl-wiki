@@ -238,6 +238,22 @@ For example: `CFLAGS="-Dgnu_fnmatch=fnmatch -Drpl_getgroups=getgroups
 [gnulib]: https://gitlab.com/sortix/sortix/wikis/Gnulib
 [overwrite]: https://github.com/sabotage-linux/sabotage/blob/master/KEEP/gnulibfix
 
+# Q: How to turn on static PIE support?
+
+There's a [patch] by Harald Hoyer. It's been tested and is in use in the [Fedora package].
+
+To use the musl-gcc wrapper:
+
+```sh
+CC="musl-gcc -static-pie" ./configure --prefix=$HOME/musl && make
+```
+
+`-static-pie` only affects linking options (`-static -pie --no-dynamic-linker -z text`), not compile options (`-fPIE`). As the default toolchain config isn't visible to the spec file logic, building a musl-based cross-toolchain is [recommended for non-basic use].
+
+[patch]: https://www.openwall.com/lists/musl/2020/05/08/1
+[Fedora package]: https://src.fedoraproject.org/rpms/musl/blob/rawhide/f/musl-1.2.0-Support-static-pie-with-musl-gcc-specs.patch
+[recommended for non-basic use]: https://www.openwall.com/lists/musl/2020/04/07/1
+
 # Q: None of these are questions!
 
 Why would the Frequently Aired Quandaries page have questions?
