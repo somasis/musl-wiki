@@ -99,6 +99,7 @@
 - [Chromebrew] provides an official musl package.
 - [Debian] package is available.
 - [Fedora] package is available starting with Fedora 30.
+- [Guix] package is available.
 - [Ubuntu] package is included in the universe section of the repository
   starting with Ubuntu 14.04 Trusty Tahr. There is also a PPA available
   (ppa:bortis/musl) for Saucy Salamander.
@@ -113,6 +114,7 @@
 [Chromebrew]: https://chromebrew.github.io/
 [Debian]: https://packages.debian.org/search?keywords=musl&searchon=names&suite=all&section=all
 [Fedora]: https://src.fedoraproject.org/rpms/musl
+[Guix]: https://packages.guix.gnu.org/packages/musl/
 [musl overlay]: https://gitweb.gentoo.org/proj/musl.git
 [openadk]: https://openadk.org/
 [Ubuntu]: http://packages.ubuntu.com/search?keywords=musl&searchon=names&suite=all&section=all
