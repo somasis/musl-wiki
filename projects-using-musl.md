@@ -38,8 +38,8 @@
 - [KISS Linux] - An independent Linux distribution with a focus on simplicity and the concept of
   "less is more".
 - [Mere Linux]
-    - Uses pacman for package management and s6 for process supervision
-    - Contains instructions for bootstrapping LFS-style
+    - Built on the [mere](https://codeberg.org/merelinux/mere) package manager, written in Zig, with a content-addressed immutable store and atomic upgrades
+    - Uses s6 for process supervision and LLVM/Clang as the primary toolchain
 - [morpheus] - suckless linux distro
 - [oasis] - statically linked linux distribution based on musl and other lightweight components.
 - [OpenWrt] - defaults to musl as libc since 2015 ([OpenWrt-commit]) except for (as of April 2025) arc CPU ISA ([OpenWrt-reference])
