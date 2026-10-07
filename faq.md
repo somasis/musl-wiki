@@ -17,9 +17,11 @@ support for the next release of musl. The official explanation:
 
 # Q: Where is `ldd`?
 
-musl's dynamic linker comes with ldd functionality built in. Just create a symlink
-from ld-musl-$ARCH.so to /bin/ldd. If the dynamic linker was started as "ldd", it
-will detect that and print the appropriate DSO information.
+musl's dynamic linker comes with ldd functionality built in. It can be as easy as
+creating a symlink from ld-musl-$ARCH.so to /bin/ldd. However the recommended way
+is to create a shell script or program that extracts the interpreter from the binary
+(e.g. using `readelf -l`) and invoking it with the `--list` option e.g.:
+`/lib/ld-musl-x86_64.so.1 --list /bin/yasm`.
 
 # Q: Where is `ldconfig`?
 
