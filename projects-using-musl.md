@@ -7,12 +7,6 @@
   operating environment, aiming for POSIX® compliance, compatibility with a wide variety of
   computers, and ease of use without sacrificing features.
 - [Alpine Linux] - based on musl since the 3.0 release.
-- [Ataraxia Linux] - Independent, multi-platform, general purpose operating system based on the
-  Linux kernel and musl libc.
-    - Supports 17 different CPU architectures
-    - Has merged /usr for better compatibility
-    - Extremely bleeding edge
-    - Uses ZSTD where it's possible. Kernel, modules and initrd are using ZSTD by default.
 - [Bedrock Linux] - as of version 1.0alpha4
 - [bootstrap-linux] - consists only of a minimal set of packages that can be
   crosscompiled. kernel, toolchain, busybox.
